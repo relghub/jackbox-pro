@@ -93,7 +93,7 @@ class Re {
             signal: r
         } = {}) => {
             if (!l(this, b)) {
-                const n = t.workerURL ? new URL(t.workerURL) : new URL("main/pp10/nopus-opus/assets/8f00505c.js", self.location);
+                const n = t.workerURL ? new URL(t.workerURL) : new URL("/main/pp10/nopus-opus/assets/8f00505c.js", self.location);
                 $(this, b, new Worker(n, {
                     type: "module"
                 })), l(this, U).call(this)

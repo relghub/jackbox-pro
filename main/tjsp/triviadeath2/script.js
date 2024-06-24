@@ -7403,10 +7403,10 @@ var Yoe = LL((kae, eC) => {
             return this.htmlEscape(r).trim()
         }
         static sanitizeName(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
         }
         static sanitizeInput(t) {
-            return t = t.replace("…", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+            return t = t.replace("…", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
         }
         static sanitizeEmoji(t) {
             return t.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -13140,10 +13140,10 @@ ${r.message}`,
             return String(t).replace(r, "")
         }
         static input(t) {
-            return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+            return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
         }
         static username(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
         }
         static emoji(t) {
             return t.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -13183,7 +13183,7 @@ ${r.message}`,
             DRAWING_NOTHING: "You have to draw something!",
             PLAYER_KICKED: "You have been kicked from the game by a moderator.",
             ROOM_DESTROYED: "Thanks for playing!",
-            ROOM_DISCONNECTED: "Disconnected",
+            ROOM_DISCONNECTED: "Від'єднано",
             TEXT_NAUGHTY: "I’m afraid you can’t write that. Please be respectful of other players.",
             TEXT_NOTHING: "You can’t enter nothing!",
             TITLE: "Error"
@@ -13214,7 +13214,7 @@ ${r.message}`,
             BUTTON_DONE: "Let’s Go!"
         },
         WW = {
-            NAME: "AUDIENCE"
+            NAME: "ГЛЯДАЧ"
         },
         HW = {
             EPISODE_REPORT: "Report Episode",
@@ -27294,17 +27294,17 @@ ${t}`
             SWORD_4: "a sword with a length of four grid units"
         },
         vie = {
-            CHOSEN: "You have chosen",
-            MADNESS: "I'm not crazy!",
+            CHOSEN: "Твій вибір:",
+            MADNESS: "Я не збожеволів!",
             NONE: "none of these"
         },
         yie = {
-            BUSY: "NUMBER BUSY",
-            CONNECTED: "CONNECTED",
-            WRONG_NUMBER: "WRONG NUMBER"
+            BUSY: "НОМЕР ЗАЙНЯТО",
+            CONNECTED: "З’ЄДНАНО",
+            WRONG_NUMBER: "ХИБНИЙ НОМЕР"
         },
         Aie = {
-            PROMPT: "Slide your chip to pick a spot to drop"
+            PROMPT: "Обери місце, з якого скинеш фішку"
         },
         _ie = {
             ALT: mie,

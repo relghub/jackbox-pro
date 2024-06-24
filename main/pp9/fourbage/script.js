@@ -7047,10 +7047,10 @@ var Bae = UL((jae, sA) => {
             return this.htmlEscape(r).trim()
         }
         static sanitizeName(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
         }
         static sanitizeInput(t) {
-            return t = t.replace("\u2026", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+            return t = t.replace("\u2026", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
         }
         static sanitizeEmoji(t) {
             return t.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -12705,128 +12705,128 @@ ${r.message}`,
             return String(t).replace(r, "")
         }
         static input(t) {
-            return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+            return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
         }
         static username(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
         }
         static emoji(t) {
             return t.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
         }
     }
     const O6 = {
-            BACK: "Back",
-            CANCEL: "Cancel",
-            CLOSE: "Close",
-            CONFIRM: "Confirm",
-            CREATE: "Create",
-            DELETE: "Delete",
-            DONE: "Done",
-            EDIT: "Edit",
+            BACK: "Назад",
+            CANCEL: "Скасувати",
+            CLOSE: "Закрити",
+            CONFIRM: "Підтвердити",
+            CREATE: "Створити",
+            DELETE: "Видалити",
+            DONE: "Готово",
+            EDIT: "Редагувати",
             OK: "OK",
-            NO: "No",
-            PLAY: "Play",
-            PUBLISH: "Publish",
-            REMOVE: "Remove",
-            RESET: "Reset",
-            SUBMIT: "Submit",
-            TRY_AGAIN: "Try Again",
-            UNDO: "Undo",
-            YES: "Yes"
+            NO: "Ні",
+            PLAY: "Грати",
+            PUBLISH: "Опублікувати",
+            REMOVE: "Видалити",
+            RESET: "Скинути",
+            SUBMIT: "Надіслати",
+            TRY_AGAIN: "Спробуй ще раз",
+            UNDO: "Скасувати",
+            YES: "Так"
         },
         A6 = {
             UGC: {
-                VISIBILITY_CONTROLLER_OFF: "prompts hidden on players\u2019 devices",
-                VISIBILITY_CONTROLLER_ON: "prompts shown on players\u2019 devices",
-                VISIBILITY_SCREEN_OFF: "prompts hidden on game screen",
-                VISIBILITY_SCREEN_ON: "prompts shown on game screen"
+                VISIBILITY_CONTROLLER_OFF: "завдання приховані для гравців",
+                VISIBILITY_CONTROLLER_ON: "завдання показані гравцям",
+                VISIBILITY_SCREEN_OFF: "завдання приховані на екрані",
+                VISIBILITY_SCREEN_ON: "завдання показані на екрані"
             }
         },
         I6 = {
-            DISCONNECTED: "You have been disconnected.",
-            DRAWING_NOTHING: "You have to draw something!",
-            PLAYER_KICKED: "You have been kicked from the game by a moderator.",
-            ROOM_DESTROYED: "Thanks for playing!",
-            ROOM_DISCONNECTED: "Disconnected",
-            TEXT_NAUGHTY: "I\u2019m afraid you can\u2019t write that. Please be respectful of other players.",
-            TEXT_NOTHING: "You can\u2019t enter nothing!",
-            TITLE: "Error"
+            DISCONNECTED: "З'єднання розірване.",
+            DRAWING_NOTHING: "Потрібно щось намалювати!",
+            PLAYER_KICKED: "Модератор вигнав тебе з гри.",
+            ROOM_DESTROYED: "Дякуємо за гру!",
+            ROOM_DISCONNECTED: "Від'єднано",
+            TEXT_NAUGHTY: "Цей текст є недопустимим. Будь ласка, поважай інших гравців.",
+            TEXT_NOTHING: "Потрібно щось написати!",
+            TITLE: "Помилка"
         },
-        w6 = "LOADING",
+        w6 = "ЗАВАНТАЖЕННЯ",
         C6 = {
-            JOINED_COUNT: "{count} of {maxPlayers} players joined",
-            PLAYERS_NEEDED: "1 player needed to start | {count} players needed to start",
-            WAITING_FOR_VIP: "Waiting for {name} to start the game",
-            WAITING_FOR_GAMEPAD: "Waiting for the game to start",
-            GAME_STARTING: "Game is starting",
-            BUTTON_START: "Press to Start",
-            BUTTON_CANCEL: "Press to Cancel"
+            JOINED_COUNT: "В грі {count} з {maxPlayers} гравців",
+            PLAYERS_NEEDED: "Потрібен ще 1 гравець | Потрібно ще {count} гравців",
+            WAITING_FOR_VIP: "Чекаємо, поки {name} почне гру",
+            WAITING_FOR_GAMEPAD: "Очікування початку гри",
+            GAME_STARTING: "Гра починається",
+            BUTTON_START: "Натисни для запуску гри",
+            BUTTON_CANCEL: "Натисни для відміни"
         },
         N6 = {
-            GALLERY_LINK: "Visit the Gallery",
-            PLAY_AGAIN: "Play again?",
-            BUTTON_SAME_PLAYERS: "Same Players",
-            BUTTON_NEW_PLAYERS: "New Players"
+            GALLERY_LINK: "Відкрити галерею",
+            PLAY_AGAIN: "Зіграти ще?",
+            BUTTON_SAME_PLAYERS: "Ті ж гравці",
+            BUTTON_NEW_PLAYERS: "Нові гравці"
         },
         $6 = {
-            AND: "AND",
-            OR: "OR"
+            AND: "І",
+            OR: "АБО"
         },
         R6 = {
-            BUTTON_SKIP: "Skip",
-            BUTTON_NEXT: "Next",
-            BUTTON_DONE: "Let\u2019s Go!"
+            BUTTON_SKIP: "Пропустити",
+            BUTTON_NEXT: "Далі",
+            BUTTON_DONE: "Вперед!"
         },
         L6 = {
-            NAME: "AUDIENCE"
+            NAME: "ГЛЯДАЧ"
         },
         k6 = {
-            EPISODE_REPORT: "Report Episode",
-            EPISODE_UNLOAD: "Unload Episode",
-            EPISODE_VIEW_AUTHOR: "View Author",
-            EPISODES_LOAD: "Load an episode by id:",
-            EPISODES_MENU: "Episodes Menu",
-            EPISODES_SELECT: "Or select an epsiode:",
-            EPISODES_WARNING: "Warning: user generated content is not rated",
+            EPISODE_REPORT: "Поскаржитись на епізод",
+            EPISODE_UNLOAD: "Вивантажити епізод",
+            EPISODE_VIEW_AUTHOR: "Показати автора",
+            EPISODES_LOAD: "Завантажити епізод за ID:",
+            EPISODES_MENU: "Меню епізодів",
+            EPISODES_SELECT: "Або обери епізод:",
+            EPISODES_WARNING: "Важливо: користувацький контент не перевіряється",
             INSTRUCTION: {
-                CREATE_TITLE: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-                LOAD: "create or load?",
-                PUBLISH: "publish your episode",
-                TITLE: "name your episode",
-                TOGGLE_VISIBILITY: "tap to show/hide prompts",
-                WRITE: "write your prompts"
+                CREATE_TITLE: "Перш за все, введіть назву для епізоду, яка буде містити всі ваші підказки, і натисніть кнопку \"створити\".",
+                LOAD: "створити чи завантажити?",
+                PUBLISH: "оприлюднити епізод",
+                TITLE: "назви епізод",
+                TOGGLE_VISIBILITY: "показати/сховати завдання",
+                WRITE: "пиши свої завдання"
             },
             WARNING: {
-                DELETE: "Are you sure you want to delete this episode?",
-                TOS: "By sharing content, you agree to our [tos]Terms of Service[/tos]",
-                TOS_AGREE: "agree and share"
+                DELETE: "Ти впевнений, що хочеш видалити цей епізод?",
+                TOS: "Поділившись контентом, ти погоджуєшся з [tos]Умовами користування[/tos]",
+                TOS_AGREE: "погодитись і поділитися"
             },
-            BACK_TO_EPISODES: "back to episodes",
-            BACK_TO_MENU: "back to menu",
-            CREATE_NEW_EPISODE: "create a new episode",
-            PREVIOUS_EPISODES: "previous episodes",
-            PROMPT_ADD: "add prompt",
-            PROMPT_PLACEHOLDER: "enter a prompt",
-            PROMPTS_COUNT_HIDDEN: "({count} hidden)",
-            TITLE_PLACEHOLDER: "enter a title"
+            BACK_TO_EPISODES: "назад до епізодів",
+            BACK_TO_MENU: "повернутись в меню",
+            CREATE_NEW_EPISODE: "створити новий епізод",
+            PREVIOUS_EPISODES: "попередній епізод",
+            PROMPT_ADD: "додати завдання",
+            PROMPT_PLACEHOLDER: "введи завдання",
+            PROMPTS_COUNT_HIDDEN: "({count} сховано)",
+            TITLE_PLACEHOLDER: "введи назву"
         },
         P6 = {
             BROADCASTER: {
-                SUBTEXT: "You have successfully connected your account to the Jackbox Audience Kit Twitch Extension.",
-                WARNING: "THIS ROOM DOESN'T HAVE THE AUDIENCE SETTING ENABLED"
+                SUBTEXT: "Акаунт успішно під'єднаний до Twitch-розширення Jackbox Audience Kit.",
+                WARNING: "В ЦІЙ ГРІ НЕ ВКЛЮЧЕНА ОПЦІЯ ГЛЯДАЧІВ"
             },
             RECONNECTED: {
-                TEXT: "RECONNECTED",
-                SUBTEXT: "Have fun!"
+                TEXT: "ПІДКЛЮЧЕНО",
+                SUBTEXT: "Удачі!"
             },
             RECONNECTING: {
                 CONTROLLER: {
-                    TEXT: "CONNECTION INTERRUPTED",
-                    SUBTEXT: "Attempting to reconnect ({attempt} of 5)"
+                    TEXT: "З'ЄДНАННЯ ПЕРЕРВАНЕ",
+                    SUBTEXT: "Повторне підключення (спроба {attempt} з 5)"
                 },
                 GAME: {
-                    TEXT: "GAME CONNECTION INTERRUPTED",
-                    SUBTEXT: "Please wait while we attempt to reconnect"
+                    TEXT: "З'ЄДНАННЯ З ГРОЮ ЗУПИНЕНО",
+                    SUBTEXT: "Виконується повторне підключення "
                 }
             }
         },
@@ -27460,58 +27460,58 @@ ${t}`
             })
         },
         Gne = {
-            AVATAR0_OFF: "hedgehog snail avatar - unavailable",
-            AVATAR0_ON: "hedgehog snail avatar - available",
-            AVATAR1_OFF: "tortise goose avatar - unavailable",
-            AVATAR1_ON: "tortise goose avatar - available",
-            AVATAR2_OFF: "cat skull avatar - unavailable",
-            AVATAR2_ON: "cat skull avatar - available",
-            AVATAR3_OFF: "crab moth avatar - unavailable",
-            AVATAR3_ON: "crab moth avatar - available",
-            AVATAR4_OFF: "bird pufferfish avatar - unavailable",
-            AVATAR4_ON: "bird pufferfish avatar - available",
-            AVATAR5_OFF: "shoebill stork cat avatar - unavailable",
-            AVATAR5_ON: "shoebill stork cat avatar - available",
-            AVATAR6_OFF: "frog bat avatar - unavailable",
-            AVATAR6_ON: "frot bat avatar - available",
-            AVATAR7_OFF: "eyeball avatar - unavailable",
-            AVATAR7_ON: "eyeball avatar - available",
-            CHAMELEON: "a furitive-looking chameleon",
-            RABBIT: "an image of manmade horrors beyond comprehension"
+            AVATAR0_OFF: "аватар равлика-їжака (недоступний)",
+            AVATAR0_ON: "аватар равлика-їжака (доступний)",
+            AVATAR1_OFF: "аватар гусака-черепахи (недоступний)",
+            AVATAR1_ON: "аватар гусака-черепахи (доступний)",
+            AVATAR2_OFF: "аватар кота-черепа (недоступний)",
+            AVATAR2_ON: "аватар кота-черепа (доступний)",
+            AVATAR3_OFF: "аватар краба-метелика (недоступний)",
+            AVATAR3_ON: "аватар краба-метелика (доступний)",
+            AVATAR4_OFF: "аватар птаха-риби-фугу (недоступний)",
+            AVATAR4_ON: "аватар птаха-риби-фугу (доступний)",
+            AVATAR5_OFF: "аватар кота-лелеки (недоступний)",
+            AVATAR5_ON: "аватар кота-лелеки (доступний)",
+            AVATAR6_OFF: "аватар жаби-кажана (недоступний)",
+            AVATAR6_ON: "аватар жаби-кажана (доступний)",
+            AVATAR7_OFF: "аватар ока (недоступний)",
+            AVATAR7_ON: "аватар ока (доступний)",
+            CHAMELEON: "хамелеон, схожий на хижака",
+            RABBIT: "зображення жахів, створених людиною"
         },
         jne = {
-            CHOICE_BUTTON: "choice button",
-            LIE_BUTTON: "lie for me button",
-            LIE_INPUT_1: "lie entry box",
-            LIE_INPUT_2: "second lie entry box",
-            NAME_ENTRY: "name entry box",
-            NAME_SUBMIT: "name submit button",
-            SUBMIT_BUTTON: "submit button"
+            CHOICE_BUTTON: "кнопка вибору",
+            LIE_BUTTON: "рятівничка",
+            LIE_INPUT_1: "поле для введення відповіді",
+            LIE_INPUT_2: "друге поле для введення відповіді",
+            NAME_ENTRY: "поле для введення імені",
+            NAME_SUBMIT: "кнопка надіслання імені",
+            SUBMIT_BUTTON: "кнопка надіслання відповіді"
         },
         Wne = {
-            AVATAR_INSTRUCTION: "PICK YOUR CREATURE",
-            PLAYER_NAME_INSTRUCTION: "Fibbage Enough About You works best if you use your real name. Feel free to change it here.",
-            SUBMIT_NAME: "SUBMIT NAME",
-            START_TEXT: "START THE GAME"
+            AVATAR_INSTRUCTION: "ОБЕРИ СВОЮ ІСТОТУ",
+            PLAYER_NAME_INSTRUCTION: "У \"Маячницю: дещо про вас\" радимо грати під своїм справжнім іменем. Не соромся змінювати своє ім\'я тут.",
+            SUBMIT_NAME: "НАДІСЛАТИ",
+            START_TEXT: "ПОЧАТИ ГРУ"
         },
         Vne = {
-            SINGLE_INSTRUCTION: "ENTER A LIE",
-            DOUBLE_INSTRUCTION: "ENTER A LIE FOR EACH",
-            FINALROUND_INSTRUCTION: "ENTER A LIE THAT FITS BOTH",
-            LIE_FOR_ME_INSTRUCTION: "PICK A LIE",
-            LIE_FOR_ME: "LIE FOR ME",
-            SEPARATOR: "&",
-            PROHIBITED_LANGUAGE: "Your entry contains prohibited language. Try again!"
+            SINGLE_INSTRUCTION: "ВВЕДИ МАЯЧНЮ",
+            DOUBLE_INSTRUCTION: "ВВЕДИ МАЯЧНЮ У КОЖНЕ ПОЛЕ",
+            FINALROUND_INSTRUCTION: "ВВЕДИ МАЯЧНЮ, ЯКА ПАСУВАТИМЕ ОБОМ ЗАВДАННЯМ",
+            LIE_FOR_ME_INSTRUCTION: "ОБЕРИ МАЯЧНЮ",
+            LIE_FOR_ME: "РЯТІВНИЧКА",
+            SEPARATOR: "ТА",
+            PROHIBITED_LANGUAGE: "Ти ввів недопустимі слова! Спробуй ще раз."
         },
         Hne = {
-            PICK_TRUTH: "PICK THE TRUTH",
-            PICK_CATEGORY: "PICK A CATEGORY",
-            AWARD_LIKES: "AWARD LIKES"
+            PICK_TRUTH: "ОБЕРИ ПРАВДУ",
+            PICK_CATEGORY: "ОБЕРИ КАТЕГОРІЮ",
+            AWARD_LIKES: "ПОСТАВ ВПОДОБАЙКИ"
         },
-        Kne = "WAITING",
+        Kne = "ОЧІКУЄМО",
         qne = {
-            VOTE_INSTRUCTION: "VOTE FOR YOUR FAVORITE",
-            LIKE_INSTRUCTION: "AWARD A LIKE"
+            VOTE_INSTRUCTION: "ПРОГОЛОСУЙ ЗА НАЙКРАЩИЙ ВАРІАНТ",
+            LIKE_INSTRUCTION: "ПОСТАВ ВПОДОБАЙКУ"
         },
         Yne = {
             ALT: Gne,

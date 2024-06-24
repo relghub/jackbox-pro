@@ -16809,7 +16809,7 @@ https://sweetalert2.github.io/#ajax-request`), Uo(c), typeof c.title == "string"
         },
         onRoomWasDestroyed() {
             en.remove("roomCode"), en.remove("reconnect"), kt.show("error", {
-                titleText: "Disconnected",
+                titleText: "Від'єднано",
                 text: "Thanks for playing!",
                 willClose: () => {
                     window.location.reload(!0)
@@ -16818,7 +16818,7 @@ https://sweetalert2.github.io/#ajax-request`), Uo(c), typeof c.title == "string"
         },
         onDisconnected() {
             kt.show("error", {
-                titleText: "Disconnected",
+                titleText: "Від'єднано",
                 text: "You have been disconnected.",
                 willClose: () => {
                     window.location.reload(!0)
@@ -17375,7 +17375,7 @@ https://sweetalert2.github.io/#ajax-request`), Uo(c), typeof c.title == "string"
                 SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
                 LANGUAGE: "Language",
                 LOGIN: "Login",
-                STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
+                STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
                 STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
             },
             fr: {

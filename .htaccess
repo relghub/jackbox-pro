@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect /moderator to the actual script location
+RewriteRule ^moderator$ /main/@moderator [L]

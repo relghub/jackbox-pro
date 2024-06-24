@@ -8043,10 +8043,10 @@ const fl = class {
         return this.htmlEscape(n).trim()
     }
     static sanitizeName(t) {
-        return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+        return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
     }
     static sanitizeInput(t) {
-        return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+        return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
     }
     static sanitizeEmoji(t) {
         return t.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -16542,8 +16542,8 @@ const D1 = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
             inlineSubmitText: "Submit",
             error: "",
             strings: {
-                ERROR_NOTHING_ENTERED: "You need to enter something!",
-                ERROR_REJECTED_TEXT: "That's not allowed, enter something else! (You can change the level of filtering in the game's settings menu)"
+                ERROR_NOTHING_ENTERED: "Потрібно щось написати!",
+                ERROR_REJECTED_TEXT: "Це неприпустимо, введи щось інше! (В налаштуваннях гри можна змінити рівень фільтрації контенту)"
             }
         }
     }),
@@ -16808,8 +16808,8 @@ const lc = Ne.View.extend({
     },
     onRoomWasDestroyed() {
         yn.remove("roomCode"), yn.remove("reconnect"), Ve.show("error", {
-            titleText: "Disconnected",
-            text: "Thanks for playing!",
+            titleText: "Від'єднано",
+            text: "Дякуємо за гру!",
             willClose: () => {
                 window.location.reload(!0)
             }
@@ -16817,8 +16817,8 @@ const lc = Ne.View.extend({
     },
     onDisconnected() {
         Ve.show("error", {
-            titleText: "Disconnected",
-            text: "You have been disconnected.",
+            titleText: "Від'єднано",
+            text: "Втрачено з'єднання з серверами.",
             willClose: () => {
                 window.location.reload(!0)
             }
@@ -16880,7 +16880,7 @@ const z1 = `<div id="controller" class="state-controller controller-content">
         <div id="characters" class="charactersContainer"></div>
     </div>
     <div id="artifactId" class="artifactContainer text">
-        <a id="artifactLink" aria-label="Visit the Gallery" class="artifactLink" target="_blank">
+        <a id="artifactLink" aria-label="Відвідати галерею" class="artifactLink" target="_blank">
             <button id="artifactButton" class="artifactButton"></button>
         </a>
     </div>
@@ -16914,28 +16914,28 @@ const z1 = `<div id="controller" class="state-controller controller-content">
             formattedActiveContentId: null,
             isLocal: !1,
             strings: {
-                wait: "Sit back and relax!",
-                vip_waiting: "Waiting for all players to join",
-                vip_canStart: "Press this button when everybody has joined",
-                vip_cancel: "Press this button to cancel game start",
-                vip_postgame: "What would you like to do now?",
-                vip_episodes_menu: "Episodes Menu",
-                vip_episodes_unload: "Unload Episode",
-                vip_episodes_report: "Report Episode",
-                vip_episodes_warning: "Warning: user generated content is not rated",
-                vip_episodes_load: "Load an episode by id:",
-                vip_episodes_select: "Or select an episode:",
-                vip_episodes_back: "Back",
-                vip_episodes_submit: "SUBMIT",
-                vip_episodes_view_author: "View Author",
-                button_start: "Everybody's In",
-                button_cancel: "Cancel",
-                button_changename: "Change Name",
-                button_sameplayers: "Same Players",
-                button_newplayers: "New Players",
-                prompt_entername: "Enter your name",
-                prompt_choosecharacter: "Select your character",
-                button_censorOptions: "Censor Options",
+                wait: "Відкинься на спинку крісла і відпочинь!",
+                vip_waiting: "Очікуємо інших гравців...",
+                vip_canStart: "Натисни цю кнопку, коли всі приєдналися",
+                vip_cancel: "Натисни цю кнопку, щоб відмінити запуск гри",
+                vip_postgame: "Що обереш?",
+                vip_episodes_menu: "Меню епізодів",
+                vip_episodes_unload: "Вигрузити епізод",
+                vip_episodes_report: "Поскаржитись на епізод",
+                vip_episodes_warning: "Важливо: користувацький контент не перевіряється",
+                vip_episodes_load: "Завантажити епізод за ID:",
+                vip_episodes_select: "Або обери епізод:",
+                vip_episodes_back: "Назад",
+                vip_episodes_submit: "НАДІСЛАТИ",
+                vip_episodes_view_author: "Показати автора",
+                button_start: "Усі тут",
+                button_cancel: "Відміна",
+                button_changename: "Змінити ім'я",
+                button_sameplayers: "Тим же складом",
+                button_newplayers: "Нові гравці",
+                prompt_entername: "Введи своє ім'я",
+                prompt_choosecharacter: "Обери свого персонажа",
+                button_censorOptions: "Меню цензури",
                 censor_prompt: ""
             }
         }
@@ -17374,8 +17374,8 @@ const z1 = `<div id="controller" class="state-controller controller-content">
             SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
             LANGUAGE: "Language",
             LOGIN: "Login",
-            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
-            STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
+            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
+            STRING_ERROR_SERVER_ROOM_DESTROYED: "Дякуємо за гру!"
         },
         fr: {
             LANGUAGE_NAME: "Fran\xE7ais",
@@ -17495,7 +17495,7 @@ const z1 = `<div id="controller" class="state-controller controller-content">
             announcePrompt: !1,
             countGroupName: null,
             strings: {
-                your_choice: "Thank you. Your choice: ",
+                your_choice: "Дякуємо. Твій вибір: ",
                 censor_prompt: "Censor this?",
                 censor_confirm: "Yes, Censor!",
                 censor_cancel: "No!"
@@ -19106,7 +19106,7 @@ const kC = `<div id="controller" class="state-controller controller-content">\r
             doneText: {},
             announcePrompt: !1,
             strings: {
-                your_choice: "Thank you. Your choice: ",
+                your_choice: "Дякуємо. Твій вибір: ",
                 censor_prompt: "Censor this?",
                 censor_confirm: "Yes, Censor!",
                 censor_cancel: "No!"
@@ -19348,29 +19348,29 @@ const kC = `<div id="controller" class="state-controller controller-content">\r
             text: "",
             validActions: [],
             strings: {
-                tos_warning: "By sharing content, you agree to our Terms of service",
-                tos_warning_agree: "agree and share",
-                tos_warning_back: "back to menu",
-                create_new_episode: "create a new episode",
-                create_new_name_prompt: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-                create_new_button: "create",
-                button_back_to_episodes: "back to episodes",
-                button_back_to_menu: "back to menu",
-                previous_episodes: "previous episodes:",
-                toggle_prompts_prompt: "tap to show/hide prompts",
-                button_close: "close",
-                button_done: "done",
-                button_add: "add prompt",
-                input_placeholder: "enter a prompt",
-                label_hidden: "hidden",
-                button_edit: "edit",
-                button_save: "save",
-                button_publish: "publish",
-                button_play: "play",
-                button_delete: "delete",
-                delete_warning: "Are you sure you want to delete this episode?",
-                delete_warning_confirm: "Yes",
-                delete_warning_cancel: "No"
+                tos_warning: "Поділившись контентом, ти погоджуєшся з Умовами користування",
+                tos_warning_agree: "погодитися та поділитися",
+                tos_warning_back: "повернутися до меню",
+                create_new_episode: "створити новий епізод",
+                create_new_name_prompt: "насамперед введи назву епізоду, яка міститиме твої завдання, та натисни кнопку \"Створити\".",
+                create_new_button: "створити",
+                button_back_to_episodes: "повернутися до епізодів",
+                button_back_to_menu: "повернутися до меню",
+                previous_episodes: "попередні епізоди:",
+                toggle_prompts_prompt: "показати/приховати завдання",
+                button_close: "закрити",
+                button_done: "готово",
+                button_add: "додати завдання",
+                input_placeholder: "введи завдання",
+                label_hidden: "приховано",
+                button_edit: "редагувати",
+                button_save: "зберегти",
+                button_publish: "опублікувати",
+                button_play: "грати",
+                button_delete: "Видалити",
+                delete_warning: "Ти впевнений, що хочеш видалити цей епізод?",
+                delete_warning_confirm: "Так",
+                delete_warning_cancel: "Ні"
             }
         }
     }),
@@ -22615,14 +22615,14 @@ const wc = ph.exports,
                 <div id="lobby-main-menu"> 
                     <span id="awshirt-lobby-text" class="awshirt-lobby-text"></span>
                     <form class="pure-form">                     
-                        <button type="button" id="awshirt-startgame" class="awshirt-button button-xlarge pure-button pure-input-1">FIGHT</button> 
-                        <button type="button" id="awshirt-stopcountdown" class="awshirt-button  button-xlarge pure-button pure-input-1">CANCEL</button> 
-                        <button type="button" id="awshirt-sameplayers" class="awshirt-button  button-xlarge pure-button pure-input-1 awshirt-endbuttons">SAME PLAYERS</button> 
-                        <button type="button" id="awshirt-newplayers" class="awshirt-button  button-xlarge pure-button pure-input-1 awshirt-endbuttons">NEW PLAYERS</button>     
+                        <button type="button" id="awshirt-startgame" class="awshirt-button button-xlarge pure-button pure-input-1">У БІЙ</button> 
+                        <button type="button" id="awshirt-stopcountdown" class="awshirt-button  button-xlarge pure-button pure-input-1">Скасувати</button> 
+                        <button type="button" id="awshirt-sameplayers" class="awshirt-button  button-xlarge pure-button pure-input-1 awshirt-endbuttons">ТИМ ЖЕ СКЛАДОМ</button> 
+                        <button type="button" id="awshirt-newplayers" class="awshirt-button  button-xlarge pure-button pure-input-1 awshirt-endbuttons">З НОВИМИ ГРАВЦЯМИ</button>     
                     </form> 
  
                     <form class="pure-form"> 
-                        <button type="button" id="awshirt-lobby-menu-censor" class="menu-button lobby-button awshirt-button button-xlarge pure-button pure-input-1">Censor Menu</button>
+                        <button type="button" id="awshirt-lobby-menu-censor" class="menu-button lobby-button awshirt-button button-xlarge pure-button pure-input-1">Меню цензури</button>
                     </form> 
                     <div class="awshirt-avatars">
                     <!-- catfish, cat, kappa, redDemon, hair, fire, crow, blueDemon, fox, bun, raccoon, dog, snake, monkey, umbrella, baku -->
@@ -22645,10 +22645,10 @@ const wc = ph.exports,
                     </div>
                     <form>
                         <div id="awshirt-taunt-input-group" class="form-group">
-                            <label for="awshirt-taunt-text" class="awshirt-lobby-text">Victory Quote</label>
+                            <label for="awshirt-taunt-text" class="awshirt-lobby-text">Переможна цитата</label>
                             <div class="awshirt-button-group awshirt-taunt-group">
-                                <input id="awshirt-taunt-text" type="text" class="awshirt-input-text" placeholder="VICTORY QUOTE" autocapitalize='off' autocorrect='off' autocomplete='off' maxLength="70">
-                                <button id="awshirt-taunt-submit" class="awshirt-button-submit btn" type="submit" disabled>SET</button>
+                                <input id="awshirt-taunt-text" type="text" class="awshirt-input-text" placeholder="Переможна цитата" autocapitalize='off' autocorrect='off' autocomplete='off' maxLength="70">
+                                <button id="awshirt-taunt-submit" class="awshirt-button-submit btn" type="submit" disabled>ГОТОВО</button>
                             </div>
                         </div>
                     </form>
@@ -22665,13 +22665,13 @@ const wc = ph.exports,
                      
                     <form class="pure-form"> 
                         <div class="pure-u-1"> 
-                            <button type="button" class="awshirt-lobby-menu-back awshirt-button button-xlarge pure-button pure-input-1" style="margin-left: 0px; margin-right: 0px;">back</button> 
+                            <button type="button" class="awshirt-lobby-menu-back awshirt-button button-xlarge pure-button pure-input-1" style="margin-left: 0px; margin-right: 0px;">Назад</button> 
                         </div> 
                          
                         <div class="pure-u-1"></div> 
                          
                         <div id="lobby-censor-players" class="pure-u-1"></div> 
-                        <div class="awshirt-text awshirt-text-alt">Hit X to CENSOR player for rest of the game, hiding their name.</div>
+                        <div class="awshirt-text awshirt-text-alt">Натисни X, щоб ЗАБЛОКУВАТИ гравця на подальшу гру з прихованням його імені.</div>
                     </form> 
                 </div> 
             </div>
@@ -22707,7 +22707,7 @@ const wc = ph.exports,
                                 </li>
                             </ul>
                             <canvas class="awshirt-sketchpad" width='600' height='600' style='background-color:white;'> 
-                              Sorry, your browser is not supported. 
+                              На жаль, ваш браузер не підтримується 
                             </canvas> 
                             <ul class="awshirt-drawing-buttons nav nav-tabs awshirt-nav-backgrounds">
                                 <li class="pull-left">
@@ -22745,13 +22745,13 @@ const wc = ph.exports,
                 </div>
 
                 <div class="col-xs-12 awshirt-button-bar post-sketchpad">
-                    <button type="button" id="awshirt-drawing-audience-censor" class="awshirt-audience-censor awshirt-button capitalize btn btn-block">CENSOR AUDIENCE</button>
+                    <button type="button" id="awshirt-drawing-audience-censor" class="awshirt-audience-censor awshirt-button capitalize btn btn-block">ЦЕНЗУРА ГЛЯДАЧІВ</button>
                     <button id="awshirt-suggestdraw" class='awshirt-button-suggestion awshirt-suggestion awshirt-button btn btn-block'> 
-                        <span id="awshirt-instructions" class='awshirt-text-instruction awshirt-text drawing-instructions'>SUGGESTION</span>
+                        <span id="awshirt-instructions" class='awshirt-text-instruction awshirt-text drawing-instructions'>ЗАПРОПОНУВАТИ</span>
                     </button> 
 
                     <p class="awshirt-text-instruction">
-                        <span id="awshirt-instructions" class='awshirt-text-instruction awshirt-text instructions'>a picture of yourself!</span>
+                        <span id="awshirt-instructions" class='awshirt-text-instruction awshirt-text instructions'>малюнок самого себе!</span>
                     </p>
                 </div>
             <!-- </div> -->
@@ -22767,7 +22767,7 @@ const wc = ph.exports,
                         <div class="row">
                             <div class="awshirt-task"></div>
                             <p class="awshirt-text-instruction">
-                                <span class='awshirt-text-instruction awshirt-text instructions'>a picture of yourself!</span>
+                                <span class='awshirt-text-instruction awshirt-text instructions'>малюнок самого себе!</span>
                             </p>
                             <label for='awshirt-title-input' id="awshirt-input-task"></label>
                             <input id='awshirt-title-input' value='' type='text' class='form-control input-lg awshirt-input-text' autocapitalize='off' autocorrect='off' autocomplete='off' maxlength='70'/>
@@ -22782,7 +22782,7 @@ const wc = ph.exports,
                                 <li class="pull-right">
                                     <div class="awshirt-button-pad">
                                         <button id="awshirt-suggesttitle" class="awshirt-suggestion awshirt-button button-input">
-                                            SUGGESTION
+                                            ЗАПРОПОНУВАТИ
                                         </button>
                                     </div>
                                 </li>
@@ -22792,14 +22792,14 @@ const wc = ph.exports,
                     </div>
 
                     <div class="col-xs-12">
-                        <button type="button" id="awshirt-input-audience-censor" class="awshirt-audience-censor awshirt-button capitalize btn btn-block">CENSOR AUDIENCE</button>
+                        <button type="button" id="awshirt-input-audience-censor" class="awshirt-audience-censor awshirt-button capitalize btn btn-block">ЦЕНЗУРА ГЛЯДАЧІВ</button>
                     </div>
                 </fieldset>
             </form>
         </div>
 
         <div id="state-prompts-done" class="pt-page-off awshirt-page awshirt-player-avatar-large">
-            <!-- <h2>Waiting for other players to finish!</h2> -->
+            <!-- <h2>Почекай на інших гравців!</h2> -->
         </div>
 
         <div id="state-shirt" class="pt-page-off awshirt-page">
@@ -22808,7 +22808,7 @@ const wc = ph.exports,
                     <td style="vertical-align:top;">
                         <div class="awshirt-solid-bg">
                             <div class="canvas-container">
-                                <div class="pre-sketchpad-shirt awshirt-text">CHOOSE A DRAWING</div>
+                                <div class="pre-sketchpad-shirt awshirt-text">ОБЕРИ МАЛЮНОК</div>
                                 <div id="awshirt-shirttime-canvas" class="awshirt-canvas-container-box">
                                     <div class="glideShirts">
                                         <div id="awshirt-image-bullets" class="glide__bullets" data-glide-el="controls[nav]">
@@ -22847,7 +22847,7 @@ const wc = ph.exports,
                                         </div>
                                     </div>
                                 </div>
-                                <div class="pre-sketchpad-shirt awshirt-text">CHOOSE A SLOGAN</div>
+                                <div class="pre-sketchpad-shirt awshirt-text">ОБЕРИ ГАСЛО</div>
                                 <div class="pre-sketchpad-shirt">
                                     <button type="submit-shirt" id="awshirt-submit-shirt" class="submit-drawing awshirt-button awshirt-button-submit"><i class="fas fa-check" aria-hidden="true"></i></button>
                                     <div id="awshirt-submitshirt-loading" style="display:none;" class="awshirt-button-loading">
@@ -22864,16 +22864,16 @@ const wc = ph.exports,
         </div>
 
         <div id="state-shirts-done" class="pt-page-off awshirt-page container awshirt-player-avatar-large">
-            <!-- <h2>Waiting for other players to finish!</h2> -->
+            <!-- <h2>Почекай на інших гравців!</h2> -->
         </div>
 
         <div id="state-vote" class="pt-page-off awshirt-page container">
-            <p class="awshirt-text-instruction">Pick your favorite!</p>
+            <p class="awshirt-text-instruction">Обери, що тобі до вподоби!</p>
             <div id="vote-buttons" class="pure-form awshirt-vote-buttons awshirt-text"></div>
         </div>
         
         <div id="state-voting-done" class="pt-page-off awshirt-page container awshirt-player-avatar-large">
-            <!-- <h2>Waiting for other players to finish!</h2> -->
+            <!-- <h2>Почекай на інших гравців!</h2> -->
         </div>
 
         <div id="state-audience-suggestions" class="pt-page-off awshirt-page">
@@ -22881,7 +22881,7 @@ const wc = ph.exports,
                 <fieldset>
 
                     <label id="awshirt-audience-suggestion-instruction" for="audience-suggestion"></label>
-                    <input id="awshirt-audience-suggestion" class="pure-input-1 capitalize awshirt-answer-input" type="text" placeholder="ENTER A SUGGESTION" maxlength="45" autocapitalize='off' autocorrect='off' autocomplete='off'>
+                    <input id="awshirt-audience-suggestion" class="pure-input-1 capitalize awshirt-answer-input" type="text" placeholder="ВВЕДИ ПРОПОЗИЦІЮ" maxlength="45" autocapitalize='off' autocorrect='off' autocomplete='off'>
 
                     <button id="awshirt-audience-suggestion-submit" type="submit" class="pure-button pure-button-primary">Send</button>
                 </fieldset>
@@ -22903,13 +22903,13 @@ const wc = ph.exports,
             <div class="container">
                 <br /><span id="question-text"></span><br />
 
-                <span id="awshirt-submit-alert" class="alert alert-info">Alert message goes here</span>
+                <span id="awshirt-submit-alert" class="alert alert-info">Сповіщення тут</span>
                 <form class="pure-form" id="awshirt-answer-field">
                     <div class="pure-u-1">
-                        <input id="awshirt-answer-input" name="awshirt-answer" class="pure-input-1 capitalize awshirt-answer-input" type="text" maxlength="45" placeholder="ANSWER HERE" autocapitalize="off" autocorrect="off" autocomplete="off">
+                        <input id="awshirt-answer-input" name="awshirt-answer" class="pure-input-1 capitalize awshirt-answer-input" type="text" maxlength="45" placeholder="ПИШИ ТУТ" autocapitalize="off" autocorrect="off" autocomplete="off">
                     </div>
-                    <button type="submit" id="awshirt-submit-answer" class="awshirt-button button-large pure-button capitalize right"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp;Send</button>
-                    <button type="submit" id="awshirt-suggestion" class="awshirt-button button-large pure-button capitalize right">Suggestion</button>
+                    <button type="submit" id="awshirt-submit-answer" class="awshirt-button button-large pure-button capitalize right"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp;Надіслати</button>
+                    <button type="submit" id="awshirt-suggestion" class="awshirt-button button-large pure-button capitalize right">ЗАПРОПОНУВАТИ</button>
                     <div id="awshirt-submit-answer-loading" style="display:none;" class="awshirt-button-loading"></div>            
                 </form>
                 <div id="awshirt-suggestions" class="pure-g"></div>
@@ -22917,7 +22917,7 @@ const wc = ph.exports,
         </div>    
         
         <div id="state-done-answering" class="pt-page-off awshirt-page">
-            <br/><span>Thanks for your answers!</span><br/>
+            <br/><span>Дякуємо за твої відповіді</span><br/>
         </div>
     </div>
 </div>
@@ -22934,68 +22934,70 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
         backgroundColors: ["#2f5f9d", "#d02c41", "#2a3a2a", "#0d162d", "#51346c", "#43342e", "#080808", "#505253"],
         stories: {
             cat: {
-                intro: "My mother is very ill. I must win the tournament to pay for her surgery.",
-                taunt: "I knew I could do it!"
+                intro: "Моїй матері дуже зле. Я мушу виграти турнір, аби оплатити лікування.",
+                taunt: "Я знав, що зможу це зробити!"
             },
             raccoon: {
-                intro: "I must win the tournament or the evil banker will repossess the orphanage!",
-                taunt: "I put all of my heart into winning!"
+                intro: "Я повинен виграти турнір, або мене виселять за несплату боргів!",
+                taunt: "Я вклав усю свою душу в перемогу!"
             },
             kappa: {
-                intro: "If I win the tournament, I will get my own reality show!",
-                taunt: "Now I will be famous!"
+                intro: "Якщо я виграю турнір, то я створю власне реаліті-шоу!",
+                taunt: "Тепер я буду знаменитим!"
             },
             dog: {
-                intro: "WOOF! WOOF WOOF!",
-                taunt: "BARK! WOOF! BARK BARK!"
+                intro: "ГАВ! ТЯВ! ГАВ!",
+                taunt: "ГАВ! ГАВ! ТЯВ ТЯВ!"
             },
             umbrella: {
-                intro: "My dream is to open a sandal shop. I would also like to win this tournament!",
-                taunt: "What an unexpected surprise!"
+                intro: "Моя мрія - відкрити крамницю сандаль. А також перемогти в цьому турнірі!",
+                taunt: "Який несподіваний сюрприз!"
             },
-            blueDemon: {
-                intro: "My shirt will put my twin\u2019s efforts to shame!",
-                taunt: "Sorry, but my skills are superior!"
+            umbrella: {
+                intro: "Моя футболка має вдрузки порвати братову!",
+                taunt: "Перепрошую, я здатний на більше!"
             },
             redDemon: {
-                intro: "I don\u2019t care about winning, as long as I beat my twin!",
-                taunt: "I was born to be the best!"
+                intro: "Мені не важлива перемога, важливішим буде переграти брата!",
+                taunt: "Я народжений, щоб бути кращим!"
             },
             catfish: {
-                intro: "I\u2019m competing to raise Fin Rot awareness!",
-                taunt: "I win! Please donate to cure Fin Rot today!"
+                intro: "На цьому турнірі я представляю Фонд Сергія Сомохи!",
+                taunt: "Я переміг! Підтримайте Фонд Сергія Сомохи!"
             },
             hair: {
-                intro: "I HUNGER FOR VICTORY!",
-                taunt: "MY HUNGER HAS BEEN SATISFIED\u2026FOR NOW\u2026"
+                intro: "Я ЖАДАЮ ПЕРЕМОГИ!",
+                taunt: "МОЮ ЖАГУ ВГАМОВАНО... НАРАЗІ..."
             },
             bun: {
-                intro: "I\u2019ve never made t-shirts before, but I\u2019m usually pretty lucky.",
-                taunt: "I never lose!"
+                intro: "Ніколи не робив футболок, однак талан мене ніколи не підводив.",
+                taunt: "Я ніколи не програю!"
             },
             fox: {
-                intro: "After I win the tournament, I can take a year off and finish my sitcom pilot!",
-                taunt: "Hollywood, here I come!"
+                intro: "Коли я виграю турнір, візьму відпустку і нарешті завершу свій фільм!",
+                taunt: "Голлівуде, начувайся!"
             },
             fire: {
-                intro: "I\u2019m just happy to get out of the house!",
-                taunt: "We\u2019re having so much fun, guys!"
+                intro: "Я відчуваю такий запал бути надворі!",
+                taunt: "Нам так весело, хлопці!"
             },
             crow: {
-                intro: "I did not mean to enter this tournament! It was a clerical error!",
-                taunt: "What is happening? Did I win?"
+                intro: "Я не мав брати участь у цьому турнірі! Якась прикра помилка!",
+                taunt: "Що відбувається? Я переміг?"
+                
             },
             monkey: {
-                intro: "If I don\u2019t win the tournament, I guess I\u2019ll go paint houses for my uncle.",
-                taunt: "I deserve this!"
+                intro: "Якщо я переможу, мені більше не доведеться фарбувати татову хату!",
+                taunt: "Батя, я стараюсь!"
+                
             },
             baku: {
-                intro: "Winning the tournament is my life-long dream!",
-                taunt: "All my dreams are coming true!"
+                intro: "Виграти турнір - мрія всього мого життя!",
+                taunt: "Всі мої мрії здійснюються!"
             },
             snake: {
-                intro: "I do not have arms, but my love of t-shirts is strong. I will win the tournament!",
-                taunt: "I am honored to accept this victory."
+                intro: "Я не маю рук, але до нестями обожнюю футболки! Я виграю турнір!",
+                taunt: "Для мене велика честь прийняти цю перемогу."
             }
         },
         events: {
@@ -23061,13 +23063,13 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
         setPlayerTaunt() {
             const e = this.$el.find("#awshirt-taunt-text"),
                 t = this.$el.find("#awshirt-taunt-submit");
-            if (e.prop("disabled")) e.prop("disabled", !1), t.html("SET"), e.focus(), e.select();
+            if (e.prop("disabled")) e.prop("disabled", !1), t.html("Встановити"), e.focus(), e.select();
             else {
                 const n = e.val();
                 if (this.sanitize(n).length === 0) return !1;
                 this.client.send("SendMessageToRoomOwner", {
                     taunt: n
-                }), e.prop("disabled", !0), t.blur(), t.html("CHANGE")
+                }), e.prop("disabled", !0), t.blur(), t.html("Змінити")
             }
             return !1
         },
@@ -23092,7 +23094,7 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
             return lt(".awshirt-undo").prop("disabled", !0), this.currentCanvas.undoLine(), lt(".awshirt-undo").prop("disabled", !1), !1
         },
         submitDrawing() {
-            if (this.currentCanvas.isClean) return alert("You have to draw something!"), !1;
+            if (this.currentCanvas.isClean) return alert("Ти маєш щось намалювати!"), !1;
             this.enableLoadingButton("#awshirt-submitdrawing", !1);
             const e = {
                 pictureLines: this.currentCanvas.getLines(),
@@ -23103,7 +23105,7 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
         submitTitle() {
             const e = this.sanitize(this.$el.find("#awshirt-title-input").val()).toUpperCase(),
                 t = this.$el.find("#awshirt-submit-alert");
-            return e.length === 0 ? (t.html("You can't enter nothing!"), t.removeClass("alert-info"), t.addClass("alert-danger"), t.show(), !1) : (this.client.send("SendMessageToRoomOwner", {
+            return e.length === 0 ? (t.html("Ти не можеш не ввести нічого!"), t.removeClass("alert-info"), t.addClass("alert-danger"), t.show(), !1) : (this.client.send("SendMessageToRoomOwner", {
                 msg: e,
                 answer: !0
             }), this.$el.find("#awshirt-title-input").val(""), this.$el.find("#awshirt-title-input").closest("form").find('button[type="submit"]').prop("disabled", !0), this.$el.find("#awshirt-title-input").focus(), t.hide(), !1)
@@ -23111,7 +23113,7 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
         submitSuggestion() {
             const e = this.sanitize(this.$el.find("#awshirt-audience-suggestion").val()).toUpperCase(),
                 t = this.$el.find("#awshirt-submit-alert");
-            return e.length === 0 ? (t.html("You can't enter nothing!"), t.removeClass("alert-info"), t.addClass("alert-danger"), t.show(), !1) : (this.client.sessionSend("comment", "AwShirt Comments", {
+            return e.length === 0 ? (t.html("Ти не можеш не ввести нічого!"), t.removeClass("alert-info"), t.addClass("alert-danger"), t.show(), !1) : (this.client.sessionSend("comment", "AwShirt Comments", {
                 type: "comment",
                 comment: e
             }), this.$el.find("#awshirt-audience-suggestion").val(""), this.$el.find("#awshirt-audience-suggestion").focus(), t.hide(), !1)
@@ -23161,7 +23163,7 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
             let o = e.lobbyState,
                 f = 0;
             if (this.currentAnswerQuestionId = -1, n === "RoomFull") {
-                Ve.show(Error("The room is full"), {
+                Ve.show(Error("Місця закінчились"), {
                     willClose: () => {
                         window.location.reload(!0)
                     }
@@ -23169,7 +23171,7 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
                 return
             }
             if (n === "GameLocked") {
-                Ve.show(Error("Game is in progress. Please wait for a new game to start."), {
+                Ve.show(Error("Гру вже почато"), {
                     willClose: () => {
                         window.location.reload(!0)
                     }
@@ -23200,10 +23202,10 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
                     this.$el.find(".gallery-link").html(D), yi.add(v, this.getOption("appTag")), this.$el.find("#awshirt-lobby-postgame").show()
                 } else this.$el.find("#awshirt-lobby-postgame").hide();
                 if (!t.isAllowedToStartGame) {
-                    this.$el.find("#awshirt-lobby-text").html("Sit back and relax!"), this.showScreen("#state-lobby");
+                    this.$el.find("#awshirt-lobby-text").html("Відкинься на спинку крісла і відпочинь!"), this.showScreen("#state-lobby");
                     return
                 }
-                e.sendDefaultColor && this.sendDefaultColor(), o || (o = t.state.split("_")[1]), o === "WaitingForMore" ? (this.$el.find("#awshirt-lobby-text").html("Waiting for all players to join"), lt(".awshirt-avatars").show(), this.$el.find("#awshirt-taunt-input-group").show()) : o === "CanStart" ? (this.$el.find("#awshirt-lobby-text").html("Press this button when everybody has joined"), this.$el.find("#awshirt-startgame").show(), lt(".awshirt-avatars").show(), this.$el.find("#awshirt-taunt-input-group").show()) : o === "Countdown" ? (this.$el.find("#awshirt-lobby-text").html("Press this button to cancel game start"), this.$el.find("#awshirt-stopcountdown").show(), lt(".awshirt-avatars").hide(), this.$el.find("#awshirt-taunt-input-group").hide()) : o === "PostGame" && (this.$el.find("#awshirt-lobby-text").html("What do you want to do?"), lt(".awshirt-endbuttons").show(), lt(".awshirt-avatars").hide(), this.$el.find("#awshirt-taunt-input-group").hide()), this.showScreen("#state-lobby")
+                e.sendDefaultColor && this.sendDefaultColor(), o || (o = t.state.split("_")[1]), o === "WaitingForMore" ? (this.$el.find("#awshirt-lobby-text").html("Очікуємо інших гравців..."), lt(".awshirt-avatars").show(), this.$el.find("#awshirt-taunt-input-group").show()) : o === "CanStart" ? (this.$el.find("#awshirt-lobby-text").html("Тисни цю кнопку, коли всі приєднаються"), this.$el.find("#awshirt-startgame").show(), lt(".awshirt-avatars").show(), this.$el.find("#awshirt-taunt-input-group").show()) : o === "Countdown" ? (this.$el.find("#awshirt-lobby-text").html("Тисни цю кнопку, щоб скасувати запуск гри"), this.$el.find("#awshirt-stopcountdown").show(), lt(".awshirt-avatars").hide(), this.$el.find("#awshirt-taunt-input-group").hide()) : o === "PostGame" && (this.$el.find("#awshirt-lobby-text").html("Зіграти ще раз?"), lt(".awshirt-endbuttons").show(), lt(".awshirt-avatars").hide(), this.$el.find("#awshirt-taunt-input-group").hide()), this.showScreen("#state-lobby")
             } else if (i === "Logo") lt(".player-title-bar").hide(), lt(".awshirt-message-panel").show(), this.showScreen("#state-logo");
             else if (i && i.split("_")[0] === "Gameplay")
                 if (n && n.split("_")[0] === "Gameplay") {
@@ -23215,13 +23217,13 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
                             });
                             break;
                         case "DrawingComplete":
-                            lt(".awshirt-audience-censor").hide(), this.$el.find("#awshirt-message").html("Waiting for other players to finish!"), t.canCensor && e.canDoSuggestions && (lt(".awshirt-audience-censor").show(), this.$el.find("#awshirt-message").append('<div class="col-xs-12"><button type="button" id="awshirt-drawing-audience-censor" class="awshirt-audience-censor awshirt-button capitalize btn btn-block">CENSOR AUDIENCE</button></div>')), lt(".awshirt-message-panel").show(), this.showScreen("#state-drawing-done");
+                            lt(".awshirt-audience-censor").hide(), this.$el.find("#awshirt-message").html("Почекай на інших гравців!"), t.canCensor && e.canDoSuggestions && (lt(".awshirt-audience-censor").show(), this.$el.find("#awshirt-message").append('<div class="col-xs-12"><button type="button" id="awshirt-drawing-audience-censor" class="awshirt-audience-censor awshirt-button capitalize btn btn-block">ЦЕНЗУРА ГЛЯДАЧІВ</button></div>')), lt(".awshirt-message-panel").show(), this.showScreen("#state-drawing-done");
                             break;
                         case "InputPrompt":
                             lt(".instructions").html(t.task), t.suggestion ? (lt(".instructions").html(t.task), lt(".awshirt-suggestion").show(), lt(".awshirt-suggestion").prop("disabled", !1), lt(".instructions").show()) : (lt(".instructions").html(t.alert), lt(".awshirt-suggestion").hide(), lt(".instructions").show()), lt(".awshirt-audience-censor").hide(), t.canCensor && e.canDoSuggestions && lt(".awshirt-audience-censor").show(), this.showScreen("#state-input");
                             break;
                         case "PromptsDone":
-                            this.$el.find("#awshirt-audience-censor-done").hide(), this.$el.find("#awshirt-message").html("Waiting for other players to finish!"), t.canCensor && e.canDoSuggestions && (this.$el.find("#awshirt-audience-censor-done").show(), this.$el.find("#awshirt-message").append('<div class="col-xs-12"><button type="button" id="awshirt-drawing-audience-censor" class="awshirt-audience-censor awshirt-button capitalize btn btn-block">CENSOR AUDIENCE</button></div>')), lt(".awshirt-message-panel").show(), this.showScreen("#state-prompts-done");
+                            this.$el.find("#awshirt-audience-censor-done").hide(), this.$el.find("#awshirt-message").html("Почекай на інших гравців!"), t.canCensor && e.canDoSuggestions && (this.$el.find("#awshirt-audience-censor-done").show(), this.$el.find("#awshirt-message").append('<div class="col-xs-12"><button type="button" id="awshirt-drawing-audience-censor" class="awshirt-audience-censor awshirt-button capitalize btn btn-block">ЦЕНЗУРА ГЛЯДАЧІВ</button></div>')), lt(".awshirt-message-panel").show(), this.showScreen("#state-prompts-done");
                             break;
                         case "ShirtTime": {
                             if (lt(".player-title-bar").hide(), this.currentCanvas || this.startDrawingInterface(t.playerColors), this.$el.find("#toggle-prompt").data("params", 0), t.drawings && lt(".awshirt-drawing").length !== t.drawings.length) {
@@ -23263,7 +23265,7 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
                             break
                         }
                         case "ShirtsDone":
-                            this.$el.find("#awshirt-audience-censor-done").hide(), t.canCensor && e.canDoSuggestions && this.$el.find("#awshirt-audience-censor-done").show(), this.$el.find("#awshirt-message").html("Waiting for other players to finish!"), lt(".awshirt-message-panel").show(), this.showScreen("#state-shirts-done");
+                            this.$el.find("#awshirt-audience-censor-done").hide(), t.canCensor && e.canDoSuggestions && this.$el.find("#awshirt-audience-censor-done").show(), this.$el.find("#awshirt-message").html("Почекай на інших гравців!"), lt(".awshirt-message-panel").show(), this.showScreen("#state-shirts-done");
                             break
                     }
                 } else this.showScreen("#state-logo");
@@ -23279,11 +23281,11 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
                             A = lt(this.renderTemplate(this.$el.find("#awshirt-vote-button").html(), k));
                         A.find(".awshirt-vote-button").css("background-color", t.choices[t.order[f]].background), y.push(A[0].outerHTML)
                     }
-                    this.$el.find("#vote-buttons").html(y.join("<span>OR</span>")), t.censorOnly && lt(".awshirt-vote-button").prop("disabled", !0), this.showScreen("#state-vote");
+                    this.$el.find("#vote-buttons").html(y.join("<span>ЧИ</span>")), t.censorOnly && lt(".awshirt-vote-button").prop("disabled", !0), this.showScreen("#state-vote");
                     break
                 }
                 case "DoneVoting":
-                    this.$el.find("#awshirt-message").html("Waiting for other players to finish!"), lt(".awshirt-message-panel").show(), this.showScreen("#state-voting-done");
+                    this.$el.find("#awshirt-message").html("Почекай на інших гравців!"), lt(".awshirt-message-panel").show(), this.showScreen("#state-voting-done");
                     break
             }
         },
@@ -23308,7 +23310,7 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
                         this.$el.find(".gallery-link").attr("href", v);
                         const k = `<img src="${y}" />`;
                         this.$el.find(".gallery-link").html(k), yi.add(i, this.getOption("appTag"))
-                    } else this.$el.find("#awshirt-audience").html("Sit back and relax!");
+                    } else this.$el.find("#awshirt-audience").html("Відкинься на спинку крісла і відпочинь!");
                     this.showScreen("#state-audience");
                     break
                 }
@@ -23320,10 +23322,10 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
                         o = e.instruction;
                     switch (i) {
                         case "Gameplay_ShirtTime":
-                            this.$el.find("#awshirt-audience").html("Training in progress..."), this.showScreen("#state-audience");
+                            this.$el.find("#awshirt-audience").html("Тренування триває..."), this.showScreen("#state-audience");
                             break;
                         case "Suggestions":
-                            e.canDoSuggestions ? (this.$el.find("#awshirt-audience-suggestion-instruction").html(o), this.showScreen("#state-audience-suggestions")) : (this.$el.find("#awshirt-audience").html("Training in progress..."), this.showScreen("#state-audience"));
+                            e.canDoSuggestions ? (this.$el.find("#awshirt-audience-suggestion-instruction").html(o), this.showScreen("#state-audience-suggestions")) : (this.$el.find("#awshirt-audience").html("Тренування триває..."), this.showScreen("#state-audience"));
                             break;
                         default:
                             this.$el.find("#awshirt-audience").html(""), this.showScreen("#state-audience");
@@ -23342,7 +23344,7 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
                             f = lt(this.renderTemplate(this.$el.find("#awshirt-vote-button").html(), o));
                         f.find(".awshirt-vote-button").css("background-color", e.choices[e.order[n]].background), i.push(f[0].outerHTML)
                     }
-                    this.$el.find("#vote-buttons").html(i.join("<span>OR</span>")), this.showScreen("#state-vote");
+                    this.$el.find("#vote-buttons").html(i.join("<span>ЧИ</span>")), this.showScreen("#state-vote");
                     break
                 }
             }
@@ -23404,7 +23406,7 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
             const t = lt(e.target).data("index");
             return this.client.isRole("player") ? this.client.send("SendMessageToRoomOwner", {
                 vote: t
-            }) : this.client.isRole("audience") && (this.$el.find("#awshirt-audience").html("Thanks for voting!"), this.showScreen("#state-audience"), this.client.sessionSend("vote", "AwShirt Vote", {
+            }) : this.client.isRole("audience") && (this.$el.find("#awshirt-audience").html("Дякуємо за вибір!"), this.showScreen("#state-audience"), this.client.sessionSend("vote", "AwShirt Vote", {
                 type: "vote",
                 vote: t
             })), lt(".awshirt-vote-button").removeClass("selected"), lt(e.target).addClass("selected"), !1
@@ -23456,7 +23458,7 @@ const ux = `url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' x
             return e = this.sanitizeInput(e).replace(/'/g, "\u2019"), Ze.htmlEscape(e).trim()
         },
         sanitizeInput(e) {
-            return e = e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF!?*$+\-’'_ .,=<>:;]/gi, ""), e
+            return e = e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454!?*$+\-’'_ .,=<>:;]/gi, ""), e
         },
         validateInput(e) {
             const t = lt(e.target);

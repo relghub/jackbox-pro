@@ -8047,10 +8047,10 @@ const yl = class {
         return this.htmlEscape(n).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
     }
     static sanitizeInput(e) {
-        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
     }
     static sanitizeEmoji(e) {
         return e.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -13241,7 +13241,7 @@ const vC = `<form>\r
             ".inlineSubmitText": {
                 observe: "inlineSubmitText",
                 onGet(t) {
-                    return t !== void 0 ? t : "Send"
+                    return t !== void 0 ? t : "Надіслати"
                 }
             },
             ".form-group": {
@@ -15357,7 +15357,7 @@ class bt {
         return e.customClass = {
             ...n,
             popup: "jbgModal"
-        }, e.titleText = e.titleText || "Error", Rn.fire(e)
+        }, e.titleText = e.titleText || "Помилка", Rn.fire(e)
     }
     static async showError(e) {
         const n = new URL("main/pp4/fibbage3/assets/8cdd50e7.png", self.location).href,
@@ -15365,7 +15365,7 @@ class bt {
         return e.customClass = {
             ...i,
             popup: "jbgModal"
-        }, e.titleText = e.titleText || "Error", n && (e.imageUrl = n), Rn.fire(e)
+        }, e.titleText = e.titleText || "Помилка", n && (e.imageUrl = n), Rn.fire(e)
     }
     static async showCustom(e) {
         return Rn.fire(e)
@@ -16545,8 +16545,8 @@ const VC = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
             inlineSubmitText: "Submit",
             error: "",
             strings: {
-                ERROR_NOTHING_ENTERED: "You need to enter something!",
-                ERROR_REJECTED_TEXT: "That's not allowed, enter something else! (You can change the level of filtering in the game's settings menu)"
+                ERROR_NOTHING_ENTERED: "Потрібно щось написати!",
+                ERROR_REJECTED_TEXT: "Це неприпустимо, введи щось інше! (В налаштуваннях гри можна змінити рівень фільтрації контенту)"
             }
         }
     }),
@@ -16811,8 +16811,8 @@ xt.View.extend({
     },
     onRoomWasDestroyed() {
         en.remove("roomCode"), en.remove("reconnect"), bt.show("error", {
-            titleText: "Disconnected",
-            text: "Thanks for playing!",
+            titleText: "Від'єднано",
+            text: "Дякуємо за гру!",
             willClose: () => {
                 window.location.reload(!0)
             }
@@ -16820,8 +16820,8 @@ xt.View.extend({
     },
     onDisconnected() {
         bt.show("error", {
-            titleText: "Disconnected",
-            text: "You have been disconnected.",
+            titleText: "Від'єднано",
+            text: "Втрачено з'єднання з серверами.",
             willClose: () => {
                 window.location.reload(!0)
             }
@@ -16890,28 +16890,28 @@ const UC = `<div id="controller" class="state-controller controller-content">
             formattedActiveContentId: null,
             isLocal: !1,
             strings: {
-                wait: "Sit back and relax!",
-                vip_waiting: "Waiting for all players to join",
-                vip_canStart: "Press this button when everybody has joined",
-                vip_cancel: "Press this button to cancel game start",
-                vip_postgame: "What would you like to do now?",
-                vip_episodes_menu: "Episodes Menu",
-                vip_episodes_unload: "Unload Episode",
-                vip_episodes_report: "Report Episode",
-                vip_episodes_warning: "Warning: user generated content is not rated",
-                vip_episodes_load: "Load an episode by id:",
-                vip_episodes_select: "Or select an episode:",
-                vip_episodes_back: "Back",
-                vip_episodes_submit: "SUBMIT",
-                vip_episodes_view_author: "View Author",
-                button_start: "Everybody's In",
-                button_cancel: "Cancel",
-                button_changename: "Change Name",
-                button_sameplayers: "Same Players",
-                button_newplayers: "New Players",
-                prompt_entername: "Enter your name",
-                prompt_choosecharacter: "Select your character",
-                button_censorOptions: "Censor Options",
+                wait: "Відкинься на спинку крісла і відпочинь!",
+                vip_waiting: "Очікуємо інших гравців...",
+                vip_canStart: "Натисни цю кнопку, коли всі приєдналися",
+                vip_cancel: "Натисни цю кнопку, щоб відмінити запуск гри",
+                vip_postgame: "Що обереш?",
+                vip_episodes_menu: "Меню епізодів",
+                vip_episodes_unload: "Вигрузити епізод",
+                vip_episodes_report: "Поскаржитись на епізод",
+                vip_episodes_warning: "Важливо: користувацький контент не перевіряється",
+                vip_episodes_load: "Завантажити епізод за ID:",
+                vip_episodes_select: "Або обери епізод:",
+                vip_episodes_back: "Назад",
+                vip_episodes_submit: "НАДІСЛАТИ",
+                vip_episodes_view_author: "Показати автора",
+                button_start: "Усі тут",
+                button_cancel: "Відміна",
+                button_changename: "Змінити ім'я",
+                button_sameplayers: "Тим же складом",
+                button_newplayers: "Нові гравці",
+                prompt_entername: "Введи своє ім'я",
+                prompt_choosecharacter: "Обери свого персонажа",
+                button_censorOptions: "Меню цензури",
                 censor_prompt: ""
             }
         }
@@ -17350,8 +17350,8 @@ const UC = `<div id="controller" class="state-controller controller-content">
             SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
             LANGUAGE: "Language",
             LOGIN: "Login",
-            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
-            STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
+            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
+            STRING_ERROR_SERVER_ROOM_DESTROYED: "Дякуємо за гру!"
         },
         fr: {
             LANGUAGE_NAME: "Fran\xE7ais",
@@ -17471,7 +17471,7 @@ const UC = `<div id="controller" class="state-controller controller-content">
             announcePrompt: !1,
             countGroupName: null,
             strings: {
-                your_choice: "Thank you. Your choice: ",
+                your_choice: "Дякуємо. Твій вибір: ",
                 censor_prompt: "Censor this?",
                 censor_confirm: "Yes, Censor!",
                 censor_cancel: "No!"
@@ -19082,7 +19082,7 @@ const Sx = `<div id="controller" class="state-controller controller-content">\r
             doneText: {},
             announcePrompt: !1,
             strings: {
-                your_choice: "Thank you. Your choice: ",
+                your_choice: "Дякуємо. Твій вибір: ",
                 censor_prompt: "Censor this?",
                 censor_confirm: "Yes, Censor!",
                 censor_cancel: "No!"
@@ -19324,29 +19324,29 @@ const Sx = `<div id="controller" class="state-controller controller-content">\r
             text: "",
             validActions: [],
             strings: {
-                tos_warning: "By sharing content, you agree to our Terms of service",
-                tos_warning_agree: "agree and share",
-                tos_warning_back: "back to menu",
-                create_new_episode: "create a new episode",
-                create_new_name_prompt: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-                create_new_button: "create",
-                button_back_to_episodes: "back to episodes",
-                button_back_to_menu: "back to menu",
-                previous_episodes: "previous episodes:",
-                toggle_prompts_prompt: "tap to show/hide prompts",
-                button_close: "close",
-                button_done: "done",
-                button_add: "add prompt",
-                input_placeholder: "enter a prompt",
-                label_hidden: "hidden",
-                button_edit: "edit",
-                button_save: "save",
-                button_publish: "publish",
-                button_play: "play",
-                button_delete: "delete",
-                delete_warning: "Are you sure you want to delete this episode?",
-                delete_warning_confirm: "Yes",
-                delete_warning_cancel: "No"
+                tos_warning: "Поділившись контентом, ти погоджуєшся з Умовами користування",
+                tos_warning_agree: "погодитися та поділитися",
+                tos_warning_back: "повернутися до меню",
+                create_new_episode: "створити новий епізод",
+                create_new_name_prompt: "насамперед введи назву епізоду, яка міститиме твої завдання, та натисни кнопку \"Створити\".",
+                create_new_button: "створити",
+                button_back_to_episodes: "повернутися до епізодів",
+                button_back_to_menu: "повернутися до меню",
+                previous_episodes: "попередні епізоди:",
+                toggle_prompts_prompt: "показати/приховати завдання",
+                button_close: "закрити",
+                button_done: "готово",
+                button_add: "додати завдання",
+                input_placeholder: "введи завдання",
+                label_hidden: "приховано",
+                button_edit: "редагувати",
+                button_save: "зберегти",
+                button_publish: "опублікувати",
+                button_play: "грати",
+                button_delete: "Видалити",
+                delete_warning: "Ти впевнений, що хочеш видалити цей епізод?",
+                delete_warning_confirm: "Так",
+                delete_warning_cancel: "Ні"
             }
         }
     }),
@@ -21022,16 +21022,16 @@ const Gx = xt.View.extend({
             })
         })
     },
-    Hx = `<div>Are you sure you want to censor the answer <span class="censorMenuTitle">title</span></div>
+    Hx = `<div>Ти впевнений, що хочеш приховати відповідь <span class="censorMenuTitle">title</span></div>
 <div class="btn-toolbar choices">
     <div class="button-group btn-group btn-block">
-        <button type="button" style="" class="button btn btn-lg censorRound">CENSOR THIS ENTRY</button>
+        <button type="button" style="" class="button btn btn-lg censorRound">Приховати цю відповідь</button>
     </div>
     <div class="button-group btn-group btn-block">
-        <button type="button" style="" class="button btn btn-lg censorGame">CENSOR THIS PLAYER</button>
+        <button type="button" style="" class="button btn btn-lg censorGame">Приховати всі відповіді гравця</button>
     </div>
     <div class="button-group btn-group btn-block">
-        <button type="button" style="" class="button btn btn-lg cancel">CANCEL</button>
+        <button type="button" style="" class="button btn btn-lg cancel">Скасувати</button>
     </div>
 </div>`,
     qx = xt.View.extend({
@@ -21107,7 +21107,7 @@ const Gx = xt.View.extend({
                 vote: this.model.get("choices")[n].text
             }), this.model.setUpdate({
                 prompt: {
-                    text: `Thank you. Your choice: ${this.model.get("choices")[n].text}`,
+                    text: `Дякуємо. Твій вибір: ${this.model.get("choices")[n].text}`,
                     html: null
                 },
                 choices: []
@@ -21155,7 +21155,7 @@ const Gx = xt.View.extend({
             </div>
             <span class="inlineSubmit">
                 <div class="col-xs-6">
-                    <button type="button" class="btn btn-block lieForMe" type="button">Lie For Me</button>
+                    <button type="button" class="btn btn-block lieForMe" type="button">>Вигадайте за мене<</button>
                 </div>
                 <div class="col-xs-6">
                     <button type="submit" class="btn btn-block submitButton" type="button">Send</button>
@@ -21165,7 +21165,7 @@ const Gx = xt.View.extend({
     </div>
 </div>
 <div class="entryDone">
-    Thank you! Your entry: <span class="entryText">entryText</span>
+    Дякуємо. Ти ввів: <span class="entryText">entryText</span>
 </div>
 </form>`,
     Jx = us.extend({
@@ -21283,7 +21283,7 @@ const Gx = xt.View.extend({
             this.shouldSubmit && this.onChildviewInputSubmit()
         },
         update() {
-            rs.prototype.update.apply(this), this.model.get("requireLie") === !0 && this.inputComponent.model.set("answerDelim", "Write one LIE about yourself."), this.inputComponent.model.set("doubleInput", this.model.get("requireLie") || this.model.get("doubleInput")), this.inputComponent.model.set("canUseSuggestions", this.model.get("canUseSuggestions")), this.inputComponent.model.set("usedSuggestion", this.model.get("usedSuggestion")), this.inputComponent.model.set("question", this.model.get("question")), this.model.get("entry") && this.model.get("entry").length > 0 ? this.buttonsCollection.reset() : this.model.get("suggestions") && this.buttonsCollection.set(this.model.get("suggestions").map(t => ({
+            rs.prototype.update.apply(this), this.model.get("requireLie") === !0 && this.inputComponent.model.set("answerDelim", "Напиши одну брехню про себе!"), this.inputComponent.model.set("doubleInput", this.model.get("requireLie") || this.model.get("doubleInput")), this.inputComponent.model.set("canUseSuggestions", this.model.get("canUseSuggestions")), this.inputComponent.model.set("usedSuggestion", this.model.get("usedSuggestion")), this.inputComponent.model.set("question", this.model.get("question")), this.model.get("entry") && this.model.get("entry").length > 0 ? this.buttonsCollection.reset() : this.model.get("suggestions") && this.buttonsCollection.set(this.model.get("suggestions").map(t => ({
                 block: !0,
                 text: t
             })))
@@ -21302,8 +21302,8 @@ const Gx = xt.View.extend({
             let t = this.inputComponent.getValue();
             const e = {};
             if (this.inputComponent.model.set("error", ""), typeof t == "object") {
-                if (t[0] = t[0].replace(/\s\s+/g, " ").trim(), t[1] = t[1].replace(/\s\s+/g, " ").trim(), e.inputs = t, t[0] === "" || t[1] === "") return this.inputComponent.model.set("error", "You must write two things."), !1
-            } else if (t = t.replace(/\s\s+/g, " ").trim(), e.entry = t, e.entry.length === 0) return this.inputComponent.model.set("error", "You must write something."), !1;
+                if (t[0] = t[0].replace(/\s\s+/g, " ").trim(), t[1] = t[1].replace(/\s\s+/g, " ").trim(), e.inputs = t, t[0] === "" || t[1] === "") return this.inputComponent.model.set("error", "Треба дати дві відповіді!"), !1
+            } else if (t = t.replace(/\s\s+/g, " ").trim(), e.entry = t, e.entry.length === 0) return this.inputComponent.model.set("error", "Треба написати хоч щось!"), !1;
             return this.triggerMethod("client:message", e), !1
         }
     }),
@@ -21320,7 +21320,7 @@ const Gx = xt.View.extend({
             }
         }),
         update() {
-            Ys.prototype.update.apply(this, []), !this.model.get("playerCanStartGame") && this.model.get("type") === "TMI" && this.titleComponent.model.set("text", "TIP: This game is better when you use your real name!")
+            Ys.prototype.update.apply(this, []), !this.model.get("playerCanStartGame") && this.model.get("type") === "TMI" && this.titleComponent.model.set("text", "ПОРАДА: ця гра буде цікавішою, якщо ти гратимеш під своїм ім'ям.")
         }
     }),
     eE = hs.extend({
@@ -21374,7 +21374,7 @@ const tE = $x.extend({
         return t.playerInfo = {
             username: t.displayName || t.playerName,
             avatar: t.playerAvatar
-        }, t.state === "EndShortie" && (t.state = "Logo"), t.state === "Lobby" && (this.client.isRole("player") || (t.state = "Logo"), t.playerInfo = t.playerInfo || {}, t.playerInfo.username = t.displayName || t.playerName || "audience", t.playerInfo.username = t.playerInfo.username.toUpperCase(), t.playerIsVIP = t.isAllowedToStartGame, t.playerCanStartGame = t.isAllowedToStartGame, t.playerCanCensor = t.canCensor, t.gameCanStart = ["CanStart", "Countdown", "PostGame"].indexOf(t.lobbyState) !== -1, t.gameIsStarting = t.lobbyState === "Countdown", t.gameFinished = t.lobbyState === "PostGame", t.type === "TMI" && this.client.isRole("player") && !t.artifact && (t.canChangeName = !0)), t.state === "Logo" && (t.classes = [t.type], t.actions = []), ["EnterText", "EnterTruth"].indexOf(t.state) !== -1 && (t.prompt = {
+        }, t.state === "EndShortie" && (t.state = "Logo"), t.state === "Lobby" && (this.client.isRole("player") || (t.state = "Logo"), t.playerInfo = t.playerInfo || {}, t.playerInfo.username = t.displayName || t.playerName || "глядачі", t.playerInfo.username = t.playerInfo.username.toUpperCase(), t.playerIsVIP = t.isAllowedToStartGame, t.playerCanStartGame = t.isAllowedToStartGame, t.playerCanCensor = t.canCensor, t.gameCanStart = ["CanStart", "Countdown", "PostGame"].indexOf(t.lobbyState) !== -1, t.gameIsStarting = t.lobbyState === "Countdown", t.gameFinished = t.lobbyState === "PostGame", t.type === "TMI" && this.client.isRole("player") && !t.artifact && (t.canChangeName = !0)), t.state === "Logo" && (t.classes = [t.type], t.actions = []), ["EnterText", "EnterTruth"].indexOf(t.state) !== -1 && (t.prompt = {
             html: t.question
         }, this.client.isRole("audience") && (t.state = "ChooseLie", t.choices = t.suggestions.map(e => ({
             key: e,
@@ -21398,9 +21398,9 @@ const tE = $x.extend({
                 className: S
             }
         })), t.state === "CategorySelection" && (t.state = "MakeSingleChoice", t.classes = ["CategorySelection"], t.prompt = t.isChoosing ? {
-            text: "Pick a Category"
+            text: "Обери категорію"
         } : {
-            text: `${t.choosingPlayerName} is picking a category`
+            text: `${t.choosingPlayerName} обирає категорію`
         }, t.choices = t.choices && t.isChoosing ? t.choices.map((e, n) => ({
             text: e,
             order: n,

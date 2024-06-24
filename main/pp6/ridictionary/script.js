@@ -8043,10 +8043,10 @@ const ml = class {
         return this.htmlEscape(n).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
     }
     static sanitizeInput(e) {
-        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
     }
     static sanitizeEmoji(e) {
         return e.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -16807,7 +16807,7 @@ Et.View.extend({
     },
     onRoomWasDestroyed() {
         Zt.remove("roomCode"), Zt.remove("reconnect"), Ot.show("error", {
-            titleText: "Disconnected",
+            titleText: "Від'єднано",
             text: "Thanks for playing!",
             willClose: () => {
                 window.location.reload(!0)
@@ -16816,7 +16816,7 @@ Et.View.extend({
     },
     onDisconnected() {
         Ot.show("error", {
-            titleText: "Disconnected",
+            titleText: "Від'єднано",
             text: "You have been disconnected.",
             willClose: () => {
                 window.location.reload(!0)
@@ -17346,7 +17346,7 @@ const BC = `<div id="controller" class="state-controller controller-content">
             SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
             LANGUAGE: "Language",
             LOGIN: "Login",
-            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
+            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
             STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
         },
         fr: {
@@ -21107,7 +21107,7 @@ const Xx = Px.extend({
     },
     parseBlob(t) {
         const e = t;
-        if (e.classes = e.classes || [], e.playerInfo = e.playerInfo || {}, e.playerInfo.classes = e.playerInfo.classes || [], e.playerInfo.avatar = e.playerInfo.avatar || "Avatar_Other", e.playerInfo.classes.push(e.playerInfo.color), e.isAudience && (e.playerInfo.avatar = "Avatar_A", e.playerInfo.username = "AUDIENCE"), e.playerInfo.username) {
+        if (e.classes = e.classes || [], e.playerInfo = e.playerInfo || {}, e.playerInfo.classes = e.playerInfo.classes || [], e.playerInfo.avatar = e.playerInfo.avatar || "Avatar_Other", e.playerInfo.classes.push(e.playerInfo.color), e.isAudience && (e.playerInfo.avatar = "Avatar_A", e.playerInfo.username = "ГЛЯДАЧ"), e.playerInfo.username) {
             const n = e.playerInfo.username.length;
             this.fullNameLength = this.fullNameLength || n, this.fullNameLength === n && (e.playerInfo.username = e.playerInfo.username.slice(1))
         }

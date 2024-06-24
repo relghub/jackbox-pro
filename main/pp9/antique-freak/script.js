@@ -7048,7 +7048,7 @@ var $oe = Dk((Aoe, n1) => {
             return gG(t[0], ...t)
         }
     }
-    me(ho, "locale"), me(ho, "supported", ["en", "fr", "it", "de", "es", "es-XL"]);
+    me(ho, "locale"), me(ho, "supported", ["ru", "en", "fr", "it", "de", "es", "es-XL"]);
     const Xg = class {
         static get serverUrl() {
             var r;
@@ -7077,10 +7077,10 @@ var $oe = Dk((Aoe, n1) => {
             return this.htmlEscape(r).trim()
         }
         static sanitizeName(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
         }
         static sanitizeInput(t) {
-            return t = t.replace("\u2026", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+            return t = t.replace("\u2026", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
         }
         static sanitizeEmoji(t) {
             return t.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -11019,15 +11019,6 @@ var $oe = Dk((Aoe, n1) => {
             directory: "pp9/lineup",
             features: ["kicking", "previews"],
             categoryId: "LineupGame"
-        }, {
-            name: "Tee K.O. 2",
-            tag: "awshirt2",
-            wrapper: "vue",
-            isPublic: !1,
-            directory: "pp10/awshirt2",
-            features: ["moderation"],
-            shopItems: ["shirts"],
-            categoryId: "TeeKO2Game"
         }],
         wh = e => mq.find(t => t.tag === e || t.categoryId === e);
 
@@ -12735,128 +12726,128 @@ ${r.message}`,
             return String(t).replace(r, "")
         }
         static input(t) {
-            return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+            return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
         }
         static username(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
         }
         static emoji(t) {
             return t.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
         }
     }
     const Sq = {
-            BACK: "Back",
-            CANCEL: "Cancel",
-            CLOSE: "Close",
-            CONFIRM: "Confirm",
-            CREATE: "Create",
-            DELETE: "Delete",
-            DONE: "Done",
-            EDIT: "Edit",
+            BACK: "Назад",
+            CANCEL: "Скасувати",
+            CLOSE: "Закрити",
+            CONFIRM: "Підтвердити",
+            CREATE: "Створити",
+            DELETE: "Видалити",
+            DONE: "Готово",
+            EDIT: "Редагувати",
             OK: "OK",
-            NO: "No",
-            PLAY: "Play",
-            PUBLISH: "Publish",
-            REMOVE: "Remove",
-            RESET: "Reset",
-            SUBMIT: "Submit",
-            TRY_AGAIN: "Try Again",
-            UNDO: "Undo",
-            YES: "Yes"
+            NO: "Ні",
+            PLAY: "Грати",
+            PUBLISH: "Опублікувати",
+            REMOVE: "Видалити",
+            RESET: "Скинути",
+            SUBMIT: "Надіслати",
+            TRY_AGAIN: "Спробуй ще раз",
+            UNDO: "Скасувати",
+            YES: "Так"
         },
         Oq = {
             UGC: {
-                VISIBILITY_CONTROLLER_OFF: "prompts hidden on players\u2019 devices",
-                VISIBILITY_CONTROLLER_ON: "prompts shown on players\u2019 devices",
-                VISIBILITY_SCREEN_OFF: "prompts hidden on game screen",
-                VISIBILITY_SCREEN_ON: "prompts shown on game screen"
+                VISIBILITY_CONTROLLER_OFF: "завдання приховані для гравців",
+                VISIBILITY_CONTROLLER_ON: "завдання показані гравцям",
+                VISIBILITY_SCREEN_OFF: "завдання приховані на екрані",
+                VISIBILITY_SCREEN_ON: "завдання показані на екрані"
             }
         },
         wq = {
-            DISCONNECTED: "You have been disconnected.",
-            DRAWING_NOTHING: "You have to draw something!",
-            PLAYER_KICKED: "You have been kicked from the game by a moderator.",
-            ROOM_DESTROYED: "Thanks for playing!",
-            ROOM_DISCONNECTED: "Disconnected",
-            TEXT_NAUGHTY: "I\u2019m afraid you can\u2019t write that. Please be respectful of other players.",
-            TEXT_NOTHING: "You can\u2019t enter nothing!",
-            TITLE: "Error"
+            DISCONNECTED: "З'єднання розірване.",
+            DRAWING_NOTHING: "Потрібно щось намалювати!",
+            PLAYER_KICKED: "Модератор вигнав тебе з гри.",
+            ROOM_DESTROYED: "Дякуємо за гру!",
+            ROOM_DISCONNECTED: "Від'єднано",
+            TEXT_NAUGHTY: "Цей текст є недопустимим. Будь ласка, поважай інших гравців.",
+            TEXT_NOTHING: "Потрібно щось написати!",
+            TITLE: "Помилка"
         },
-        Iq = "LOADING",
+        Iq = "ЗАВАНТАЖЕННЯ",
         $q = {
-            JOINED_COUNT: "{count} of {maxPlayers} players joined",
-            PLAYERS_NEEDED: "1 player needed to start | {count} players needed to start",
-            WAITING_FOR_VIP: "Waiting for {name} to start the game",
-            WAITING_FOR_GAMEPAD: "Waiting for the game to start",
-            GAME_STARTING: "Game is starting",
-            BUTTON_START: "Press to Start",
-            BUTTON_CANCEL: "Press to Cancel"
+            JOINED_COUNT: "В грі {count} з {maxPlayers} гравців",
+            PLAYERS_NEEDED: "Потрібен ще 1 гравець | Потрібно ще {count} гравців",
+            WAITING_FOR_VIP: "Чекаємо, поки {name} почне гру",
+            WAITING_FOR_GAMEPAD: "Очікування початку гри",
+            GAME_STARTING: "Гра починається",
+            BUTTON_START: "Натисни для запуску гри",
+            BUTTON_CANCEL: "Натисни для відміни"
         },
         Cq = {
-            GALLERY_LINK: "Visit the Gallery",
-            PLAY_AGAIN: "Play again?",
-            BUTTON_SAME_PLAYERS: "Same Players",
-            BUTTON_NEW_PLAYERS: "New Players"
+            GALLERY_LINK: "Відкрити галерею",
+            PLAY_AGAIN: "Зіграти ще?",
+            BUTTON_SAME_PLAYERS: "Ті ж гравці",
+            BUTTON_NEW_PLAYERS: "Нові гравці"
         },
         Aq = {
-            AND: "AND",
-            OR: "OR"
+            AND: "І",
+            OR: "АБО"
         },
         Nq = {
-            BUTTON_SKIP: "Skip",
-            BUTTON_NEXT: "Next",
-            BUTTON_DONE: "Let\u2019s Go!"
+            BUTTON_SKIP: "Пропустити",
+            BUTTON_NEXT: "Далі",
+            BUTTON_DONE: "Вперед!"
         },
         Rq = {
-            NAME: "AUDIENCE"
+            NAME: "ГЛЯДАЧ"
         },
         kq = {
-            EPISODE_REPORT: "Report Episode",
-            EPISODE_UNLOAD: "Unload Episode",
-            EPISODE_VIEW_AUTHOR: "View Author",
-            EPISODES_LOAD: "Load an episode by id:",
-            EPISODES_MENU: "Episodes Menu",
-            EPISODES_SELECT: "Or select an epsiode:",
-            EPISODES_WARNING: "Warning: user generated content is not rated",
+            EPISODE_REPORT: "Поскаржитись на епізод",
+            EPISODE_UNLOAD: "Вивантажити епізод",
+            EPISODE_VIEW_AUTHOR: "Показати автора",
+            EPISODES_LOAD: "Завантажити епізод за ID:",
+            EPISODES_MENU: "Меню епізодів",
+            EPISODES_SELECT: "Або обери епізод:",
+            EPISODES_WARNING: "Важливо: користувацький контент не перевіряється",
             INSTRUCTION: {
-                CREATE_TITLE: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-                LOAD: "create or load?",
-                PUBLISH: "publish your episode",
-                TITLE: "name your episode",
-                TOGGLE_VISIBILITY: "tap to show/hide prompts",
-                WRITE: "write your prompts"
+                CREATE_TITLE: "Перш за все, введіть назву для епізоду, яка буде містити всі ваші підказки, і натисніть кнопку \"створити\".",
+                LOAD: "створити чи завантажити?",
+                PUBLISH: "оприлюднити епізод",
+                TITLE: "назви епізод",
+                TOGGLE_VISIBILITY: "показати/сховати завдання",
+                WRITE: "пиши свої завдання"
             },
             WARNING: {
-                DELETE: "Are you sure you want to delete this episode?",
-                TOS: "By sharing content, you agree to our [tos]Terms of Service[/tos]",
-                TOS_AGREE: "agree and share"
+                DELETE: "Ти впевнений, що хочеш видалити цей епізод?",
+                TOS: "Поділившись контентом, ти погоджуєшся з [tos]Умовами користування[/tos]",
+                TOS_AGREE: "погодитись і поділитися"
             },
-            BACK_TO_EPISODES: "back to episodes",
-            BACK_TO_MENU: "back to menu",
-            CREATE_NEW_EPISODE: "create a new episode",
-            PREVIOUS_EPISODES: "previous episodes",
-            PROMPT_ADD: "add prompt",
-            PROMPT_PLACEHOLDER: "enter a prompt",
-            PROMPTS_COUNT_HIDDEN: "({count} hidden)",
-            TITLE_PLACEHOLDER: "enter a title"
+            BACK_TO_EPISODES: "назад до епізодів",
+            BACK_TO_MENU: "повернутись в меню",
+            CREATE_NEW_EPISODE: "створити новий епізод",
+            PREVIOUS_EPISODES: "попередній епізод",
+            PROMPT_ADD: "додати завдання",
+            PROMPT_PLACEHOLDER: "введи завдання",
+            PROMPTS_COUNT_HIDDEN: "({count} сховано)",
+            TITLE_PLACEHOLDER: "введи назву"
         },
         Pq = {
             BROADCASTER: {
-                SUBTEXT: "You have successfully connected your account to the Jackbox Audience Kit Twitch Extension.",
-                WARNING: "THIS ROOM DOESN'T HAVE THE AUDIENCE SETTING ENABLED"
+                SUBTEXT: "Акаунт успішно під'єднаний до Twitch-розширення Jackbox Audience Kit.",
+                WARNING: "В ЦІЙ ГРІ НЕ ВКЛЮЧЕНА ОПЦІЯ ГЛЯДАЧІВ"
             },
             RECONNECTED: {
-                TEXT: "RECONNECTED",
-                SUBTEXT: "Have fun!"
+                TEXT: "ПІДКЛЮЧЕНО",
+                SUBTEXT: "Удачі!"
             },
             RECONNECTING: {
                 CONTROLLER: {
-                    TEXT: "CONNECTION INTERRUPTED",
-                    SUBTEXT: "Attempting to reconnect ({attempt} of 5)"
+                    TEXT: "З'ЄДНАННЯ ПЕРЕРВАНЕ",
+                    SUBTEXT: "Повторне підключення (спроба {attempt} з 5)"
                 },
                 GAME: {
-                    TEXT: "GAME CONNECTION INTERRUPTED",
-                    SUBTEXT: "Please wait while we attempt to reconnect"
+                    TEXT: "З'ЄДНАННЯ З ГРОЮ ЗУПИНЕНО",
+                    SUBTEXT: "Виконується повторне підключення "
                 }
             }
         },
@@ -19710,8 +19701,8 @@ function print() { __p += __j.call(arguments, '') }
         ]),
         v5 = st({
             components: {
-                TextArea: Yw,
-                TextInput: SK
+                Input: SK,
+                TextArea: Yw
             },
             props: {
                 player: Object
@@ -19783,7 +19774,7 @@ function print() { __p += __j.call(arguments, '') }
 
     function S5(e, t, r, n, s, o) {
         const c = $r("TextArea"),
-            u = $r("TextInput"),
+            u = $r("Input"),
             f = qt("bb");
         return q(), Y("div", y5, [K("div", E5, [e.player.prompt ? Ne((q(), Y("p", b5, null, 512)), [
             [f, e.player.prompt]
@@ -27477,25 +27468,25 @@ ${t}`
             })
         },
         Dne = {
-            AUDIENCE_THANKS: "Thanks!"
+            AUDIENCE_THANKS: "Дякую!"
         },
         Mne = {
-            INFO: "Fact {current}/{max}",
-            PLACEHOLDER: "write here",
-            WRITE_SOMETHING: "You need to write something!",
-            FILTER_ERROR: "Your entry contains prohibited language. Try again!"
+            INFO: "Факт {current}/{max}",
+            PLACEHOLDER: "пиши тут",
+            WRITE_SOMETHING: "Тобі потрібно написати щось!",
+            FILTER_ERROR: "Ваш запис містить заборонену лексику. Спробуйте ще раз!"
         },
         Fne = {
-            AVATAR_SELECT_PROMPT: "Choose your accessory!",
-            PRESENTATION_CHOICE_YES: "Manually Present",
-            PRESENTATION_CHOICE_NO: "Auto-Present",
-            PRESENTATION_MODE: "Presentation Mode:",
-            PRESENTATION_PROMPT: "How does your group want to showcase their writing?",
-            ON: "On",
-            OFF: "Off"
+            AVATAR_SELECT_PROMPT: "Обирай свій аксесуар!!",
+            PRESENTATION_CHOICE_YES: "Представити самостійно",
+            PRESENTATION_CHOICE_NO: "Представляти автоматично",
+            PRESENTATION_MODE: "Режим презентації:",
+            PRESENTATION_PROMPT: "Як твоя группа хочет представляти свої товари?",
+            ON: "Самостійная презентація",
+            OFF: "Автоматична презентація"
         },
         Une = {
-            UP_NEXT: "Up next"
+            UP_NEXT: "Далі"
         },
         Bne = {
             CHOOSING: Dne,
@@ -27639,6 +27630,7 @@ ${t}`
             RANKING: lie
         },
         die = {
+            ru: Bne,
             en: Bne,
             fr: Hne,
             it: Xne,
@@ -27706,7 +27698,7 @@ ${t}`
             if (!e) return "";
             const t = e.id.split("_")[0],
                 r = (n = e.type) != null ? n : "png";
-            return `https://s3.amazonaws.com/static.jackboxgames.com/game-images/antique-game/${t}.${r}`
+            return (t < 95000 ? `https://s3.amazonaws.com/static.jackboxgames.com/game-images/antique-game/` : `main/pp9/antique-freak/antique/`) + `${t}.${r}`
         },
         Tie = st({
             components: {
@@ -28129,15 +28121,15 @@ ${t}`
             ["render", ase]
         ]),
         use = st({
+            name: "Switch",
             props: {
                 checked: {
                     type: Boolean,
                     required: !0
                 }
-            },
-            emits: "update:checked"
+            }
         }),
-        lse = e => (Wa("data-v-854f67c1"), e = e(), qa(), e),
+        lse = e => (Wa("data-v-e61fc9b8"), e = e(), qa(), e),
         fse = {
             id: "toggleMode",
             class: "switchContainer"
@@ -28157,12 +28149,12 @@ ${t}`
     }
     const gse = ct(use, [
             ["render", pse],
-            ["__scopeId", "data-v-854f67c1"]
+            ["__scopeId", "data-v-e61fc9b8"]
         ]),
         _se = st({
             components: {
                 LobbyActions: nw,
-                ModeSwitch: gse
+                Switch: gse
             },
             props: {
                 info: Object,
@@ -28246,7 +28238,7 @@ ${t}`
 
     function Rse(e, t, r, n, s, o) {
         var d, p, v, y;
-        const c = $r("ModeSwitch"),
+        const c = $r("Switch"),
             u = $r("LobbyActions"),
             f = qt("t");
         return q(), Y("div", mse, [K("div", vse, [e.player && e.player.canChooseMode && e.player.presentationModeOn === void 0 ? (q(), Y(Ze, {
@@ -28782,4 +28774,4 @@ ${t}`
     })
 });
 export default $oe();
-//# sourceMappingURL=eaedd0a5.js.map
+//# sourceMappingURL=16742d45.js.map

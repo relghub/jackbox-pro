@@ -8043,10 +8043,10 @@ const fl = class {
         return this.htmlEscape(n).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
     }
     static sanitizeInput(e) {
-        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
     }
     static sanitizeEmoji(e) {
         return e.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -15353,7 +15353,7 @@ class Ot {
         return e.customClass = {
             ...n,
             popup: "jbgModal"
-        }, e.titleText = e.titleText || "Error", Rn.fire(e)
+        }, e.titleText = e.titleText || "Помилка", Rn.fire(e)
     }
     static async showError(e) {
         const n = new URL("main/pp1/wordspud/assets/8cdd50e7.png", self.location).href,
@@ -15361,7 +15361,7 @@ class Ot {
         return e.customClass = {
             ...i,
             popup: "jbgModal"
-        }, e.titleText = e.titleText || "Error", n && (e.imageUrl = n), Rn.fire(e)
+        }, e.titleText = e.titleText || "Помилка", n && (e.imageUrl = n), Rn.fire(e)
     }
     static async showCustom(e) {
         return Rn.fire(e)
@@ -16541,8 +16541,8 @@ const OC = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
             inlineSubmitText: "Submit",
             error: "",
             strings: {
-                ERROR_NOTHING_ENTERED: "You need to enter something!",
-                ERROR_REJECTED_TEXT: "That's not allowed, enter something else! (You can change the level of filtering in the game's settings menu)"
+                ERROR_NOTHING_ENTERED: "Потрібно щось написати!",
+                ERROR_REJECTED_TEXT: "Це неприпустимо, введи щось інше! (В налаштуваннях гри можна змінити рівень фільтрації контенту)"
             }
         }
     }),
@@ -16807,8 +16807,8 @@ const VC = Et.View.extend({
         },
         onRoomWasDestroyed() {
             en.remove("roomCode"), en.remove("reconnect"), Ot.show("error", {
-                titleText: "Disconnected",
-                text: "Thanks for playing!",
+                titleText: "Від'єднано",
+                text: "Дякуємо за гру!",
                 willClose: () => {
                     window.location.reload(!0)
                 }
@@ -16816,8 +16816,8 @@ const VC = Et.View.extend({
         },
         onDisconnected() {
             Ot.show("error", {
-                titleText: "Disconnected",
-                text: "You have been disconnected.",
+                titleText: "Від'єднано",
+                text: "Втрачено з'єднання з серверами.",
                 willClose: () => {
                     window.location.reload(!0)
                 }
@@ -16886,28 +16886,28 @@ const VC = Et.View.extend({
             formattedActiveContentId: null,
             isLocal: !1,
             strings: {
-                wait: "Sit back and relax!",
-                vip_waiting: "Waiting for all players to join",
-                vip_canStart: "Press this button when everybody has joined",
-                vip_cancel: "Press this button to cancel game start",
-                vip_postgame: "What would you like to do now?",
-                vip_episodes_menu: "Episodes Menu",
-                vip_episodes_unload: "Unload Episode",
-                vip_episodes_report: "Report Episode",
-                vip_episodes_warning: "Warning: user generated content is not rated",
-                vip_episodes_load: "Load an episode by id:",
-                vip_episodes_select: "Or select an episode:",
-                vip_episodes_back: "Back",
-                vip_episodes_submit: "SUBMIT",
-                vip_episodes_view_author: "View Author",
-                button_start: "Everybody's In",
-                button_cancel: "Cancel",
-                button_changename: "Change Name",
-                button_sameplayers: "Same Players",
-                button_newplayers: "New Players",
-                prompt_entername: "Enter your name",
-                prompt_choosecharacter: "Select your character",
-                button_censorOptions: "Censor Options",
+                wait: "Відкинься на спинку крісла і відпочинь!",
+                vip_waiting: "Очікуємо інших гравців...",
+                vip_canStart: "Натисни цю кнопку, коли всі приєдналися",
+                vip_cancel: "Натисни цю кнопку, щоб відмінити запуск гри",
+                vip_postgame: "Що обереш?",
+                vip_episodes_menu: "Меню епізодів",
+                vip_episodes_unload: "Вигрузити епізод",
+                vip_episodes_report: "Поскаржитись на епізод",
+                vip_episodes_warning: "Важливо: користувацький контент не перевіряється",
+                vip_episodes_load: "Завантажити епізод за ID:",
+                vip_episodes_select: "Або обери епізод:",
+                vip_episodes_back: "Назад",
+                vip_episodes_submit: "НАДІСЛАТИ",
+                vip_episodes_view_author: "Показати автора",
+                button_start: "Усі тут",
+                button_cancel: "Відміна",
+                button_changename: "Змінити ім'я",
+                button_sameplayers: "Тим же складом",
+                button_newplayers: "Нові гравці",
+                prompt_entername: "Введи своє ім'я",
+                prompt_choosecharacter: "Обери свого персонажа",
+                button_censorOptions: "Меню цензури",
                 censor_prompt: ""
             }
         }
@@ -17346,8 +17346,8 @@ const VC = Et.View.extend({
             SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
             LANGUAGE: "Language",
             LOGIN: "Login",
-            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
-            STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
+            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
+            STRING_ERROR_SERVER_ROOM_DESTROYED: "Дякуємо за гру!"
         },
         fr: {
             LANGUAGE_NAME: "Fran\xE7ais",
@@ -17467,7 +17467,7 @@ const VC = Et.View.extend({
             announcePrompt: !1,
             countGroupName: null,
             strings: {
-                your_choice: "Thank you. Your choice: ",
+                your_choice: "Дякуємо. Твій вибір: ",
                 censor_prompt: "Censor this?",
                 censor_confirm: "Yes, Censor!",
                 censor_cancel: "No!"
@@ -19078,7 +19078,7 @@ const xx = `<div id="controller" class="state-controller controller-content">\r
             doneText: {},
             announcePrompt: !1,
             strings: {
-                your_choice: "Thank you. Your choice: ",
+                your_choice: "Дякуємо. Твій вибір: ",
                 censor_prompt: "Censor this?",
                 censor_confirm: "Yes, Censor!",
                 censor_cancel: "No!"
@@ -19320,29 +19320,29 @@ const xx = `<div id="controller" class="state-controller controller-content">\r
             text: "",
             validActions: [],
             strings: {
-                tos_warning: "By sharing content, you agree to our Terms of service",
-                tos_warning_agree: "agree and share",
-                tos_warning_back: "back to menu",
-                create_new_episode: "create a new episode",
-                create_new_name_prompt: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-                create_new_button: "create",
-                button_back_to_episodes: "back to episodes",
-                button_back_to_menu: "back to menu",
-                previous_episodes: "previous episodes:",
-                toggle_prompts_prompt: "tap to show/hide prompts",
-                button_close: "close",
-                button_done: "done",
-                button_add: "add prompt",
-                input_placeholder: "enter a prompt",
-                label_hidden: "hidden",
-                button_edit: "edit",
-                button_save: "save",
-                button_publish: "publish",
-                button_play: "play",
-                button_delete: "delete",
-                delete_warning: "Are you sure you want to delete this episode?",
-                delete_warning_confirm: "Yes",
-                delete_warning_cancel: "No"
+                tos_warning: "Поділившись контентом, ти погоджуєшся з Умовами користування",
+                tos_warning_agree: "погодитися та поділитися",
+                tos_warning_back: "повернутися до меню",
+                create_new_episode: "створити новий епізод",
+                create_new_name_prompt: "насамперед введи назву епізоду, яка міститиме твої завдання, та натисни кнопку \"Створити\".",
+                create_new_button: "створити",
+                button_back_to_episodes: "повернутися до епізодів",
+                button_back_to_menu: "повернутися до меню",
+                previous_episodes: "попередні епізоди:",
+                toggle_prompts_prompt: "показати/приховати завдання",
+                button_close: "закрити",
+                button_done: "готово",
+                button_add: "додати завдання",
+                input_placeholder: "введи завдання",
+                label_hidden: "приховано",
+                button_edit: "редагувати",
+                button_save: "зберегти",
+                button_publish: "опублікувати",
+                button_play: "грати",
+                button_delete: "Видалити",
+                delete_warning: "Ти впевнений, що хочеш видалити цей епізод?",
+                delete_warning_confirm: "Так",
+                delete_warning_cancel: "Ні"
             }
         }
     }),
@@ -21017,7 +21017,7 @@ const $x = Et.View.extend({
             })
         })
     },
-    Fx = `<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap" rel="stylesheet"> 
+    Fx = `<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic" rel="stylesheet"> 
 <div id="page-wordspud" class="page gray">
     <div id="player">
         <h1><%=username%></h1>
@@ -21025,15 +21025,15 @@ const $x = Et.View.extend({
     <div id="game" class="game pt-pageholder">
         <div class="pt-page-off wordspud-page state-waiting">
             <div class="container gameplay">
-                <h3>Waiting for players</h3>
+                <h3>Чекаємо на гравців</h3>
             </div>      
         </div>
 
         <div class="pt-page-off wordspud-page state-startbutton">
             <div class="container gameplay">
-                <h3>press this button when everybody has joined</h3>
+                <h3>Тисни цю кнопку, коли всі приєднаються</h3>
                 <form class="pure-form">
-                    <button type="submit" id="button-start-game" class="button-wordspud button-xlarge pure-button pure-input-1">EVERYBODY'S IN</button>
+                    <button type="submit" id="button-start-game" class="button-wordspud button-xlarge pure-button pure-input-1">УСІ ТУТ</button>
                 </form>
             </div>      
         </div>
@@ -21041,13 +21041,13 @@ const $x = Et.View.extend({
         <div class="pt-page-off wordspud-page state-writing">
             <div class="container gameplay">
                 <h2 id="wordspud-writing-root"></h2>
-                <p>it's your turn!</p>
+                <p>твоя черга!</p>
                 <form class="pure-form">
                     <div class="pure-u-1">
-                        <input id="wordspud-input" name="spud" class="pure-input-1 spud jbg-input" type="text" placeholder="Type Something" autocapitalize="off" autocorrect="off" autocomplete="off" maxlength="32">
+                        <input id="wordspud-input" name="spud" class="pure-input-1 spud jbg-input" type="text" placeholder="Введи що-небудь" autocapitalize="off" autocorrect="off" autocomplete="off" maxlength="32">
                     </div>
                     <div class="pure-u-1-2 right">
-                        <div class="wordspud-submit"><button type="submit" id="wordspud-submit" class="button-wordspud pure-button button-large pure-input-1"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp;Send</button></div>
+                        <div class="wordspud-submit"><button type="submit" id="wordspud-submit" class="button-wordspud pure-button button-large pure-input-1"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp;Надіслати</button></div>
                     </div>
                 </form>
             </div>      
@@ -21056,10 +21056,10 @@ const $x = Et.View.extend({
         <div class="pt-page-off wordspud-page state-vote">
             <h2 id="wordspud-vote-spud"></h2>
             <div class="container gameplay">
-                <h3>do you like it?</h3>
+                <h3>тобі це подобається?</h3>
                 <form class="pure-form">
-                    <div class="wordspud-vote-yes" data-vote="1"><button id="wordspud-vote-yes" data-vote="1" class="button-wordspud-yes button-xlarge pure-button pure-input-1"><i class="fas fa-check"></i>&nbsp;&nbsp;YES</button></div>
-                    <div class="wordspud-vote-no" data-vote="-1"><button id="wordspud-vote-no" class="button-wordspud-no button-xlarge pure-button pure-input-1"><i class="fas fa-times"></i>&nbsp;&nbsp;NO</button></div>
+                    <div class="wordspud-vote-yes" data-vote="1"><button id="wordspud-vote-yes" data-vote="1" class="button-wordspud-yes button-xlarge pure-button pure-input-1"><i class="fas fa-check"></i>&nbsp;&nbsp;ТАК</button></div>
+                    <div class="wordspud-vote-no" data-vote="-1"><button id="wordspud-vote-no" class="button-wordspud-no button-xlarge pure-button pure-input-1"><i class="fas fa-times"></i>&nbsp;&nbsp;НІ</button></div>
                 </form>
             </div>
         </div>
@@ -21067,20 +21067,20 @@ const $x = Et.View.extend({
         <div class="pt-page-off wordspud-page state-vote-wait">
             <div class="container gameplay">
                 <h2 id="wordspud-vote-wait-spud"></h2>
-                <h3>you are being judged.</h3>
+                <h3>тебе судять.</h3>
             </div>
         </div>     
 
         <div class="pt-page-off wordspud-page state-nothing">
             <div class="container gameplay">
                 <h2 id="wordspud-nothing-root"></h2>
-                <p>add your own commentary</p>
+                <p>додай власний коментар</p>
                 <form class="pure-form">
                     <div class="pure-u-1">
-                        <input id="wordspud-comment" name="comment" class="pure-input-1 comment jbg-input" type="text" placeholder="Type Something" autocapitalize="off" autocorrect="off" autocomplete="off" maxlength="50" >
+                        <input id="wordspud-comment" name="comment" class="pure-input-1 comment jbg-input" type="text" placeholder="Введи що-небудь" autocapitalize="off" autocorrect="off" autocomplete="off" maxlength="50" >
                     </div>
                     <div class="pure-u-1-2 right">
-                        <div class="wordspud-comment-submit"><button type="submit" id="wordspud-comment-submit" class="button-wordspud pure-button button-large pure-input-1"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp;Send</button></div>
+                        <div class="wordspud-comment-submit"><button type="submit" id="wordspud-comment-submit" class="button-wordspud pure-button button-large pure-input-1"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp;Надіслати</button></div>
                     </div>
                 </form>
             </div>
@@ -21089,15 +21089,15 @@ const $x = Et.View.extend({
         <div class="pt-page-off wordspud-page state-voted">
             <div class="container gameplay">
                 <h2 id="wordspud-voted-spud"></h2>
-                <p>waiting for players</p>
+                <p>Чекаємо на гравців</p>
             </div>
         </div>
 
         <div class="pt-page-off wordspud-page state-gameover">
             <div class="container gameplay">
                 <form class="pure-form">
-                    <button type="button" id="wordspud-keep-playing" data-vote="1" class="button-wordspud button-xlarge pure-button pure-input-1">Next Round</button>
-                    <button type="button" id="wordspud-new-game" data-vote="-1" class="button-wordspud button-xlarge pure-button pure-input-1">New Game</button>
+                    <button type="button" id="wordspud-keep-playing" data-vote="1" class="button-wordspud button-xlarge pure-button pure-input-1">Ще раунд</button>
+                    <button type="button" id="wordspud-new-game" data-vote="-1" class="button-wordspud button-xlarge pure-button pure-input-1">Нова гра</button>
                 </form>
             </div>
         </div>

@@ -8043,10 +8043,10 @@ const fl = class {
         return this.htmlEscape(n).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
     }
     static sanitizeInput(e) {
-        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
     }
     static sanitizeEmoji(e) {
         return e.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -15353,7 +15353,7 @@ class kt {
         return e.customClass = {
             ...n,
             popup: "jbgModal"
-        }, e.titleText = e.titleText || "Error", Rn.fire(e)
+        }, e.titleText = e.titleText || "Помилка", Rn.fire(e)
     }
     static async showError(e) {
         const n = new URL("main/pp2/quiplash/assets/8cdd50e7.png", self.location).href,
@@ -15361,7 +15361,7 @@ class kt {
         return e.customClass = {
             ...i,
             popup: "jbgModal"
-        }, e.titleText = e.titleText || "Error", n && (e.imageUrl = n), Rn.fire(e)
+        }, e.titleText = e.titleText || "Помилка", n && (e.imageUrl = n), Rn.fire(e)
     }
     static async showCustom(e) {
         return Rn.fire(e)
@@ -16541,8 +16541,8 @@ const OC = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
             inlineSubmitText: "Submit",
             error: "",
             strings: {
-                ERROR_NOTHING_ENTERED: "You need to enter something!",
-                ERROR_REJECTED_TEXT: "That's not allowed, enter something else! (You can change the level of filtering in the game's settings menu)"
+                ERROR_NOTHING_ENTERED: "Потрібно щось написати!",
+                ERROR_REJECTED_TEXT: "Це неприпустимо, введи щось інше! (В налаштуваннях гри можна змінити рівень фільтрації контенту)"
             }
         }
     }),
@@ -16807,8 +16807,8 @@ const VC = Et.View.extend({
         },
         onRoomWasDestroyed() {
             en.remove("roomCode"), en.remove("reconnect"), kt.show("error", {
-                titleText: "Disconnected",
-                text: "Thanks for playing!",
+                titleText: "Від'єднано",
+                text: "Дякуємо за гру!",
                 willClose: () => {
                     window.location.reload(!0)
                 }
@@ -16816,8 +16816,8 @@ const VC = Et.View.extend({
         },
         onDisconnected() {
             kt.show("error", {
-                titleText: "Disconnected",
-                text: "You have been disconnected.",
+                titleText: "Від'єднано",
+                text: "Втрачено з'єднання з серверами.",
                 willClose: () => {
                     window.location.reload(!0)
                 }
@@ -16886,28 +16886,28 @@ const VC = Et.View.extend({
             formattedActiveContentId: null,
             isLocal: !1,
             strings: {
-                wait: "Sit back and relax!",
-                vip_waiting: "Waiting for all players to join",
-                vip_canStart: "Press this button when everybody has joined",
-                vip_cancel: "Press this button to cancel game start",
-                vip_postgame: "What would you like to do now?",
-                vip_episodes_menu: "Episodes Menu",
-                vip_episodes_unload: "Unload Episode",
-                vip_episodes_report: "Report Episode",
-                vip_episodes_warning: "Warning: user generated content is not rated",
-                vip_episodes_load: "Load an episode by id:",
-                vip_episodes_select: "Or select an episode:",
-                vip_episodes_back: "Back",
-                vip_episodes_submit: "SUBMIT",
-                vip_episodes_view_author: "View Author",
-                button_start: "Everybody's In",
-                button_cancel: "Cancel",
-                button_changename: "Change Name",
-                button_sameplayers: "Same Players",
-                button_newplayers: "New Players",
-                prompt_entername: "Enter your name",
-                prompt_choosecharacter: "Select your character",
-                button_censorOptions: "Censor Options",
+                wait: "Відкинься на спинку крісла і відпочинь!",
+                vip_waiting: "Очікуємо інших гравців...",
+                vip_canStart: "Натисни цю кнопку, коли всі приєдналися",
+                vip_cancel: "Натисни цю кнопку, щоб відмінити запуск гри",
+                vip_postgame: "Що обереш?",
+                vip_episodes_menu: "Меню епізодів",
+                vip_episodes_unload: "Вигрузити епізод",
+                vip_episodes_report: "Поскаржитись на епізод",
+                vip_episodes_warning: "Важливо: користувацький контент не перевіряється",
+                vip_episodes_load: "Завантажити епізод за ID:",
+                vip_episodes_select: "Або обери епізод:",
+                vip_episodes_back: "Назад",
+                vip_episodes_submit: "НАДІСЛАТИ",
+                vip_episodes_view_author: "Показати автора",
+                button_start: "Усі тут",
+                button_cancel: "Відміна",
+                button_changename: "Змінити ім'я",
+                button_sameplayers: "Тим же складом",
+                button_newplayers: "Нові гравці",
+                prompt_entername: "Введи своє ім'я",
+                prompt_choosecharacter: "Обери свого персонажа",
+                button_censorOptions: "Меню цензури",
                 censor_prompt: ""
             }
         }
@@ -17346,8 +17346,8 @@ const VC = Et.View.extend({
             SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
             LANGUAGE: "Language",
             LOGIN: "Login",
-            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
-            STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
+            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
+            STRING_ERROR_SERVER_ROOM_DESTROYED: "Дякуємо за гру!"
         },
         fr: {
             LANGUAGE_NAME: "Fran\xE7ais",
@@ -17467,7 +17467,7 @@ const VC = Et.View.extend({
             announcePrompt: !1,
             countGroupName: null,
             strings: {
-                your_choice: "Thank you. Your choice: ",
+                your_choice: "Дякуємо. Твій вибір: ",
                 censor_prompt: "Censor this?",
                 censor_confirm: "Yes, Censor!",
                 censor_cancel: "No!"
@@ -19078,7 +19078,7 @@ const xx = `<div id="controller" class="state-controller controller-content">\r
             doneText: {},
             announcePrompt: !1,
             strings: {
-                your_choice: "Thank you. Your choice: ",
+                your_choice: "Дякуємо. Твій вибір: ",
                 censor_prompt: "Censor this?",
                 censor_confirm: "Yes, Censor!",
                 censor_cancel: "No!"
@@ -19320,29 +19320,29 @@ const xx = `<div id="controller" class="state-controller controller-content">\r
             text: "",
             validActions: [],
             strings: {
-                tos_warning: "By sharing content, you agree to our Terms of service",
-                tos_warning_agree: "agree and share",
-                tos_warning_back: "back to menu",
-                create_new_episode: "create a new episode",
-                create_new_name_prompt: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-                create_new_button: "create",
-                button_back_to_episodes: "back to episodes",
-                button_back_to_menu: "back to menu",
-                previous_episodes: "previous episodes:",
-                toggle_prompts_prompt: "tap to show/hide prompts",
-                button_close: "close",
-                button_done: "done",
-                button_add: "add prompt",
-                input_placeholder: "enter a prompt",
-                label_hidden: "hidden",
-                button_edit: "edit",
-                button_save: "save",
-                button_publish: "publish",
-                button_play: "play",
-                button_delete: "delete",
-                delete_warning: "Are you sure you want to delete this episode?",
-                delete_warning_confirm: "Yes",
-                delete_warning_cancel: "No"
+                tos_warning: "Поділившись контентом, ти погоджуєшся з Умовами користування",
+                tos_warning_agree: "погодитися та поділитися",
+                tos_warning_back: "повернутися до меню",
+                create_new_episode: "створити новий епізод",
+                create_new_name_prompt: "насамперед введи назву епізоду, яка міститиме твої завдання, та натисни кнопку \"Створити\".",
+                create_new_button: "створити",
+                button_back_to_episodes: "повернутися до епізодів",
+                button_back_to_menu: "повернутися до меню",
+                previous_episodes: "попередні епізоди:",
+                toggle_prompts_prompt: "показати/приховати завдання",
+                button_close: "закрити",
+                button_done: "готово",
+                button_add: "додати завдання",
+                input_placeholder: "введи завдання",
+                label_hidden: "приховано",
+                button_edit: "редагувати",
+                button_save: "зберегти",
+                button_publish: "опублікувати",
+                button_play: "грати",
+                button_delete: "Видалити",
+                delete_warning: "Ти впевнений, що хочеш видалити цей епізод?",
+                delete_warning_confirm: "Так",
+                delete_warning_cancel: "Ні"
             }
         }
     }),
@@ -21035,10 +21035,10 @@ const $x = Et.View.extend({
             <div class="container">\r
                 <br /><span id="quiplash-lobby-text"></span><br />\r
                 <form class="pure-form">                    \r
-                    <button type="button" id="quiplash-startgame" class="button-quiplash button-xlarge pure-button pure-input-1">EVERYBODY'S IN</button>\r
-                    <button type="button" id="quiplash-stopcountdown" class="button-quiplash  button-xlarge pure-button pure-input-1">CANCEL</button>\r
-                    <button type="button" id="quiplash-sameplayers" class="button-quiplash  button-xlarge pure-button pure-input-1 quiplash-endbuttons">SAME PLAYERS</button>\r
-                    <button type="button" id="quiplash-newplayers" class="button-quiplash  button-xlarge pure-button pure-input-1 quiplash-endbuttons">NEW PLAYERS</button>    \r
+                    <button type="button" id="quiplash-startgame" class="button-quiplash button-xlarge pure-button pure-input-1">УСІ ТУТ</button>\r
+                    <button type="button" id="quiplash-stopcountdown" class="button-quiplash  button-xlarge pure-button pure-input-1">Скасувати</button>\r
+                    <button type="button" id="quiplash-sameplayers" class="button-quiplash  button-xlarge pure-button pure-input-1 quiplash-endbuttons">ТИМ ЖЕ СКЛАДОМ</button>\r
+                    <button type="button" id="quiplash-newplayers" class="button-quiplash  button-xlarge pure-button pure-input-1 quiplash-endbuttons">З НОВИМИ ГРАВЦЯМИ</button>    \r
                 </form>\r
             </div>\r
         </div>\r
@@ -21063,13 +21063,13 @@ const $x = Et.View.extend({
             <div class="container">\r
                 <br /><span id="question-text"></span><br />\r
 \r
-                <span id="quiplash-submit-alert" class="alert alert-info">Alert message goes here</span>\r
+                <span id="quiplash-submit-alert" class="alert alert-info">Сповіщення тут</span>\r
                 <form class="pure-form" id="quiplash-answer-field">\r
                     <div class="pure-u-1">\r
-                        <input id="quiplash-answer-input" name="quiplash-answer" class="pure-input-1 capitalize jbg-input quiplash-answer-input" type="text" maxlength="45" placeholder="ANSWER HERE" autocapitalize="off" autocorrect="off" autocomplete="off">\r
+                        <input id="quiplash-answer-input" name="quiplash-answer" class="pure-input-1 capitalize jbg-input quiplash-answer-input" type="text" maxlength="45" placeholder="ПИШИ ТУТ" autocapitalize="off" autocorrect="off" autocomplete="off">\r
                     </div>\r
                     <button type="submit" id="quiplash-submit-answer" class="button-quiplash button-large pure-button capitalize right">\r
-                        <i class="fas fa-paper-plane"></i>&nbsp;&nbsp;Send\r
+                        <i class="fas fa-paper-plane"></i>&nbsp;&nbsp;Надіслати\r
                     </button>\r
                     <div id="quiplash-submit-answer-loading" style="display:none;" class="button-quiplash-loading"></div>            \r
                 </form>\r
@@ -21078,7 +21078,7 @@ const $x = Et.View.extend({
         </div>    \r
         \r
         <div id="state-done-answering" class="pt-page-off quiplash-page">\r
-            <br/><span>Thanks for your answers!</span><br/>\r
+            <br/><span>Дякуємо за твої відповіді</span><br/>\r
         </div>\r
         \r
         <div id="state-vote" class="pt-page-off quiplash-page">\r
@@ -21120,14 +21120,14 @@ const Hx = VC.extend({
         Ce("#player").css("background-color", a);
         const f = Kt.adjustColor(a, .52);
         if (Ce("#state-lobby").css("background-color", f), Ce("#state-answer-question-audience").css("background-color", f), Ce("#state-answer-question").css("background-color", f), Ce("#state-done-answering").css("background-color", f), Ce("#state-vote").css("background-color", f), this.currentAnswerQuestionId = -1, n === "RoomFull") {
-            kt.show(Error("The room is full"), {
+            kt.show(Error("Місця закінчились"), {
                 willClose: () => {
                     window.location.reload(!0)
                 }
             });
             return
         }
-        if (n === "GameLocked") kt.show(Error("Game is in progress. Please wait for a new game to start."), {
+        if (n === "GameLocked") kt.show(Error("Гру вже почато"), {
             willClose: () => {
                 window.location.reload(!0)
             }
@@ -21138,11 +21138,11 @@ const Hx = VC.extend({
                 return
             }
             if (this.hideLobbyButtons(), !e.isAllowedToStartGame) {
-                Ce("#quiplash-lobby-text").html("Sit back and relax!"), this.showScreen("#state-lobby");
+                Ce("#quiplash-lobby-text").html("Відкинься на спинку крісла і відпочинь!"), this.showScreen("#state-lobby");
                 return
             }
             const v = t.lobbyState;
-            v === "WaitingForMore" ? Ce("#quiplash-lobby-text").html("Waiting for all players to join") : v === "CanStart" ? (Ce("#quiplash-lobby-text").html("Press this button when everybody has joined"), Ce("#quiplash-startgame").show()) : v === "Countdown" ? (Ce("#quiplash-lobby-text").html("Press this button to cancel game start"), Ce("#quiplash-stopcountdown").show()) : v === "PostGame" && (Ce("#quiplash-lobby-text").html("What do you want to do?"), Ce(".quiplash-endbuttons").show()), this.showScreen("#state-lobby")
+            v === "WaitingForMore" ? Ce("#quiplash-lobby-text").html("Очікуємо інших гравців...") : v === "CanStart" ? (Ce("#quiplash-lobby-text").html("Тисни цю кнопку, коли всі приєднаються"), Ce("#quiplash-startgame").show()) : v === "Countdown" ? (Ce("#quiplash-lobby-text").html("Тисни цю кнопку, щоб скасувати запуск гри"), Ce("#quiplash-stopcountdown").show()) : v === "PostGame" && (Ce("#quiplash-lobby-text").html("Зіграти ще раз?"), Ce(".quiplash-endbuttons").show()), this.showScreen("#state-lobby")
         } else if (i === "Gameplay_Logo") this.showScreen("#state-logo");
         else if (i === "Gameplay_Round") {
             const v = new URL(Object.assign({
@@ -21159,18 +21159,18 @@ const Hx = VC.extend({
                 }
                 if (this.currentAnswerQuestionId !== e.question.id && (Ce("#quiplash-answer-input").val(""), Ce("#quiplash-answer-field").show(), Ce("#quiplash-submit-alert").hide(), Ce("#state-answer-question #question-text").html(e.question.prompt.replace(/<BLANK>/gi, "________"))), e.showError) {
                     const v = Ce("#quiplash-submit-alert");
-                    Ce("#quiplash-submit-alert").html("You entered the same thing as someone else! Try again."), v.addClass("alert-info"), v.removeClass("alert-danger"), v.show()
+                    Ce("#quiplash-submit-alert").html("Хтось інший дав таку саму відповідь! Пометикуй трохи."), v.addClass("alert-info"), v.removeClass("alert-danger"), v.show()
                 }
                 this.currentAnswerQuestionId = e.question.id, this.showScreen("#state-answer-question")
             } else Ce(".state-answer-question-audience-text").html("You\u2019re in the audience! Wait for the time to vote."), this.showScreen("#state-answer-question-audience");
         else if (i === "Gameplay_Vote") {
             if (e.doneVoting) {
-                Ce("#vote-text").html("Wait for the other players!"), Ce("#quiplash-vote").html(""), this.showScreen("#state-vote");
+                Ce("#vote-text").html("Чекаємо на інших гравців!"), Ce("#quiplash-vote").html(""), this.showScreen("#state-vote");
                 return
             }
             t.question ? Ce("#state-vote #question-text").html(t.question.prompt.replace(/<BLANK>/gi, "________")) : Ce("#state-vote #question-text").html("");
             let v = "";
-            e.votesLeft > 1 ? v = " votes left" : e.votesLeft === 1 && (v = " vote left"), Ce("#vote-text").html(e.votesLeft ? `You have ${e.votesLeft}${v}` : "Which one do you like more?");
+            e.votesLeft > 1 ? v = " голосів" : e.votesLeft === 1 && (v = " голос"), Ce("#vote-text").html(e.votesLeft ? (v === " голос" ? "Залишився ": "Залишилося " ) + ` ${e.votesLeft}${v}` : "Which one do you like more?");
             let S = "";
             if (t.choices && t.order)
                 for (let k = 0; k < t.order.length; k++) {
@@ -21217,7 +21217,7 @@ const Hx = VC.extend({
         const t = this.sanitize(Ce("#quiplash-answer-input").val()).toUpperCase();
         if (t.length === 0) {
             const e = Ce("#quiplash-submit-alert");
-            return Ce("#quiplash-submit-alert").html("You can't enter nothing!"), e.removeClass("alert-info"), e.addClass("alert-danger"), e.show(), !1
+            return Ce("#quiplash-submit-alert").html("Ти не можеш не ввести нічого!"), e.removeClass("alert-info"), e.addClass("alert-danger"), e.show(), !1
         }
         return this.client.send("SendMessageToRoomOwner", {
             answer: t,
@@ -21231,7 +21231,7 @@ const Hx = VC.extend({
         }) : this.client.isRole("audience") && (this.client.sessionSend("vote", "Quiplash Vote", {
             type: "vote",
             vote: e
-        }), Ce("#vote-text").html("Thanks, audience member!"), Ce("#quiplash-vote").html(""), this.showScreen("#state-vote")), !1
+        }), Ce("#vote-text").html("Дякуємо, глядачу!"), Ce("#quiplash-vote").html(""), this.showScreen("#state-vote")), !1
     },
     newGameSamePlayers() {
         return this.client.send("SendMessageToRoomOwner", {
@@ -21246,7 +21246,7 @@ const Hx = VC.extend({
         }), !1
     },
     sanitize(t) {
-        return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF!?*$+\-’'_ .,:]/gi, "").replace(/'/g, "\u2019").trim()
+        return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454!?*$+\-’'_ .,:]/gi, "").replace(/'/g, "\u2019").trim()
     }
 });
 jx({

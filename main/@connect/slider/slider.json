@@ -1,0 +1,34 @@
+{
+    "bannerAds": [
+        {
+            "text": "Спілкуйся з перекладачами",
+            "src": "main/@connect/slider/discord.png",
+            "href": "https://discord.gg/Ayxf9Cvfg9"
+        },
+        {
+            "text": "Слідкуй у Facebook",
+            "src": "main/@connect/slider/facebook.png",
+            "href": "https://www.facebook.com/groups/1877966972555719"
+        },
+        {
+            "text": "Підтримуй переклади",
+            "src": "main/@connect/slider/patreon.png",
+            "href": "https://www.patreon.com/tutusa"
+        },
+        {
+            "text": "Читай у Telegram",
+            "src": "main/@connect/slider/telegram.png",
+            "href": "https://t.me/tutusa_team"
+        },
+		{
+            "text": "Дивись стріми",
+            "src": "main/@connect/slider/twitch.png",
+            "href": "https://www.twitch.tv/tutusa_team"
+        },
+		{
+            "text": "Дивись відео",
+            "src": "main/@connect/slider/youtube.png",
+            "href": "https://www.youtube.com/@tutusa"
+        }
+    ]
+}

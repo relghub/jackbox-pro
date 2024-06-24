@@ -8043,10 +8043,10 @@ const fl = class {
         return this.htmlEscape(n).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
     }
     static sanitizeInput(e) {
-        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
     }
     static sanitizeEmoji(e) {
         return e.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -15353,7 +15353,7 @@ class kt {
         return e.customClass = {
             ...n,
             popup: "jbgModal"
-        }, e.titleText = e.titleText || "Error", Rn.fire(e)
+        }, e.titleText = e.titleText || "Помилка", Rn.fire(e)
     }
     static async showError(e) {
         const n = new URL("main/pp1/drawful/assets/8cdd50e7.png", self.location).href,
@@ -15361,7 +15361,7 @@ class kt {
         return e.customClass = {
             ...i,
             popup: "jbgModal"
-        }, e.titleText = e.titleText || "Error", n && (e.imageUrl = n), Rn.fire(e)
+        }, e.titleText = e.titleText || "Помилка", n && (e.imageUrl = n), Rn.fire(e)
     }
     static async showCustom(e) {
         return Rn.fire(e)
@@ -16541,8 +16541,8 @@ const IC = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
             inlineSubmitText: "Submit",
             error: "",
             strings: {
-                ERROR_NOTHING_ENTERED: "You need to enter something!",
-                ERROR_REJECTED_TEXT: "That's not allowed, enter something else! (You can change the level of filtering in the game's settings menu)"
+                ERROR_NOTHING_ENTERED: "Потрібно щось написати!",
+                ERROR_REJECTED_TEXT: "Це неприпустимо, введи щось інше! (В налаштуваннях гри можна змінити рівень фільтрації контенту)"
             }
         }
     }),
@@ -16807,8 +16807,8 @@ const lc = Et.View.extend({
         },
         onRoomWasDestroyed() {
             en.remove("roomCode"), en.remove("reconnect"), kt.show("error", {
-                titleText: "Disconnected",
-                text: "Thanks for playing!",
+                titleText: "Від'єднано",
+                text: "Дякуємо за гру!",
                 willClose: () => {
                     window.location.reload(!0)
                 }
@@ -16816,8 +16816,8 @@ const lc = Et.View.extend({
         },
         onDisconnected() {
             kt.show("error", {
-                titleText: "Disconnected",
-                text: "You have been disconnected.",
+                titleText: "Від'єднано",
+                text: "Втрачено з'єднання з серверами.",
                 willClose: () => {
                     window.location.reload(!0)
                 }
@@ -16886,28 +16886,28 @@ const lc = Et.View.extend({
             formattedActiveContentId: null,
             isLocal: !1,
             strings: {
-                wait: "Sit back and relax!",
-                vip_waiting: "Waiting for all players to join",
-                vip_canStart: "Press this button when everybody has joined",
-                vip_cancel: "Press this button to cancel game start",
-                vip_postgame: "What would you like to do now?",
-                vip_episodes_menu: "Episodes Menu",
-                vip_episodes_unload: "Unload Episode",
-                vip_episodes_report: "Report Episode",
-                vip_episodes_warning: "Warning: user generated content is not rated",
-                vip_episodes_load: "Load an episode by id:",
-                vip_episodes_select: "Or select an episode:",
-                vip_episodes_back: "Back",
-                vip_episodes_submit: "SUBMIT",
-                vip_episodes_view_author: "View Author",
-                button_start: "Everybody's In",
-                button_cancel: "Cancel",
-                button_changename: "Change Name",
-                button_sameplayers: "Same Players",
-                button_newplayers: "New Players",
-                prompt_entername: "Enter your name",
-                prompt_choosecharacter: "Select your character",
-                button_censorOptions: "Censor Options",
+                wait: "Відкинься на спинку крісла і відпочинь!",
+                vip_waiting: "Очікуємо інших гравців...",
+                vip_canStart: "Натисни цю кнопку, коли всі приєдналися",
+                vip_cancel: "Натисни цю кнопку, щоб відмінити запуск гри",
+                vip_postgame: "Що обереш?",
+                vip_episodes_menu: "Меню епізодів",
+                vip_episodes_unload: "Вигрузити епізод",
+                vip_episodes_report: "Поскаржитись на епізод",
+                vip_episodes_warning: "Важливо: користувацький контент не перевіряється",
+                vip_episodes_load: "Завантажити епізод за ID:",
+                vip_episodes_select: "Або обери епізод:",
+                vip_episodes_back: "Назад",
+                vip_episodes_submit: "НАДІСЛАТИ",
+                vip_episodes_view_author: "Показати автора",
+                button_start: "Усі тут",
+                button_cancel: "Відміна",
+                button_changename: "Змінити ім'я",
+                button_sameplayers: "Тим же складом",
+                button_newplayers: "Нові гравці",
+                prompt_entername: "Введи своє ім'я",
+                prompt_choosecharacter: "Обери свого персонажа",
+                button_censorOptions: "Меню цензури",
                 censor_prompt: ""
             }
         }
@@ -17346,8 +17346,8 @@ const lc = Et.View.extend({
             SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
             LANGUAGE: "Language",
             LOGIN: "Login",
-            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
-            STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
+            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
+            STRING_ERROR_SERVER_ROOM_DESTROYED: "Дякуємо за гру!"
         },
         fr: {
             LANGUAGE_NAME: "Fran\xE7ais",
@@ -17467,7 +17467,7 @@ const lc = Et.View.extend({
             announcePrompt: !1,
             countGroupName: null,
             strings: {
-                your_choice: "Thank you. Your choice: ",
+                your_choice: "Дякуємо. Твій вибір: ",
                 censor_prompt: "Censor this?",
                 censor_confirm: "Yes, Censor!",
                 censor_cancel: "No!"
@@ -19078,7 +19078,7 @@ const Ex = `<div id="controller" class="state-controller controller-content">\r
             doneText: {},
             announcePrompt: !1,
             strings: {
-                your_choice: "Thank you. Your choice: ",
+                your_choice: "Дякуємо. Твій вибір: ",
                 censor_prompt: "Censor this?",
                 censor_confirm: "Yes, Censor!",
                 censor_cancel: "No!"
@@ -19320,29 +19320,29 @@ const Ex = `<div id="controller" class="state-controller controller-content">\r
             text: "",
             validActions: [],
             strings: {
-                tos_warning: "By sharing content, you agree to our Terms of service",
-                tos_warning_agree: "agree and share",
-                tos_warning_back: "back to menu",
-                create_new_episode: "create a new episode",
-                create_new_name_prompt: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-                create_new_button: "create",
-                button_back_to_episodes: "back to episodes",
-                button_back_to_menu: "back to menu",
-                previous_episodes: "previous episodes:",
-                toggle_prompts_prompt: "tap to show/hide prompts",
-                button_close: "close",
-                button_done: "done",
-                button_add: "add prompt",
-                input_placeholder: "enter a prompt",
-                label_hidden: "hidden",
-                button_edit: "edit",
-                button_save: "save",
-                button_publish: "publish",
-                button_play: "play",
-                button_delete: "delete",
-                delete_warning: "Are you sure you want to delete this episode?",
-                delete_warning_confirm: "Yes",
-                delete_warning_cancel: "No"
+                tos_warning: "Поділившись контентом, ти погоджуєшся з Умовами користування",
+                tos_warning_agree: "погодитися та поділитися",
+                tos_warning_back: "повернутися до меню",
+                create_new_episode: "створити новий епізод",
+                create_new_name_prompt: "насамперед введи назву епізоду, яка міститиме твої завдання, та натисни кнопку \"Створити\".",
+                create_new_button: "створити",
+                button_back_to_episodes: "повернутися до епізодів",
+                button_back_to_menu: "повернутися до меню",
+                previous_episodes: "попередні епізоди:",
+                toggle_prompts_prompt: "показати/приховати завдання",
+                button_close: "закрити",
+                button_done: "готово",
+                button_add: "додати завдання",
+                input_placeholder: "введи завдання",
+                label_hidden: "приховано",
+                button_edit: "редагувати",
+                button_save: "зберегти",
+                button_publish: "опублікувати",
+                button_play: "грати",
+                button_delete: "Видалити",
+                delete_warning: "Ти впевнений, що хочеш видалити цей епізод?",
+                delete_warning_confirm: "Так",
+                delete_warning_cancel: "Ні"
             }
         }
     }),
@@ -21078,10 +21078,10 @@ const jx = Et.View.extend({
 			<div class="container">\r
 				<br /><span id="drawful-lobby-text" class='drawful-text'></span><br />\r
 				<form class="pure-form">					\r
-					<button type="button" id="drawful-startgame" class="button-drawful button-xlarge pure-button pure-input-1">everybody's in</button>\r
-					<button type="button" id="drawful-stopcountdown" class="button-drawful button-xlarge pure-button pure-input-1">cancel</button>\r
-					<button type="button" id="drawful-sameplayers" class="button-drawful button-xlarge pure-button pure-input-1 drawful-endbuttons">same players</button>\r
-					<button type="button" id="drawful-newplayers" class="button-drawful button-xlarge pure-button pure-input-1 drawful-endbuttons">new players</button>	\r
+					<button type="button" id="drawful-startgame" class="button-drawful button-xlarge pure-button pure-input-1">УСІ ТУТ</button>\r
+					<button type="button" id="drawful-stopcountdown" class="button-drawful button-xlarge pure-button pure-input-1">Скасувати</button>\r
+					<button type="button" id="drawful-sameplayers" class="button-drawful button-xlarge pure-button pure-input-1 drawful-endbuttons">ТИМ ЖЕ СКЛАДОМ</button>\r
+					<button type="button" id="drawful-newplayers" class="button-drawful button-xlarge pure-button pure-input-1 drawful-endbuttons">З НОВИМИ ГРАВЦЯМИ</button>	\r
 				</form>\r
 			</div>\r
 		</div>\r
@@ -21101,13 +21101,13 @@ const jx = Et.View.extend({
 		<div class="pt-page-off state-drawing-sent drawful-page">\r
 			<div class="container">\r
 				<br /><span id="drawful-drawing-received" class='drawful-text'></span><br />\r
-				<span class='drawful-text'>thanks for your drawing</span><br />\r
+				<span class='drawful-text'>дякуємо за малюнок!</span><br />\r
 			</div>\r
 		</div>\r
 \r
 		<div class="pt-page-off state-drawing-done drawful-page">\r
 			<div class="container">\r
-				<br /><span class='drawful-text'>drawing time is over!</span><br />\r
+				<br /><span class='drawful-text'>час вийшов!</span><br />\r
 			</div>\r
 		</div>		\r
 \r
@@ -21116,13 +21116,13 @@ const jx = Et.View.extend({
 				\r
 				<br /><span class="drawful-text  author-text"></span><br />\r
 \r
-				<div id="drawful-submit-alert" class="alert alert-info">Alert message goes here</div>\r
+				<div id="drawful-submit-alert" class="alert alert-info">Сповіщення тут</div>\r
 				<form class="pure-form" id="drawful-enterlie-field">\r
 					<div class="pure-u-1">\r
-						<input id="drawful-lie-input" name="drawful-lie" class="pure-input-1 jbg-input" type="text" maxlength="45" placeholder="enter a title" autocapitalize="off" autocorrect="off" autocomplete="off">\r
+						<input id="drawful-lie-input" name="drawful-lie" class="pure-input-1 jbg-input" type="text" maxlength="45" placeholder="вигадай назву" autocapitalize="off" autocorrect="off" autocomplete="off">\r
 					</div>\r
 					<div class="pure-u-1 right">\r
-						<button type="submit" id="drawful-submitlie" class="button-drawful button-xlarge pure-button right"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp;send</button>\r
+						<button type="submit" id="drawful-submitlie" class="button-drawful button-xlarge pure-button right"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp;Надіслати</button>\r
 						<div id="drawful-submitlie-loading" class="button-drawful-loading right" style="display:none; width: 110px; height: 48px; margin-top:10px;" ></div>\r
 					</div>\r
 				</form>\r
@@ -21150,13 +21150,13 @@ const jx = Et.View.extend({
 \r
 		<div class="pt-page-off state-liereceived drawful-page">\r
 			<div class="container">\r
-				<br /><span class='drawful-text'>title entered!<br />waiting for other players.</span><br />\r
+				<br /><span class='drawful-text'>назву введено!<br />чекаємо на інших гравців.</span><br />\r
 			</div>\r
 		</div>\r
 \r
 		<div class="pt-page-off state-lyingdone drawful-page">\r
 			<div class="container">\r
-				<br /><span class='drawful-text'>done!</span><br />\r
+				<br /><span class='drawful-text'>готово!</span><br />\r
 			</div>\r
 		</div>		\r
 \r
@@ -21168,14 +21168,14 @@ const jx = Et.View.extend({
 \r
 		<div class="pt-page-off state-draw drawful-page">\r
 			<!-- <div class="container"> -->\r
-				<span id="drawful-prompt" class='prompt drawful-text'>please draw:</span><br />\r
-				<span id="drawful-instructions" class='instructions drawful-text'>a picture of yourself!</span><br />\r
+				<span id="drawful-prompt" class='prompt drawful-text'>будь ласка, намалюй:</span><br />\r
+				<span id="drawful-instructions" class='instructions drawful-text'>малюнок самого себе!</span><br />\r
 \r
 				<canvas class="sketchpad" width='240' height='300' style='background-color:white;'>\r
-					Sorry, your browser is not supported.\r
+					На жаль, ваш браузер не підтримується\r
 				</canvas>\r
 				<form class="pure-form container">\r
-					<button type="submit" id="drawful-submitdrawing" class="submit-drawing button-drawful button-large pure-button pure-input-1" style="margin-top: 0px;"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp;send</button>\r
+					<button type="submit" id="drawful-submitdrawing" class="submit-drawing button-drawful button-large pure-button pure-input-1" style="margin-top: 0px;"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp;Надіслати</button>\r
 					<div id="drawful-submitdrawing-loading" style="display:none;" class="button-drawful-loading"></div>\r
 				</form>				\r
 			<!-- </div> -->\r
@@ -21186,7 +21186,7 @@ const jx = Et.View.extend({
 const Hx = lc.extend({
     template: at.template(zx),
     lacksAudience: !0,
-    authorMessages: ["you drew this. think about what you've done.", "you drew this. relax.", "you drew this. wait for everyone to figure out what you did.", "you drew this. there's no taking that back.", "you drew this. take a breather.", "you drew this. you are all-powerful.", "you drew this. how do you feel about it?", "you drew this. this is your fault.", "you drew this. it's... good?", "you drew this. all hail you!", "you drew this. let's see what happens."],
+    authorMessages: ["ти намалював це. замислись над тим, що ти зробив.", "ти намалював це. розслабся.", "ти намалював це. почекай, поки інші зрозуміють, що ти зробив.", "ти намалював це. назад немає вороття.", "ти намалював це. вдихни глибше.", "ти намалював це. потужно.", "ти намалював це. як себе чуєш?", "ти намалював це. це твоя вина.", "ти намалював це. це... добре?", "ти намалював це. твоє досягнення!", "ти намалював це. погляньмо, що буде далі."],
     events: {
         "click #drawful-startgame": "startGame",
         "click #drawful-stopcountdown": "stopCountdown",
@@ -21208,7 +21208,7 @@ const Hx = lc.extend({
             i = e ? e.state : "";
         let a;
         if (t !== void 0 && t.playerColor !== void 0 && (fe("#player").css("background-color", t.playerColor), fe("#drawful-instructions").css("color", t.playerColor)), n === "RoomFull") {
-            kt.show(Error("The room is full"), {
+            kt.show(Error("Місця закінчились"), {
                 willClose: () => {
                     window.location.reload(!0)
                 }
@@ -21216,7 +21216,7 @@ const Hx = lc.extend({
             return
         }
         if (n === "GameLocked") {
-            kt.show(Error("Game is in progress. Please wait for a new game to start."), {
+            kt.show(Error("Гру вже почато"), {
                 willClose: () => {
                     window.location.reload(!0)
                 }
@@ -21228,7 +21228,7 @@ const Hx = lc.extend({
                 this.onResize();
                 return
             }
-            this.enableLoadingButton("#drawful-submitdrawing", !0), this.showScreen(".state-draw"), fe(".drawful .state-draw .instructions").html("a picture of yourself!");
+            this.enableLoadingButton("#drawful-submitdrawing", !0), this.showScreen(".state-draw"), fe(".drawful .state-draw .instructions").html("нарис самого себе!");
             const f = this.$(".drawful .sketchpad")[0],
                 m = f.getContext("2d"),
                 _ = fe("#player").outerHeight(!0) + fe("#drawful-instructions").outerHeight(!0) + fe("#drawful-prompt").outerHeight(!0) + fe("#drawful-submitdrawing").outerHeight(!0) + 10;
@@ -21238,9 +21238,9 @@ const Hx = lc.extend({
         if (this.joiningInterfaceIsUp = !1, i && i === "Lobby" && n === i) {
             this.currentCanvas = void 0, this.hideLobbyButtons();
             const f = e.lobbyState;
-            f === "WaitingForMore" ? fe("#drawful-lobby-text").html("waiting for all players to join") : f === "CanStart" ? (fe("#drawful-lobby-text").html("press this button when everybody has joined"), fe("#drawful-startgame").show()) : f === "Countdown" ? (fe("#drawful-lobby-text").html("press this button to cancel game start"), fe("#drawful-stopcountdown").show()) : f === "PostGame" && (fe("#drawful-lobby-text").html("what do you want to do?"), fe(".drawful-endbuttons").show()), this.showScreen(".state-lobby")
+            f === "WaitingForMore" ? fe("#drawful-lobby-text").html("Очікуємо інших гравців...") : f === "CanStart" ? (fe("#drawful-lobby-text").html("Тисни цю кнопку, коли всі приєднаються"), fe("#drawful-startgame").show()) : f === "Countdown" ? (fe("#drawful-lobby-text").html("Тисни цю кнопку, щоб скасувати запуск гри"), fe("#drawful-stopcountdown").show()) : f === "PostGame" && (fe("#drawful-lobby-text").html("Зіграти ще раз?"), fe(".drawful-endbuttons").show()), this.showScreen(".state-lobby")
         } else if (i === "Gameplay_Logo") this.showScreen(".state-nothing");
-        else if (i === "Gameplay_Round") fe(".round-text").html(`ROUND ${e.round}`), this.showScreen(".state-round");
+        else if (i === "Gameplay_Round") fe(".round-text").html(`РАУНД ${e.round}`), this.showScreen(".state-round");
         else if (i === "Gameplay_DrawingTime" && n === "Gameplay_DrawingTime")
             if (t.receivedBitmap) fe("#drawful-drawing-received").html(Ut.safeText(t.prompt)), this.showScreen(".state-drawing-sent");
             else {
@@ -21254,14 +21254,14 @@ const Hx = lc.extend({
         else if (i === "Gameplay_EnterLie" && n === "Gameplay_EnterLie") {
             if (this.activeScreen !== ".state-enterlie" && (t.isAuthor ? (fe("#drawful-lie-input").hide(), fe("#drawful-enterlie-field").hide(), fe("#drawful-submit-alert").hide(), fe("#drawful-submitlie").hide(), fe(".state-enterlie .author-text").html(this.authorMessages[Math.floor(Math.random() * this.authorMessages.length)])) : (fe(".state-enterlie .author-text").html(""), fe("#drawful-lie-input").val(""), fe("#drawful-lie-input").show(), fe("#drawful-enterlie-field").show(), fe("#drawful-submitlie").show(), fe("#drawful-submit-alert").hide())), t.showError) {
                 const f = fe("#drawful-submit-alert");
-                fe("#drawful-submit-alert").html("you entered the correct title! enter a fake one!"), f.addClass("alert-info"), f.removeClass("alert-danger"), f.show()
+                fe("#drawful-submit-alert").html("ти наблизився до правильної назви чи відповіді іншого гравця! введи щось інше!"), f.addClass("alert-info"), f.removeClass("alert-danger"), f.show()
             }
             this.enableLoadingButton("#drawful-submitlie", !0), this.showScreen(".state-enterlie")
         } else if (n === "Gameplay_LieReceived") this.showScreen(".state-liereceived");
         else if (i === "Gameplay_LyingDone") this.showScreen(".state-lyingdone");
         else if (i === "Gameplay_ChooseLie" && n === "Gameplay_ChooseLie")
             if (t.choosingDone || t.chosen != null || t.isAuthor) {
-                t.isAuthor ? fe("#chooselikes-choice").html("") : fe("#chooselikes-choice").html(t.chosen ? `you chose: ${t.chosen}` : "you didn't make a choice"), fe("#chooselikes-text").html("award bonus likes");
+                t.isAuthor ? fe("#chooselikes-choice").html("") : fe("#chooselikes-choice").html(t.chosen ? `твій вибір: ${t.chosen}` : "ти нічого не обрав."), fe("#chooselikes-text").html("постав бонусні вподобайки");
                 const m = "pure-input-1 drawful-like-button button-large pure-button";
                 let _ = "";
                 for (a = 0; a < t.choices.length; a++) {
@@ -21272,7 +21272,7 @@ const Hx = lc.extend({
                 }
                 fe("#drawful-chooselikes").html(_), this.showScreen(".state-chooselikes")
             } else {
-                fe("#chooselie-text").html("What's the real title?");
+                fe("#chooselie-text").html("яка з назв справжня?");
                 const m = "pure-input-1 drawful-lie-button button-large pure-button button-drawful";
                 let _ = "";
                 for (a = 0; a < t.choices.length; a++) _ += `<button type="button" data-num="${a}" class="${m}">`, _ += Ut.safeText(t.choices[a]), _ += "</button>";
@@ -21296,7 +21296,7 @@ const Hx = lc.extend({
         e ? (fe(t).show(), fe(`${t}-loading`).hide()) : (fe(t).hide(), fe(`${t}-loading`).show())
     },
     submitDrawing() {
-        if (this.currentCanvas.isClean) return alert("You have to draw something!"), !1;
+        if (this.currentCanvas.isClean) return alert("Ти маєш щось намалювати!"), !1;
         this.enableLoadingButton("#drawful-submitdrawing", !1);
         const t = this.joiningInterfaceIsUp ? {
             setPlayerPicture: !0,
@@ -21310,7 +21310,7 @@ const Hx = lc.extend({
         let t = this.sanitize(fe("#drawful-lie-input").val()).toUpperCase();
         if (t = t.replace(/\s\s+/g, " ").trim(), t.length === 0) {
             const e = fe("#drawful-submit-alert");
-            return fe("#drawful-submit-alert").html("you can't enter nothing!"), e.removeClass("alert-info"), e.addClass("alert-danger"), e.show(), !1
+            return fe("#drawful-submit-alert").html("Ти не можеш не ввести нічого!"), e.removeClass("alert-info"), e.addClass("alert-danger"), e.show(), !1
         }
         return this.enableLoadingButton("#drawful-submitlie", !1), this.client.send("SendMessageToRoomOwner", {
             lieEntered: t,
@@ -21349,7 +21349,7 @@ const Hx = lc.extend({
         }), !1
     },
     sanitize(t) {
-        return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF!?*$+\-’'_ .,]/gi, "").replace(/'/g, "\u2019").trim()
+        return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454!?*$+\-’'_ .,]/gi, "").replace(/'/g, "\u2019").trim()
     }
 });
 Fx({

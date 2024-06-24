@@ -7678,10 +7678,10 @@ let js = (Wo = class {
         return this.htmlEscape(n).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
     }
     static sanitizeInput(e) {
-        return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+        return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
     }
     static sanitizeEmoji(e) {
         return e.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -13077,29 +13077,29 @@ class Ey {
     }
 }
 const HX = {
-        BACK: "Back",
-        CANCEL: "Cancel",
-        CLOSE: "Close",
-        CONFIRM: "Confirm",
-        CREATE: "Create",
-        DELETE: "Delete",
-        DONE: "Done",
-        EDIT: "Edit",
+        BACK: "Назад",
+        CANCEL: "Скасувати",
+        CLOSE: "Закрити",
+        CONFIRM: "Підтвердити",
+        CREATE: "Створити",
+        DELETE: "Видалити",
+        DONE: "Готово",
+        EDIT: "Редагувати",
         OK: "OK",
-        NEXT: "Next",
-        NO: "No",
-        PLAY: "Play",
-        PUBLISH: "Publish",
-        REMOVE: "Remove",
-        RESET: "Reset",
-        SUBMIT: "Submit",
-        TRY_AGAIN: "Try Again",
-        UNDO: "Undo",
-        YES: "Yes"
+        NEXT: "Далі",
+        NO: "Ні",
+        PLAY: "Грати",
+        PUBLISH: "Опублікувати",
+        REMOVE: "Видалити",
+        RESET: "Скинути",
+        SUBMIT: "Надіслати",
+        TRY_AGAIN: "Спробуй ще раз",
+        UNDO: "Відмінити",
+        YES: "Так"
     },
     YX = {
         UGC: {
-            VISIBILITY_CONTROLLER_OFF: "prompts hidden on players’ devices",
+            VISIBILITY_CONTROLLER_OFF: "завдання приховані для гравців",
             VISIBILITY_CONTROLLER_ON: "prompts shown on players’ devices",
             VISIBILITY_SCREEN_OFF: "prompts hidden on game screen",
             VISIBILITY_SCREEN_ON: "prompts shown on game screen"
@@ -13110,31 +13110,31 @@ const HX = {
         DRAWING_NOTHING: "You have to draw something!",
         PLAYER_KICKED: "You have been kicked from the game by a moderator.",
         ROOM_DESTROYED: "Thanks for playing!",
-        ROOM_DISCONNECTED: "Disconnected",
+        ROOM_DISCONNECTED: "Від'єднано",
         TEXT_NAUGHTY: "I’m afraid you can’t write that. Please be respectful of other players.",
         TEXT_NOTHING: "You can’t enter nothing!",
         TITLE: "Error"
     },
-    KX = "LOADING",
+    KX = "ЗАВАНТАЖЕННЯ",
     ZX = {
-        JOINED_COUNT: "{count} of {maxPlayers} players joined",
-        PLAYERS_NEEDED: "1 player needed to start | {count} players needed to start",
-        WAITING_FOR_VIP: "Waiting for {name} to start the game",
-        WAITING_FOR_GAMEPAD: "Waiting for the game to start",
-        WAITING_FOR_NEW_GAME: "Waiting for a new game to start",
+        JOINED_COUNT: "У грі {count} з {maxPlayers} гравців",
+        PLAYERS_NEEDED: "Потрібен ще 1 гравець | Потрібно ще {count} гравця",
+        WAITING_FOR_VIP: "Очікуємо, поки {name} почне гру",
+        WAITING_FOR_GAMEPAD: "Чекаємо на початок гри",
+        WAITING_FOR_NEW_GAME: "Чекаємо на початок нової гри",
         GAME_STARTING: "Game is starting",
         BUTTON_START: "Press to Start",
         BUTTON_CANCEL: "Press to Cancel"
     },
     XX = {
-        GALLERY_LINK: "Visit the Gallery",
-        NEW_GAME_STARTED: "A new game has started",
-        PLAY_AGAIN: "Play again?",
-        THANKS_FOR_PLAYING: "Thanks for playing!",
-        BUTTON_GO_TO_GAME: "Go to game",
-        BUTTON_GO_TO_JACKBOX: "Back to jackbox.tv",
-        BUTTON_SAME_PLAYERS: "Same players",
-        BUTTON_NEW_PLAYERS: "New players"
+        GALLERY_LINK: "Відвідати галерею",
+        NEW_GAME_STARTED: "Розпочалася нова гра",
+        PLAY_AGAIN: "Зіграти знов?",
+        THANKS_FOR_PLAYING: "Дякуємо за гру!",
+        BUTTON_GO_TO_GAME: "Перейти до гри",
+        BUTTON_GO_TO_JACKBOX: "Назад на ua.jackbox.fun",
+        BUTTON_SAME_PLAYERS: "Ті ж гравці",
+        BUTTON_NEW_PLAYERS: "Нові гравці"
     },
     QX = {
         AND: "AND",
@@ -13142,11 +13142,11 @@ const HX = {
     },
     JX = {
         BUTTON_SKIP: "Skip",
-        BUTTON_NEXT: "Next",
+        BUTTON_NEXT: "Далі",
         BUTTON_DONE: "Let’s Go!"
     },
     eQ = {
-        NAME: "AUDIENCE"
+        NAME: "ГЛЯДАЧ"
     },
     tQ = {
         CART: {
@@ -13157,43 +13157,43 @@ const HX = {
         }
     },
     nQ = {
-        EPISODE_REPORT: "Report Episode",
-        EPISODE_UNLOAD: "Unload Episode",
-        EPISODE_VIEW_AUTHOR: "View Author",
-        EPISODES_LOAD: "Load an episode by id:",
-        EPISODES_MENU: "Episodes Menu",
-        EPISODES_SELECT: "Or select an epsiode:",
-        EPISODES_WARNING: "Warning: user generated content is not rated",
+        EPISODE_REPORT: "Поскаржитись на епізод",
+        EPISODE_UNLOAD: "Вивантажити епізод",
+        EPISODE_VIEW_AUTHOR: "Показати автора",
+        EPISODES_LOAD: "Завантажити епізод за ID:",
+        EPISODES_MENU: "Меню епізодів",
+        EPISODES_SELECT: "Або обери епізод:",
+        EPISODES_WARNING: "Важливо: користувацький контент не перевіряється",
         INSTRUCTION: {
-            CREATE_TITLE: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-            LOAD: "create or load?",
-            PUBLISH: "publish your episode",
-            TITLE: "name your episode",
-            TOGGLE_VISIBILITY: "tap to show/hide prompts",
-            WRITE: "write your prompts"
+            CREATE_TITLE: "Перш за все, введіть назву для епізоду, яка буде містити всі ваші підказки, і натисніть кнопку \"створити\".",
+            LOAD: "створити чи завантажити?",
+            PUBLISH: "оприлюднити епізод",
+            TITLE: "назви епізод",
+            TOGGLE_VISIBILITY: "показати/сховати завдання",
+            WRITE: "пиши свої завдання"
         },
         WARNING: {
-            DELETE: "Are you sure you want to delete this episode?",
-            TOS: "By sharing content, you agree to our [tos]Terms of Service[/tos]",
-            TOS_AGREE: "agree and share"
+            DELETE: "Ти впевнений, що хочеш видалити цей епізод?",
+            TOS: "Поділившись контентом, ти погоджуєшся з [tos]Умовами користування[/tos]",
+            TOS_AGREE: "погодитись і поділитися"
         },
-        BACK_TO_EPISODES: "back to episodes",
-        BACK_TO_MENU: "back to menu",
-        CREATE_NEW_EPISODE: "create a new episode",
-        PREVIOUS_EPISODES: "previous episodes",
-        PROMPT_ADD: "add prompt",
-        PROMPT_PLACEHOLDER: "enter a prompt",
-        PROMPTS_COUNT_HIDDEN: "({count} hidden)",
-        TITLE_PLACEHOLDER: "enter a title"
+        BACK_TO_EPISODES: "назад до епізодів",
+        BACK_TO_MENU: "повернутись в меню",
+        CREATE_NEW_EPISODE: "створити новий епізод",
+        PREVIOUS_EPISODES: "попередній епізод",
+        PROMPT_ADD: "додати завдання",
+        PROMPT_PLACEHOLDER: "введи завдання",
+        PROMPTS_COUNT_HIDDEN: "({count} сховано)",
+        TITLE_PLACEHOLDER: "введи назву"
     },
     rQ = {
         BROADCASTER: {
-            SUBTEXT: "You have successfully connected your account to the Jackbox Audience Kit Twitch Extension.",
-            WARNING: "THIS ROOM DOESN'T HAVE THE AUDIENCE SETTING ENABLED"
+            SUBTEXT: "Акаунт успішно під'єднаний до Twitch-розширення Jackbox Audience Kit Twitch Extension.",
+            WARNING: "В ЦІЙ ГРІ НЕ ВКЛЮЧЕНА ОПЦІЯ ГЛЯДАЧІВ"
         },
         RECONNECTED: {
-            TEXT: "RECONNECTED",
-            SUBTEXT: "Have fun!"
+            TEXT: "ПІДКЛЮЧЕНО",
+            SUBTEXT: "Удачі!"
         },
         RECONNECTING: {
             CONTROLLER: {
@@ -13206,14 +13206,14 @@ const HX = {
             }
         },
         PAUSED: {
-            TEXT: "THE GAME IS PAUSED",
-            SUBTEXT: "Anything you submit will still be sent to the game."
+            TEXT: "ПАУЗА У ГРІ",
+            SUBTEXT: "Але твоє введення буде в будь-якому разі відправлено в гру."
         }
     },
     sQ = {
-        SHARE: "Share",
-        COPY_TO_CLIPBOARD: "Copy to clipboard",
-        COPIED: "Copied"
+        SHARE: "Поділитися",
+        COPY_TO_CLIPBOARD: "Скопіювати в буфер обміну",
+        COPIED: "Скопійовано"
     },
     iQ = {
         ACTION: HX,
@@ -13395,11 +13395,11 @@ const HX = {
         EDIT: "Modifica",
         OK: "OK",
         NEXT: "Prossimo",
-        NO: "No",
+        NO: "Ні",
         PLAY: "Gioca",
         PUBLISH: "Pubblica",
         REMOVE: "Rimuovi",
-        RESET: "Reset",
+        RESET: "Скинути",
         SUBMIT: "Invia",
         TRY_AGAIN: "Riprova",
         UNDO: "Annulla",
@@ -13703,7 +13703,7 @@ const HX = {
         EDIT: "Editar",
         OK: "Aceptar",
         NEXT: "Siguiente",
-        NO: "No",
+        NO: "Ні",
         PLAY: "Jugar",
         PUBLISH: "Publicar",
         REMOVE: "Eliminar",
@@ -13857,7 +13857,7 @@ const HX = {
         EDIT: "Editar",
         OK: "Aceptar",
         NEXT: "Siguiente",
-        NO: "No",
+        NO: "Ні",
         PLAY: "Jugar",
         PUBLISH: "Publicar",
         REMOVE: "Quitar",
@@ -20477,7 +20477,7 @@ const Loe = {
     },
     Boe = {
         key: 0,
-        href: "https://jackbox.tv/past-games",
+        href: "https://ua.jackbox.fun/past-games",
         "aria-label": "back"
     },
     qoe = {
@@ -21367,11 +21367,11 @@ const AO = Rc(Yue),
             }
         }
     }),
-    OO = "main/pp10/nopus-opus/assets/ad9172fc.png",
-    CO = "main/pp10/nopus-opus/assets/dc131b16.png",
-    Kue = "main/pp10/nopus-opus/assets/38715b18.png",
-    Zue = "main/pp10/nopus-opus/assets/b0d7c822.png",
-    Xue = "main/pp10/nopus-opus/assets/06150f24.png";
+    OO = "/main/pp10/nopus-opus/assets/ad9172fc.png",
+    CO = "/main/pp10/nopus-opus/assets/dc131b16.png",
+    Kue = "/main/pp10/nopus-opus/assets/38715b18.png",
+    Zue = "/main/pp10/nopus-opus/assets/b0d7c822.png",
+    Xue = "/main/pp10/nopus-opus/assets/06150f24.png";
 const Ms = t => (Gr("data-v-2c53389f"), t = t(), Vr(), t),
     Que = {
         class: "jbg"
@@ -24678,9 +24678,9 @@ const x1e = {
             dismissText: String
         }
     }),
-    R1e = "main/pp10/nopus-opus/assets/928ef0da.png",
-    M1e = "main/pp10/nopus-opus/assets/0bb76a2d.png",
-    D1e = "main/pp10/nopus-opus/assets/ed4469b3.png";
+    R1e = "/main/pp10/nopus-opus/assets/928ef0da.png",
+    M1e = "/main/pp10/nopus-opus/assets/0bb76a2d.png",
+    D1e = "/main/pp10/nopus-opus/assets/ed4469b3.png";
 const $1e = {
         key: 0,
         class: "image",
@@ -27807,7 +27807,7 @@ const $ge = {
             }
         }
     }),
-    Fge = "main/pp10/nopus-opus/assets/c8afd972.svg";
+    Fge = "/main/pp10/nopus-opus/assets/c8afd972.svg";
 const Uge = {
         class: "constrain"
     },
@@ -28222,124 +28222,121 @@ const s_e = {
     },
     i_e = {
         AVATARS: {
-            0: "calm light green bird with a single dark green feather on its head",
-            1: "punky yellow bird with yellow feathers that look like a mohawk",
-            2: "fancy teal bird with round yellow feathers on its head and tail",
-            3: "sleek red bird with a pointy head and curly black tail",
-            4: "tufted green bird with yellow wings",
-            5: "wild magenta bird with light pink, unkempt feathers on its head",
-            6: "dramatic white bird with angular black eyebrow feathers",
-            7: "flamboyant purple bird with forward feathers on its head and a big curly tail",
-            8: "chill brown bird with a foxy tail",
-            9: "cute pink bird with a tail that looks like ice cream cones",
-            10: "dorky blue bird with perfect hair",
-            11: "emo pink bird with feathers brushed forward on its head"
+            0: "cпокійний світло-зелений птах з одним темно-зеленим пером на голові",
+            1: "жовтий птах-панк з жовтим пір\'ям, схожим на ірокез",
+            2: "тендітний бірюзовий птах з круглим жовтим пір\'ям на голові та хвості",
+            3: "лискучий червоний птах із загостреною головою та кучерявим чорним хвостиком",
+            4: "чубатий зелений птах з жовтими крилами",
+            5: "дикий пурпуровий птах зі світло-рожевим неохайним пір\'ям на голові",
+            6: "ефектний білий птах з кутастим чорним пір\'ям на бровах",
+            7: "яскравий фіолетовий птах з висунутим вперед пір\'ям на голові та великим кучерявим хвостом",
+            8: "байдужий коричневий птах з лисячим хвостом",
+            9: "милий рожевий птах з хвостом, схожим на ріжок морозива",
+            10: "нікчемний блакитний птах з ідеальним волоссям",
+            11: "рожевий птах-емо з зачесаним вперед пір\'ям на голові"
         },
-        CHANGE_AVATAR: "Change Avatar",
-        LOGO: "the Dodo Re Mi logo"
+        CHANGE_AVATAR: "Змінити аватар",
+        LOGO: "логотип Додо Ре Мі"
     },
     o_e = {
-        CHANGE_AVATAR: "change avatar",
-        SONG_DOWN: "scroll to the next song {songName}",
-        SONG_UP: "scroll to the previous song {songName}",
-        SELECT_SONG: "select song {songName}"
+        CHANGE_AVATAR: "змінити аватар",
+        SONG_DOWN: "прокрутити до наступної пісні під назвою “{songName}”",
+        SONG_UP: "прокрутити до попередньої пісні під назвою “{songName}”",
+        SELECT_SONG: "обрати пісню під назвою “{songName}”"
     },
     a_e = {
-        BASS: "Bass",
-        MELODY: "Melody",
-        COUNTER: "Counter",
-        DRUMS: "Drums",
-        PERCUSSION: "Percussion",
-        HARMONY: "Harmony",
-        SIGNATURE: "Signature"
+        BASS: "Бас",
+        MELODY: "Мелодія",
+        COUNTER: "Контрмелодія",
+        DRUMS: "Ударні",
+        PERCUSSION: "Перкусія",
+        HARMONY: "Гармонія",
+        SIGNATURE: "Сигнатура"
     },
     c_e = {
-        GET_READY: "Get Ready",
-        TAP: "tap",
-        TAP_ALONG: "and then tap along",
-        TAP_HERE: "TAP[break][/break]ZONE[info](OR PRESS SPACEBAR)[/info]",
-        SYNCED: "synced",
-        SYNCING: "Syncing",
-        WAIT: "Wait for the count down"
+        GET_READY: "Приготуйся",
+        TAP: "тиць",
+        TAP_ALONG: "а потім тицяй по екрану",
+        TAP_HERE: "ЗОНА[break]ТИЦЬ[/break][info](АБО НАТИСНИ ПРОБІЛ)[/info]",
+        SYNCED: "синхронізовано",
+        SYNCING: "Синхронізація",
+        WAIT: "Дочекайся зворотного відліку"
     },
     l_e = {
-        SHARE: "Share",
-        SILENT_PHONE: "Don't forget to put your phone back on silent!"
+        SHARE: "Поділитися",
+        SILENT_PHONE: "Не забудь перевести телефон у беззвучний режим!"
     },
     u_e = {
-        VERY_EASY: "Super Easy",
-        EASY: "Easy",
-        MEDIUM: "Medium",
-        HARD: "Hard",
-        VERY_HARD: "Super Hard"
+        VERY_EASY: "Дуже легко",
+        EASY: "Легко",
+        MEDIUM: "Середнє",
+        HARD: "Складно",
+        VERY_HARD: "Надскладно"
     },
-    h_e = {
-        DOWNLOAD: "DOWNLOAD MP3"
-    },
-    f_e = {
-        CONTINUOUS: "Tap and hold notes when they enter the zone below",
-        DISCRETE: "Tap notes when they fill the circles below",
-        PAUSED: "Game Paused",
-        IN_PROGRESS: "Song In Progress",
-        PROCESSING: "The birds are preparing to play back your performance"
+    h_e = { DOWNLOAD: "ЗАВАНТАЖИТИ MP3" }, f_e = {
+        CONTINUOUS: "Тицяй та утримуй ноти, щойно вони досягають зони нижче",
+        DISCRETE: "Тицяй ноти, щойно вони заповнять кола нижче",
+        PAUSED: "Гру призупинено",
+        IN_PROGRESS: "Пісня виконується",
+        PROCESSING: "Птахи готуються відтворити ваш виступ"
     },
     d_e = {
-        BACK_TO_MENU: "Back to Game Menu",
-        BEST_SCORE: "Best Score",
-        CANCEL: "Cancel",
-        CHANGE_HOST: "Change[break][/break]Host?",
-        CHOOSE_HOST: "Choose New Host",
-        CHOOSE_INSTRUMENT: "Choose an Instrument",
-        CHOOSE_SONG: "Choose a Song",
-        COMPLETED_PARTS: "Parts Survived",
-        CUSTOMIZE: "Customize?",
-        DIFFICULTY: "Difficulty",
-        END_SESSION: "End Session",
-        LANES: "Lanes",
-        LOADING: "Loading",
-        LOCKED: "Locked",
-        NEVERMIND: "Nevermind",
-        NEW_SONG: "New Song",
-        RETRY_SONG: "Retry Song",
-        RESET: "Reset",
-        SELECT_SONG: "Select Song",
-        SONG_PART: "Song Part",
-        SPACEBAR: "SPACE",
-        START_SONG: "Play Song",
-        TEST_IT: "Test It Out",
-        THANKS: "Thanks for playing",
-        UNLOCKED: "Unlocked Instruments",
-        VOTE_SONG: "Vote for a Song",
-        WAITING_FOR: "Waiting for {vipName}",
-        WAITING_FOR_SONG: "Waiting for {vipName} to select song",
-        WHAT_NEXT: "What's Next?"
+        BACK_TO_MENU: "Повернутися до ігрового меню",
+        BEST_SCORE: "Найкращий рахунок",
+        CANCEL: "Скасувати",
+        CHANGE_HOST: "Змінити[break][/break]хоста?",
+        CHOOSE_HOST: "Вибрати нового хоста",
+        CHOOSE_INSTRUMENT: "Обери інструмент",
+        CHOOSE_SONG: "Обери пісню",
+        COMPLETED_PARTS: "Партій вижили",
+        CUSTOMIZE: "Налаштувати?",
+        DIFFICULTY: "Складність",
+        END_SESSION: "Завершити сесію",
+        LANES: "Смуг",
+        LOADING: "Завантаження",
+        LOCKED: "Заблоковано",
+        NEVERMIND: "Неважливо",
+        NEW_SONG: "Нова пісня",
+        RETRY_SONG: "Повторити пісню",
+        RESET: "Скинути",
+        SELECT_SONG: "Обрати пісню",
+        SONG_PART: "Партія пісні",
+        SPACEBAR: "ПРОБІЛ",
+        START_SONG: "Грати пісню",
+        TEST_IT: "Спробуй",
+        THANKS: "Дякуємо за гру",
+        UNLOCKED: "Розблоковані інструменти",
+        VOTE_SONG: "Голосуй за пісню",
+        WAITING_FOR: "Чекаємо на гравця {vipName}",
+        WAITING_FOR_SONG: "Очікуємо, поки гравець {vipName} обере пісню",
+        WHAT_NEXT: "Що далі?"
     },
     p_e = {
-        SIT_BACK: "Sit back and enjoy",
-        LOOK_UP: "Performance on the main screen"
+        SIT_BACK: "Сідай зручніше та насолоджуйся",
+        LOOK_UP: "Виступ на головному екрані"
     },
     m_e = {
-        PERFECT: "Perfect",
-        GREAT: "Great",
-        OKAY: "Okay",
-        MISS: "Miss"
+        PERFECT: "Ідеально",
+        GREAT: "Чудово",
+        OKAY: "Гаразд",
+        MISS: "Промах"
     },
     g_e = {
-        AUDIENCE: "Audience",
-        SURVIVED: "Survived",
-        EATEN: "Eaten"
+        AUDIENCE: "Глядачі",
+        SURVIVED: "Вижили",
+        EATEN: "З\'їдені"
     },
     __e = {
-        AUDIO_CHECK: "Audio Check",
-        CHECK_SETTINGS: "Check these settings on your device",
-        CONFIRM: "Sounds good",
-        NOT_HEARING: "Not hearing anything?",
-        OFF: "OFF",
-        POWER_SAVER: "Power Saver Mode",
-        SILENT: "Silent Mode",
-        TEST: "Play test audio",
-        UP: "UP",
-        VOLUME: "Volume"
+        AUDIO_CHECK: "Перевірка звуку",
+        CHECK_SETTINGS: "Перевірте ці налаштування на своєму пристрої",
+        CONFIRM: "Звучить чудово",
+        NOT_HEARING: "Нічого не чути?",
+        OFF: "ВИМК.",
+        POWER_SAVER: "Режим енергозбереж.",
+        SILENT: "Беззвучний режим",
+        TEST: "Відтворити тестове аудіо",
+        UP: "МАКС.",
+        VOLUME: "Гучність"
     },
     y_e = {
         ALT: i_e,
@@ -28573,7 +28570,7 @@ const s_e = {
         NEVERMIND: "Non importa",
         NEW_SONG: "Nuova canzone",
         RETRY_SONG: "Riprova canzone",
-        RESET: "Reset",
+        RESET: "Скинути",
         SELECT_SONG: "Seleziona canzone",
         SONG_PART: "Parte della canzone",
         SPACEBAR: "SPAZIO",
@@ -29276,7 +29273,7 @@ const s_e = {
                 if (!this.renderData && this.status !== "loading") {
                     this.$emit("update:status", "loading");
                     try {
-                        const t = await Qye(() => import("main/pp10/nopus-opus/assets/Muxer-ce5cf19a.js"), []),
+                        const t = await Qye(() => import("/main/pp10/nopus-opus/assets/Muxer-ce5cf19a.js"), []),
                             e = new t.Muxer({
                                 artifact: this.artifact,
                                 params: this.params
@@ -46204,7 +46201,7 @@ const G8e = He(y8e, [
                 window.location.reload()
             },
             onDidEmitPausedEvent(t) {
-                this.status !== "disconnected" && (t !== "didDisconnect" && t !== "roomDidExit" || (this.status = "disconnected"))
+                this.status !== "Від'єднано" && (t !== "didDisconnect" && t !== "roomDidExit" || (this.status = "Від'єднано"))
             }
         }
     });
@@ -50557,12 +50554,12 @@ function MOe(t, e, n, r, s, i) {
 const DOe = He(COe, [
         ["render", MOe]
     ]),
-    $Oe = "main/pp10/nopus-opus/assets/50849cf6.mp3",
-    LOe = "main/pp10/nopus-opus/assets/9431923a.ogg",
-    FOe = "main/pp10/nopus-opus/assets/2188b01d.mp3",
-    UOe = "main/pp10/nopus-opus/assets/9f40765c.ogg",
-    BOe = "main/pp10/nopus-opus/assets/20141192.mp3",
-    qOe = "main/pp10/nopus-opus/assets/8e80ea3f.ogg",
+    $Oe = "/main/pp10/nopus-opus/assets/50849cf6.mp3",
+    LOe = "/main/pp10/nopus-opus/assets/9431923a.ogg",
+    FOe = "/main/pp10/nopus-opus/assets/2188b01d.mp3",
+    UOe = "/main/pp10/nopus-opus/assets/9f40765c.ogg",
+    BOe = "/main/pp10/nopus-opus/assets/20141192.mp3",
+    qOe = "/main/pp10/nopus-opus/assets/8e80ea3f.ogg",
     GOe = st({
         props: {
             state: {
@@ -51475,12 +51472,12 @@ const Cke = He(Tke, [
         ["render", Oke],
         ["__scopeId", "data-v-08490565"]
     ]),
-    kke = "main/pp10/nopus-opus/assets/0523d60f.mp3",
-    Ike = "main/pp10/nopus-opus/assets/6048b084.ogg",
-    Nke = "main/pp10/nopus-opus/assets/a4c32d49.mp3",
-    xke = "main/pp10/nopus-opus/assets/7a6eefbc.ogg",
-    Pke = "main/pp10/nopus-opus/assets/23af5ef9.mp3",
-    Rke = "main/pp10/nopus-opus/assets/47782f89.ogg";
+    kke = "/main/pp10/nopus-opus/assets/0523d60f.mp3",
+    Ike = "/main/pp10/nopus-opus/assets/6048b084.ogg",
+    Nke = "/main/pp10/nopus-opus/assets/a4c32d49.mp3",
+    xke = "/main/pp10/nopus-opus/assets/7a6eefbc.ogg",
+    Pke = "/main/pp10/nopus-opus/assets/23af5ef9.mp3",
+    Rke = "/main/pp10/nopus-opus/assets/47782f89.ogg";
 var Xv = {
     exports: {}
 };

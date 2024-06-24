@@ -7277,7 +7277,10 @@ var lae = cP((zae, A1) => {
             return this.htmlEscape(r).trim()
         }
         static sanitizeName(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+        }
+        static sanitizeInput(t) {
+            return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\’]/gi, "")
         }
         static sanitizeInput(t) {
             return t = t.replace("…", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
@@ -13371,119 +13374,118 @@ ${r.message}`,
     ve(oo, "isPolyfilled", !1);
     let Bh = oo;
     const hW = {
-            BACK: "Back",
-            CANCEL: "Cancel",
-            CLOSE: "Close",
-            CONFIRM: "Confirm",
-            CREATE: "Create",
-            DELETE: "Delete",
-            DONE: "Done",
-            EDIT: "Edit",
+            BACK: "Назад",
+            CANCEL: "Скасувати",
+            CLOSE: "Закрити",
+            CONFIRM: "Підтвердити",
+            CREATE: "Створити",
+            DELETE: "Видалити",
+            DONE: "Готово",
+            EDIT: "Редагувати",
             OK: "OK",
-            NEXT: "Next",
-            NO: "No",
-            PLAY: "Play",
-            PUBLISH: "Publish",
-            REMOVE: "Remove",
-            RESET: "Reset",
-            SUBMIT: "Submit",
-            TRY_AGAIN: "Try Again",
-            UNDO: "Undo",
-            YES: "Yes"
+            NO: "Ні",
+            PLAY: "Грати",
+            PUBLISH: "Опублікувати",
+            REMOVE: "Видалити",
+            RESET: "Скинути",
+            SUBMIT: "Надіслати",
+            TRY_AGAIN: "Спробуй ще раз",
+            UNDO: "Скасувати",
+            YES: "Так"
         },
         pW = {
             UGC: {
-                VISIBILITY_CONTROLLER_OFF: "prompts hidden on players’ devices",
-                VISIBILITY_CONTROLLER_ON: "prompts shown on players’ devices",
-                VISIBILITY_SCREEN_OFF: "prompts hidden on game screen",
-                VISIBILITY_SCREEN_ON: "prompts shown on game screen"
+                VISIBILITY_CONTROLLER_OFF: "завдання приховані для гравців",
+                VISIBILITY_CONTROLLER_ON: "завдання показані гравцям",
+                VISIBILITY_SCREEN_OFF: "завдання приховані на екрані",
+                VISIBILITY_SCREEN_ON: "завдання показані на екрані"
             }
         },
         gW = {
-            DISCONNECTED: "You have been disconnected.",
-            DRAWING_NOTHING: "You have to draw something!",
-            PLAYER_KICKED: "You have been kicked from the game by a moderator.",
-            ROOM_DESTROYED: "Thanks for playing!",
-            ROOM_DISCONNECTED: "Disconnected",
-            TEXT_NAUGHTY: "I’m afraid you can’t write that. Please be respectful of other players.",
-            TEXT_NOTHING: "You can’t enter nothing!",
-            TITLE: "Error"
+            DISCONNECTED: "З'єднання розірване.",
+            DRAWING_NOTHING: "Потрібно щось намалювати!",
+            PLAYER_KICKED: "Модератор вигнав тебе з гри.",
+            ROOM_DESTROYED: "Дякуємо за гру!",
+            ROOM_DISCONNECTED: "Від'єднано",
+            TEXT_NAUGHTY: "Цей текст є недопустимим. Будь ласка, поважай інших гравців.",
+            TEXT_NOTHING: "Потрібно щось написати!",
+            TITLE: "Помилка"
         },
-        mW = "LOADING",
+        mW = "ЗАВАНТАЖЕННЯ",
         _W = {
-            JOINED_COUNT: "{count} of {maxPlayers} players joined",
-            PLAYERS_NEEDED: "1 player needed to start | {count} players needed to start",
-            WAITING_FOR_VIP: "Waiting for {name} to start the game",
-            WAITING_FOR_GAMEPAD: "Waiting for the game to start",
-            GAME_STARTING: "Game is starting",
-            BUTTON_START: "Press to Start",
-            BUTTON_CANCEL: "Press to Cancel"
+            JOINED_COUNT: "В грі {count} з {maxPlayers} гравців",
+            PLAYERS_NEEDED: "Потрібен ще 1 гравець | Потрібно ще {count} гравців",
+            WAITING_FOR_VIP: "Чекаємо, поки {name} почне гру",
+            WAITING_FOR_GAMEPAD: "Очікування початку гри",
+            GAME_STARTING: "Гра починається",
+            BUTTON_START: "Натисни для запуску гри",
+            BUTTON_CANCEL: "Натисни для відміни"
         },
         vW = {
-            GALLERY_LINK: "Visit the Gallery",
-            PLAY_AGAIN: "Play again?",
-            BUTTON_SAME_PLAYERS: "Same Players",
-            BUTTON_NEW_PLAYERS: "New Players"
+            GALLERY_LINK: "Відкрити галерею",
+            PLAY_AGAIN: "Зіграти ще?",
+            BUTTON_SAME_PLAYERS: "Ті ж гравці",
+            BUTTON_NEW_PLAYERS: "Нові гравці"
         },
         yW = {
-            AND: "AND",
-            OR: "OR"
+            AND: "І",
+            OR: "АБО"
         },
         EW = {
-            BUTTON_SKIP: "Skip",
-            BUTTON_NEXT: "Next",
-            BUTTON_DONE: "Let’s Go!"
+            BUTTON_SKIP: "Пропустити",
+            BUTTON_NEXT: "Далі",
+            BUTTON_DONE: "Вперед!"
         },
         bW = {
-            NAME: "AUDIENCE"
+            NAME: "ГЛЯДАЧ"
         },
         TW = {
-            EPISODE_REPORT: "Report Episode",
-            EPISODE_UNLOAD: "Unload Episode",
-            EPISODE_VIEW_AUTHOR: "View Author",
-            EPISODES_LOAD: "Load an episode by id:",
-            EPISODES_MENU: "Episodes Menu",
-            EPISODES_SELECT: "Or select an epsiode:",
-            EPISODES_WARNING: "Warning: user generated content is not rated",
+            EPISODE_REPORT: "Поскаржитись на епізод",
+            EPISODE_UNLOAD: "Вивантажити епізод",
+            EPISODE_VIEW_AUTHOR: "Показати автора",
+            EPISODES_LOAD: "Завантажити епізод за ID:",
+            EPISODES_MENU: "Меню епізодів",
+            EPISODES_SELECT: "Або обери епізод:",
+            EPISODES_WARNING: "Важливо: користувацький контент не перевіряється",
             INSTRUCTION: {
-                CREATE_TITLE: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-                LOAD: "create or load?",
-                PUBLISH: "publish your episode",
-                TITLE: "name your episode",
-                TOGGLE_VISIBILITY: "tap to show/hide prompts",
-                WRITE: "write your prompts"
+                CREATE_TITLE: "Перш за все, введіть назву для епізоду, яка буде містити всі ваші підказки, і натисніть кнопку \"створити\".",
+                LOAD: "створити чи завантажити?",
+                PUBLISH: "оприлюднити епізод",
+                TITLE: "назви епізод",
+                TOGGLE_VISIBILITY: "показати/сховати завдання",
+                WRITE: "пиши свої завдання"
             },
             WARNING: {
-                DELETE: "Are you sure you want to delete this episode?",
-                TOS: "By sharing content, you agree to our [tos]Terms of Service[/tos]",
-                TOS_AGREE: "agree and share"
+                DELETE: "Ти впевнений, що хочеш видалити цей епізод?",
+                TOS: "Поділившись контентом, ти погоджуєшся з [tos]Умовами користування[/tos]",
+                TOS_AGREE: "погодитись і поділитися"
             },
-            BACK_TO_EPISODES: "back to episodes",
-            BACK_TO_MENU: "back to menu",
-            CREATE_NEW_EPISODE: "create a new episode",
-            PREVIOUS_EPISODES: "previous episodes",
-            PROMPT_ADD: "add prompt",
-            PROMPT_PLACEHOLDER: "enter a prompt",
-            PROMPTS_COUNT_HIDDEN: "({count} hidden)",
-            TITLE_PLACEHOLDER: "enter a title"
+            BACK_TO_EPISODES: "назад до епізодів",
+            BACK_TO_MENU: "повернутись в меню",
+            CREATE_NEW_EPISODE: "створити новий епізод",
+            PREVIOUS_EPISODES: "попередній епізод",
+            PROMPT_ADD: "додати завдання",
+            PROMPT_PLACEHOLDER: "введи завдання",
+            PROMPTS_COUNT_HIDDEN: "({count} сховано)",
+            TITLE_PLACEHOLDER: "введи назву"
         },
         SW = {
             BROADCASTER: {
-                SUBTEXT: "You have successfully connected your account to the Jackbox Audience Kit Twitch Extension.",
-                WARNING: "THIS ROOM DOESN'T HAVE THE AUDIENCE SETTING ENABLED"
+                SUBTEXT: "Акаунт успішно під'єднаний до Twitch-розширення Jackbox Audience Kit.",
+                WARNING: "В ЦІЙ ГРІ НЕ ВКЛЮЧЕНА ОПЦІЯ ГЛЯДАЧІВ"
             },
             RECONNECTED: {
-                TEXT: "RECONNECTED",
-                SUBTEXT: "Have fun!"
+                TEXT: "ПІДКЛЮЧЕНО",
+                SUBTEXT: "Удачі!"
             },
             RECONNECTING: {
                 CONTROLLER: {
-                    TEXT: "CONNECTION INTERRUPTED",
-                    SUBTEXT: "Attempting to reconnect ({attempt} of 5)"
+                    TEXT: "З'ЄДНАННЯ ПЕРЕРВАНЕ",
+                    SUBTEXT: "Повторне підключення (спроба {attempt} з 5)"
                 },
                 GAME: {
-                    TEXT: "GAME CONNECTION INTERRUPTED",
-                    SUBTEXT: "Please wait while we attempt to reconnect"
+                    TEXT: "З'ЄДНАННЯ З ГРОЮ ЗУПИНЕНО",
+                    SUBTEXT: "Виконується повторне підключення "
                 }
             }
         },
@@ -18601,7 +18603,7 @@ function print() { __p += __j.call(arguments, '') }
             style: ii(e.stageDimensions)
         }, null, 4), x("button", {
             onClick: t[0] || (t[0] = Je((...l) => e.onSubmitClick && e.onSubmitClick(...l), ["prevent"]))
-        }, pe(e.player.submitText || "SUBMIT"), 1)])], 512)])
+        }, pe(e.player.submitText || "Надіслати"), 1)])], 512)])
     }
     const U6 = wt(R6, [
             ["render", M6]
@@ -27649,83 +27651,84 @@ ${t}`
             })
         },
         oie = {
-            VIP_PORTRAIT_WARNING: "you sure you want to start before everyone’s avatars are in?",
-            VIP_PORTRAIT_WARNING_CANCEL: "no",
-            VIP_PORTRAIT_WARNING_CONFIRM: "yes",
-            VIP_EPISODES_MENU: "episodes menu",
-            VIP_EPISODES_UNLOAD: "unload episode",
-            VIP_EPISODES_REPORT: "report episode",
-            VIP_EPISODES_WARNING: "warning: user generated content is not rated",
-            VIP_EPISODES_LOAD: "load an episode by ID:",
-            VIP_EPISODES_SELECT: "or select an episode:",
-            VIP_EPISODES_BACK: "back",
-            VIP_EPISODES_SUBMIT: "submit",
-            VIP_EPISODES_VIEW_AUTHOR: "view author"
+            VIP_PORTRAIT_WARNING: "не всі намалювали свій аватар. ти справді хочеш почати?",
+            VIP_PORTRAIT_WARNING_CANCEL: "ні",
+            VIP_PORTRAIT_WARNING_CONFIRM: "так",
+            VIP_EPISODES_MENU: "меню епізодів",
+            VIP_EPISODES_UNLOAD: "вивантажити епізод",
+            VIP_EPISODES_REPORT: "поскаржитися на епізод",
+            VIP_EPISODES_WARNING: "увага: користувацький контент не перевіряється",
+            VIP_EPISODES_LOAD: "завантажити епізод за його id: ",
+            VIP_EPISODES_SELECT: "або вибрати епізод: ",
+            VIP_EPISODES_BACK: "назад",
+            VIP_EPISODES_SUBMIT: "надіслати",
+            VIP_EPISODES_VIEW_AUTHOR: "показати автора"
         },
         aie = {
-            SLIDE_1_TITLE: "You will create a simple animation.",
-            SLIDE_1_ITEM_1: "Draw your first frame.",
-            SLIDE_1_ITEM_2: "Then tap on the frame 2 tab.",
-            SLIDE_2_TITLE: "Draw your second frame.",
-            SLIDE_2_ITEM_1: "You’ll see your first drawing for reference.",
-            SLIDE_2_ITEM_2: "The faded lines will not appear in the animation.",
-            SLIDE_3_TITLE: "You have 3 colors.",
-            SLIDE_3_ITEM_1: "Every player has a different set of colors.",
-            SLIDE_3_ITEM_2: "There is NO eraser.",
-            SLIDE_4_TITLE: "When BOTH frames are done, tap the Submit button.",
-            SLIDE_4_ITEM_1: "You can alternate between tabs before submitting.",
-            SLIDE_5_TITLE: "And presto, it’s your avatar!"
+            SLIDE_1_TITLE: "Ти створиш просту анімацію.",
+            SLIDE_1_ITEM_1: "Намалюй перший кадр.",
+            SLIDE_1_ITEM_2: "Потім перейди до другого кадру.",
+            SLIDE_2_TITLE: "Намалюй другий кадр.",
+            SLIDE_2_ITEM_1: "Ти бачитимеш свій перший малюнок.",
+            SLIDE_2_ITEM_2: "Прозорі лінії не зображатимуться в анімації.",
+            SLIDE_3_TITLE: "Ти маєш 3 кольори.",
+            SLIDE_3_ITEM_1: "Кожен гравець має свій набір кольорів.",
+            SLIDE_3_ITEM_2: "Ластик ВІДСУТНІЙ.",
+            SLIDE_4_TITLE: "Коли обидва кадри будуть готові, надішли свою анімацію.",
+            SLIDE_4_ITEM_1: "Ти можеш міняти вкладки з кадрами будь-якої миті.",
+            SLIDE_5_TITLE: "Вуаля - твій аватар готовий!"
         },
         cie = {
-            BUTTON_ADD: "add prompt",
-            BUTTON_BACK_TO_EPISODES: "back to episodes",
-            BUTTON_BACK_TO_MENU: "back to menu",
-            BUTTON_CLOSE: "close",
-            BUTTON_DELETE: "delete",
-            BUTTON_DONE: "done",
-            BUTTON_EDIT: "edit",
-            BUTTON_PLAY: "play",
-            BUTTON_PUBLISH: "publish",
-            BUTTON_SAVE: "save",
-            CREATE_NEW_BUTTON: "create",
-            CREATE_NEW_EPISODE: "create a new episode",
-            CREATE_NEW_NAME_PROMPT: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-            DELETE_WARNING: "are you sure you want to delete this episode?",
-            DELETE_WARNING_CANCEL: "no",
-            DELETE_WARNING_CONFIRM: "yes",
-            INPUT_PLACEHOLDER: "enter a prompt",
-            TITLE_INPUT_PLACEHOLDER: "enter a title",
-            LABEL_HIDDEN: "hidden",
-            PREVIOUS_EPISODES: "previous episodes",
-            TOGGLE_PROMPTS_PROMPT: "tap to show/hide prompts",
-            TOS_WARNING: "by sharing content, you agree to our [tos]Terms of Service[/tos]",
-            TOS_WARNING_AGREE: "agree and share",
-            TOS_WARNING_BACK: "back to menu",
-            HEADER_DEFAULT: "create or load?",
-            HEADER_TITLE: "name your episode",
-            HEADER_WRITE: "write your prompts",
-            HEADER_PUBLISH: "publish your episode"
+            BUTTON_ADD: "додати завдання",
+            BUTTON_BACK_TO_EPISODES: "назад до епізодів",
+            BUTTON_BACK_TO_MENU: "назад в меню",
+            BUTTON_CLOSE: "закрити",
+            BUTTON_DELETE: "видалити",
+            BUTTON_DONE: "готово",
+            BUTTON_EDIT: "редагувати",
+            BUTTON_PLAY: "грати",
+            BUTTON_PUBLISH: "опублікувати",
+            BUTTON_SAVE: "зберегти",
+            CREATE_NEW_BUTTON: "створити",
+            CREATE_NEW_EPISODE: "створити новий епізод",
+            CREATE_NEW_NAME_PROMPT: "спочатку введи назву свого епізоду та натисни створити.",
+            DELETE_WARNING: "ти справді хочеш видалити цей епізод?",
+            DELETE_WARNING_CANCEL: "ні",
+            DELETE_WARNING_CONFIRM: "так",
+            INPUT_PLACEHOLDER: "введи завдання",
+            TITLE_INPUT_PLACEHOLDER: "введи назву",
+            LABEL_HIDDEN: "приховано",
+            PREVIOUS_EPISODES: "попередні епізоди",
+            TOGGLE_PROMPTS_PROMPT: "натисни, щоб показати/приховати завдання",
+            TOS_WARNING: "поширюючи контент, ти погоджуєшся з [tos]умовами використання[tos]",
+            TOS_WARNING_AGREE: "погодитися й опублікувати",
+            TOS_WARNING_BACK: "назад в меню",
+            HEADER_DEFAULT: "створити чи завантажити?",
+            HEADER_TITLE: "назви свій епізод",
+            HEADER_WRITE: "пиши свої завдання",
+            HEADER_PUBLISH: "опублікуй свій епізод"
+
         },
         lie = {
-            DONE: "thanks for your answer. if the audience nailed it, we’ll let you know.",
-            BUTTON_SUBMIT: "send",
-            FRIEND_HINT: "psst… they/them pronouns are used in titles",
-            PROMPT: "write an answer below that will fool the others",
-            FILTER_ERROR: "that's not allowed, enter something else! (you can change the level of filtering in the game's settings menu)"
+            DONE: "дякуємо за відповідь. якщо глядачі впораються, ми вас повідомимо.",
+            BUTTON_SUBMIT: "надіслати",
+            FRIEND_HINT: "пс-с... у заголовках завжди вживай чоловічий рід",
+            PROMPT: "напиши відповідь, на яку поведуться інші",
+            FILTER_ERROR: "це неприпустимо, введи щось інше! (у налаштуваннях гри можна змінити рівень фільтрації контенту)"
         },
         uie = {
-            BUTTON_SUBMIT: "submit",
-            FRAME_1: "frame 1",
-            FRAME_2: "frame 2"
+            BUTTON_SUBMIT: "надіслати",
+            FRAME_1: "кадр 1",
+            FRAME_2: "кадр 2"
         },
         fie = {
-            DONE_TEXT: "thanks! stand by to see results."
+            DONE_TEXT: "дякуємо! незабаром ти побачиш результат."
         },
         die = {
-            DOUBLEDOWN_USED: "already used",
-            DOUBLEDOWN_PER_ROUND: "(once per round)",
-            DOUBLEDOWN_PER_GAME: "(once per game)",
-            DOUBLEDOWN_TEXT: "double down?"
+            DOUBLEDOWN_USED: "вже використано",
+            DOUBLEDOWN_PER_ROUND: "(один раз за раунд)",
+            DOUBLEDOWN_PER_GAME: "(один раз за гру)",
+            DOUBLEDOWN_TEXT: "подвоїти бали?"
         },
         hie = {
             LOBBY: oie,
@@ -27838,7 +27841,7 @@ ${t}`
             }])
         }, [x("div", {
             class: "header",
-            textContent: pe(e.header)
+            textContent: pe(e.header == "audience" ? fe(e.$t("AUDIENCE.NAME")) : e.header) 
         }, null, 8, _ie), x("div", vie, [e.player.doubleDown ? (V(), J("div", yie, [x("div", {
             class: "doubleDownPrompt",
             textContent: pe(e.player.doubleDown.prompt)
@@ -28264,14 +28267,14 @@ ${t}`
                 selected: e.chosenKey === e.player.countGroupChoices[0]
             }]),
             disabled: e.isSubmitting,
-            "aria-label": "Slide top row right",
+            "aria-label": "Зсунути праворуч у верхньому ряді",
             onClick: t[0] || (t[0] = Je(c => e.voteClicked(c, 0), ["prevent"]))
         }, null, 10, ose), x("button", {
             class: $e(["circle-button left", {
                 selected: e.chosenKey === e.player.countGroupChoices[1]
             }]),
             disabled: e.isSubmitting,
-            "aria-label": "Slide top row left",
+            "aria-label": "Зсунути ліворуч у верхньому ряді",
             onClick: t[1] || (t[1] = Je(c => e.voteClicked(c, 1), ["prevent"]))
         }, null, 10, ase), x("div", {
             class: $e([{
@@ -28300,14 +28303,14 @@ ${t}`
                 selected: e.chosenKey === e.player.countGroupChoices[2]
             }]),
             disabled: e.isSubmitting,
-            "aria-label": "Slide bottom row right",
+            "aria-label": "Зсунути праворуч у нижньому ряді",
             onClick: t[2] || (t[2] = Je(c => e.voteClicked(c, 2), ["prevent"]))
         }, null, 10, lse), x("button", {
             class: $e(["circle-button left", {
                 selected: e.chosenKey === e.player.countGroupChoices[3]
             }]),
             disabled: e.isSubmitting,
-            "aria-label": "Slide bottom row left",
+            "aria-label": "Зсунути ліворуч у нижньому ряді",
             onClick: t[3] || (t[3] = Je(c => e.voteClicked(c, 3), ["prevent"]))
         }, null, 10, use)]), e.timer ? (V(), J("div", fse, [x("span", {
             class: "timer-bar",
@@ -28854,7 +28857,7 @@ ${t}`
         }, null, 8, ioe)) : Ee("", !0), e.player.validActions.length === 0 ? (V(), J("div", soe, aoe)) : Ee("", !0), e.player.validActions.includes("add") ? (V(), J("div", coe, [loe, x("div", uoe, [x("div", foe, [x("div", null, pe(e.promptCharacterCount), 1), x("textarea", {
             id: "promptTextarea",
             ref: "promptTextarea",
-            "aria-label": "add a prompt",
+            "aria-label": "додати завдання",
             rows: "1",
             value: e.answer,
             maxlength: e.player.maxContentLength,
@@ -28946,7 +28949,7 @@ ${t}`
             }])
         }, [x("div", {
             class: "header",
-            textContent: pe(e.header)
+            textContent: pe(e.header == "audience" ? fe(e.$t("AUDIENCE.NAME")) : e.header) 
         }, null, 8, Doe), x("div", Moe, [e.player.message ? (V(), J("div", {
             key: 0,
             class: "message",
@@ -29115,7 +29118,7 @@ ${t}`
         }, null, 8, tae), x("button", {
             class: "submit",
             type: "submit",
-            value: "Submit",
+            value: "Надіслати",
             disabled: !e.hasAnswer
         }, pe(e.submitText), 9, rae)])], 8, Voe)], 32))])])
     }

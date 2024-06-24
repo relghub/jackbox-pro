@@ -11014,10 +11014,10 @@ const $n = class $n {
         return this.htmlEscape(i).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
     }
     static sanitizeInput(e) {
-        return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+        return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
     }
     static sanitizeEmoji(e) {
         return e.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -23072,7 +23072,7 @@ lt.View.extend({
     },
     onRoomWasDestroyed() {
         fi.remove("roomCode"), fi.remove("reconnect"), Tt.show("error", {
-            titleText: "Disconnected",
+            titleText: "Від'єднано",
             text: "Thanks for playing!",
             willClose: () => {
                 window.location.reload(!0)
@@ -23081,7 +23081,7 @@ lt.View.extend({
     },
     onDisconnected() {
         Tt.show("error", {
-            titleText: "Disconnected",
+            titleText: "Від'єднано",
             text: "You have been disconnected.",
             willClose: () => {
                 window.location.reload(!0)
@@ -23611,7 +23611,7 @@ const GR = `<div id="controller" class="state-controller controller-content">
             SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
             LANGUAGE: "Language",
             LOGIN: "Login",
-            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
+            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
             STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
         },
         fr: {

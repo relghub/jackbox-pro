@@ -8047,10 +8047,10 @@ const yl = class {
         return this.htmlEscape(n).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
     }
     static sanitizeInput(e) {
-        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\’]/gi, "")
     }
     static sanitizeEmoji(e) {
         return e.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -13241,7 +13241,7 @@ const vC = `<form>\r
             ".inlineSubmitText": {
                 observe: "inlineSubmitText",
                 onGet(t) {
-                    return t !== void 0 ? t : "Send"
+                    return t !== void 0 ? t : "Надіслати"
                 }
             },
             ".form-group": {
@@ -16285,9 +16285,9 @@ const LC = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
         <div id="buttons" class="buttons"></div>\r
         <div id="post-sketchpad" class="post-sketchpad">\r
             <div id="submit">\r
-                <button id='submitdrawing' class="button submitDrawing">Submit</button><br/>\r
+                <button id='submitdrawing' class="button submitDrawing">Надіслати</button><br/>\r
             </div>\r
-            <button id='censorOptions' class='button'>Censor Options</button>\r
+            <button id='censorOptions' class='button'>Меню цензури</button>\r
             <div class="footer"></div>\r
         </div>\r
         </div>\r
@@ -16322,7 +16322,7 @@ const LC = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
             debug: !1,
             strings: {
                 drawing_empty: "You must draw something!",
-                submit: "submit",
+                submit: "Надіслати",
                 ERROR_REJECTED_OBJECT: "That's not allowed, enter something else!"
             }
         }
@@ -16365,7 +16365,7 @@ const LC = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
                 visible: !0,
                 updateView: !0,
                 onGet(t) {
-                    return t[0] || t[1] ? !1 : t[2] === void 0 ? "" : t[2].submit || "Submit"
+                    return t[0] || t[1] ? !1 : t[2] === void 0 ? "" : t[2].submit || "Надіслати"
                 }
             }
         },
@@ -16525,7 +16525,7 @@ const LC = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
         defaults: {
             state: "EnterSingleText",
             actions: [{
-                text: "submit",
+                text: "надіслати",
                 action: "submit"
             }],
             allowEmpty: !1,
@@ -16542,7 +16542,7 @@ const LC = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
             autocapitalize: !1,
             className: "",
             inlineSubmit: !1,
-            inlineSubmitText: "Submit",
+            inlineSubmitText: "Надіслати",
             error: "",
             strings: {
                 ERROR_NOTHING_ENTERED: "You need to enter something!",
@@ -16616,7 +16616,7 @@ const LC = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
             }), this.inputComponent = this.inputComponent || new ds({
                 model: new Ke.Model({})
             }), this.buttonsCollection = this.buttonsCollection || new Ke.Collection([{
-                text: "submit"
+                text: "надіслати"
             }]), this.buttonsComponent = this.buttonsComponent || new Un({
                 block: !0,
                 collection: this.buttonsCollection
@@ -16629,7 +16629,7 @@ const LC = `<canvas id="fullLayer" class="sketchpad fullLayer" width='480' heigh
             })), this.promptComponent.model.clear({
                 silent: !0
             }).set(this.model.get("prompt")), this.inputComponent.model.set(this.model.attributes), this.buttonsComponent.options.block = this.model.get("block"), this.buttonsCollection.set(this.model.get("actions") || [{
-                text: "submit",
+                text: "Надіслати",
                 action: "submit"
             }]), this.model.get("entryId") && this.model.get("entryId") !== this.currentEntry && (this.inputComponent.clearInput(), this.currentEntry = this.model.get("entryId")), this.$el.find(".enterSingleTextFieldset").prop("disabled", !1), this.$el.find("textarea").focus(), this.stickit(), this.model.get("autoSubmit") && this.shouldSubmit && this.onChildviewInputSubmit()
         },
@@ -16811,8 +16811,8 @@ ft.View.extend({
     },
     onRoomWasDestroyed() {
         Zt.remove("roomCode"), Zt.remove("reconnect"), Ot.show("error", {
-            titleText: "Disconnected",
-            text: "Thanks for playing!",
+            titleText: "Від'єднано",
+            text: "Дякуємо за гру!",
             willClose: () => {
                 window.location.reload(!0)
             }
@@ -16820,8 +16820,8 @@ ft.View.extend({
     },
     onDisconnected() {
         Ot.show("error", {
-            titleText: "Disconnected",
-            text: "You have been disconnected.",
+            titleText: "Від'єднано",
+            text: "Втрачено з'єднання з грою.",
             willClose: () => {
                 window.location.reload(!0)
             }
@@ -16902,7 +16902,7 @@ const zC = `<div id="controller" class="state-controller controller-content">
                 vip_episodes_load: "Load an episode by id:",
                 vip_episodes_select: "Or select an episode:",
                 vip_episodes_back: "Back",
-                vip_episodes_submit: "SUBMIT",
+                vip_episodes_submit: "Надіслати",
                 vip_episodes_view_author: "View Author",
                 button_start: "Everybody's In",
                 button_cancel: "Cancel",
@@ -16911,7 +16911,7 @@ const zC = `<div id="controller" class="state-controller controller-content">
                 button_newplayers: "New Players",
                 prompt_entername: "Enter your name",
                 prompt_choosecharacter: "Select your character",
-                button_censorOptions: "Censor Options",
+                button_censorOptions: "Меню цензури",
                 censor_prompt: ""
             }
         }
@@ -17350,7 +17350,7 @@ const zC = `<div id="controller" class="state-controller controller-content">
             SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
             LANGUAGE: "Language",
             LOGIN: "Login",
-            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
+            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
             STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
         },
         fr: {
@@ -17560,7 +17560,7 @@ const zC = `<div id="controller" class="state-controller controller-content">
             this.promptComponent.model.clear({
                 silent: !0
             }).set(this.model.get("prompt")), this.choicesList.options.block = this.model.get("block"), this.choicesList.collection.set(this.model.get("choices")), this.model.get("type") === "multiple" && qe.all(this.model.get("choices"), t => !t.disabled) && this.choicesList.collection.push({
-                text: "Submit",
+                text: "Надіслати",
                 action: "submit",
                 block: !1
             }), this.model.get("isAudience") && ((this.model.get("choiceId") === void 0 || this.model.get("choiceId") !== this.getOption("choiceId")) && (this.selected = [], this.audienceChoice = void 0, this.votesLeft = void 0), this.selected.length > 0 && (this.model.get("type") === "multiple" ? this.choicesList.children.forEach(t => {
@@ -21180,9 +21180,9 @@ const zx = ft.View.extend({
         <div id="buttons" class="buttons"></div>
         <div id="post-sketchpad" class="post-sketchpad">
             <div id="submit">
-                <button id='submitdrawing' class="button submitDrawing">Submit</button><br/>
+                <button id='submitdrawing' class="button submitDrawing">Надіслати</button><br/>
             </div>
-            <button id='censorOptions' class='button'>Censor Options</button>
+            <button id='censorOptions' class='button'>Меню цензури</button>
             <div class="footer"></div>
         </div>
         </div>
@@ -21281,14 +21281,14 @@ const zx = ft.View.extend({
     <img id="cameraImage" class="cameraImage visuallyhidden" />
 </div>
 <div class="cameraControls">
-    <button id="exitButton" class="button exitButton" aria-label="Exit"></button>
+    <button id="exitButton" class="button exitButton" aria-label="Вихід"></button>
     <div class="buttons pre">
-        <button id="switchButton" class="button switchButton" aria-label="Switch Cameras"></button>
-        <button id="snapshotButton" class="button snapshotButton" aria-label="Take a Snapshot"></button>
+        <button id="switchButton" class="button switchButton" aria-label="Змінити камеру"></button>
+        <button id="snapshotButton" class="button snapshotButton" aria-label="Зробити зняток"></button>
     </div>
     <div class="buttons post">
-        <button id="cancelButton" class="button cancelButton" aria-label="Cancel"></button>
-        <button id="confirmButton" class="button confirmButton" aria-label="Confirm">KEEP IT</button>
+        <button id="cancelButton" class="button cancelButton" aria-label="Скасувати"></button>
+        <button id="confirmButton" class="button confirmButton" aria-label="Підтвердити">ЗАЛИШИТИ</button>
     </div>
 </div>
 <div style="display:none;">
@@ -21301,7 +21301,7 @@ const zx = ft.View.extend({
                 switchButton: "",
                 snapshotButton: "",
                 cancelButton: "",
-                confirmButton: "KEEP IT"
+                confirmButton: "ЗАЛИШИТИ"
             }
         })
     }),
@@ -21403,7 +21403,7 @@ const zx = ft.View.extend({
             }), fs.prototype.initialize.apply(this, [t])
         },
         displayAudienceChoice(t) {
-            let e = "Thank you.";
+            let e = "Дякуємо.";
             const n = t.map(a => {
                 const f = this.choicesList.children.find(v => v.model.get("index") === a);
                 return f ? f.model.get("name") || f.model.get("title") : ""
@@ -21491,12 +21491,12 @@ const zx = ft.View.extend({
             
         </div>
         <div class="add">
-            <button>ADD SLIDE</button>
+            <button>ДОДАТИ СЛАЙД</button>
         </div>
     </div>    
 </div>
 <div class="submitRegion footer">
-    <button class="submit">SUBMIT</button>
+    <button class="submit">Надіслати</button>
 </div>`,
     c1 = Tn.extend({
         defaults: {
@@ -21694,7 +21694,7 @@ const d1 = Bx.extend({
             switchButton: "",
             snapshotButton: "",
             cancelButton: "",
-            confirmButton: "KEEP IT"
+            confirmButton: "ЗАЛИШИТИ"
         })), t
     },
     getGameLayout(t) {

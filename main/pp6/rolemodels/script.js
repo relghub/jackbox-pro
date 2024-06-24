@@ -16811,7 +16811,7 @@ mt.View.extend({
     },
     onRoomWasDestroyed() {
         Zt.remove("roomCode"), Zt.remove("reconnect"), Ot.show("error", {
-            titleText: "Disconnected",
+            titleText: "Від'єднано",
             text: "Thanks for playing!",
             willClose: () => {
                 window.location.reload(!0)
@@ -16820,7 +16820,7 @@ mt.View.extend({
     },
     onDisconnected() {
         Ot.show("error", {
-            titleText: "Disconnected",
+            titleText: "Від'єднано",
             text: "You have been disconnected.",
             willClose: () => {
                 window.location.reload(!0)
@@ -17350,7 +17350,7 @@ const $C = `<div id="controller" class="state-controller controller-content">
             SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
             LANGUAGE: "Language",
             LOGIN: "Login",
-            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
+            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
             STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
         },
         fr: {

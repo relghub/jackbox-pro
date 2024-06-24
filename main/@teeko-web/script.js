@@ -15401,7 +15401,7 @@ var aoe = $P((Voe, e0) => {
             DRAWING_NOTHING: "You have to draw something!",
             PLAYER_KICKED: "You have been kicked from the game by a moderator.",
             ROOM_DESTROYED: "Thanks for playing!",
-            ROOM_DISCONNECTED: "Disconnected",
+            ROOM_DISCONNECTED: "Від'єднано",
             TEXT_NAUGHTY: "I’m afraid you can’t write that. Please be respectful of other players.",
             TEXT_NOTHING: "You can’t enter nothing!",
             TITLE: "Error"

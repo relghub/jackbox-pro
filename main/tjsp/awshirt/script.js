@@ -7985,10 +7985,10 @@ var Ale = EM((nue, $O) => {
             return this.htmlEscape(r).trim()
         }
         static sanitizeName(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
         }
         static sanitizeInput(t) {
-            return t = t.replace("…", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+            return t = t.replace("…", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
         }
         static sanitizeEmoji(t) {
             return t.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -13382,153 +13382,153 @@ ${r.message}`,
             return String(t).replace(r, "")
         }
         static input(t) {
-            return t.replace("…", "...").replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u2019]/gi, "")
+            return t.replace("…", "...").replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2019]/gi, "")
         }
         static username(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
         }
         static emoji(t) {
             return t.replace(/(\u00A9|\u00AE|[\u2000-\u2017]|[\u2020-\u3300]|\uD83C[\uD000-\uDFFF]|\uD83D[\uD000-\uDFFF]|\uD83E[\uD000-\uDFFF])/, "")
         }
     }
     const T5 = {
-            BACK: "Back",
-            CANCEL: "Cancel",
-            CLOSE: "Close",
-            CONFIRM: "Confirm",
-            CREATE: "Create",
-            DELETE: "Delete",
-            DONE: "Done",
-            EDIT: "Edit",
+            BACK: "Назад",
+            CANCEL: "Скасувати",
+            CLOSE: "Закрити",
+            CONFIRM: "Підтвердити",
+            CREATE: "Створити",
+            DELETE: "Видалити",
+            DONE: "Готово",
+            EDIT: "Редагувати",
             OK: "OK",
-            NEXT: "Next",
-            NO: "No",
-            PLAY: "Play",
-            PUBLISH: "Publish",
-            REMOVE: "Remove",
-            RESET: "Reset",
-            SUBMIT: "Submit",
-            TRY_AGAIN: "Try Again",
-            UNDO: "Undo",
-            YES: "Yes"
+            NEXT: "Далі",
+            NO: "Ні",
+            PLAY: "Грати",
+            PUBLISH: "Опублікувати",
+            REMOVE: "Видалити",
+            RESET: "Скинути",
+            SUBMIT: "Надіслати",
+            TRY_AGAIN: "Спробуй ще раз",
+            UNDO: "Відмінити",
+            YES: "Так"
         },
         S5 = {
             UGC: {
-                VISIBILITY_CONTROLLER_OFF: "prompts hidden on players’ devices",
-                VISIBILITY_CONTROLLER_ON: "prompts shown on players’ devices",
-                VISIBILITY_SCREEN_OFF: "prompts hidden on game screen",
-                VISIBILITY_SCREEN_ON: "prompts shown on game screen"
+                VISIBILITY_CONTROLLER_OFF: "завдання приховані для гравців",
+                VISIBILITY_CONTROLLER_ON: "завдання показані для гравців",
+                VISIBILITY_SCREEN_OFF: "завдання приховані на екрані",
+                VISIBILITY_SCREEN_ON: "завдання показані на екрані"
             }
         },
         O5 = {
-            DISCONNECTED: "You have been disconnected.",
-            DRAWING_NOTHING: "You have to draw something!",
-            PLAYER_KICKED: "You have been kicked from the game by a moderator.",
-            ROOM_DESTROYED: "Thanks for playing!",
-            ROOM_DISCONNECTED: "Disconnected",
-            TEXT_NAUGHTY: "I’m afraid you can’t write that. Please be respectful of other players.",
-            TEXT_NOTHING: "You can’t enter nothing!",
-            TITLE: "Error"
+            DISCONNECTED: "З'єднання розірвано.",
+            DRAWING_NOTHING: "Потрібно щось намалювати!",
+            PLAYER_KICKED: "Модератор виключив тебе з гри.",
+            ROOM_DESTROYED: "Дякуємо за гру!",
+            ROOM_DISCONNECTED: "Від'єднано",
+            TEXT_NAUGHTY: "Це введення неприпустиме. Будь ласка, поважай інших гравців.",
+            TEXT_NOTHING: "Потрібно щось написати!",
+            TITLE: "Помилка"
         },
-        I5 = "LOADING",
+        I5 = "ЗАВАНТАЖЕННЯ",
         w5 = {
-            JOINED_COUNT: "{count} of {maxPlayers} players joined",
-            PLAYERS_NEEDED: "1 player needed to start | {count} players needed to start",
-            WAITING_FOR_VIP: "Waiting for {name} to start the game",
-            WAITING_FOR_GAMEPAD: "Waiting for the game to start",
-            WAITING_FOR_NEW_GAME: "Waiting for a new game to start",
-            GAME_STARTING: "Game is starting",
-            BUTTON_START: "Press to Start",
-            BUTTON_CANCEL: "Press to Cancel"
+            JOINED_COUNT: "У грі {count} з {maxPlayers} гравців",
+            PLAYERS_NEEDED: "Потрібен ще 1 гравець | Потрібно ще {count} гравця",
+            WAITING_FOR_VIP: "Очікуємо, поки {name} почне гру",
+            WAITING_FOR_GAMEPAD: "Чекаємо на початок гри",
+            WAITING_FOR_NEW_GAME: "Чекаємо на початок нової гри",
+            GAME_STARTING: "Гра починається",
+            BUTTON_START: "Натисни, щоб почати",
+            BUTTON_CANCEL: "Натисни, щоб скасувати"
         },
         C5 = {
-            GALLERY_LINK: "Visit the Gallery",
-            NEW_GAME_STARTED: "A new game has started",
-            PLAY_AGAIN: "Play again?",
-            THANKS_FOR_PLAYING: "Thanks for playing!",
-            BUTTON_GO_TO_GAME: "Go to game",
-            BUTTON_GO_TO_JACKBOX: "Back to jackbox.tv",
-            BUTTON_SAME_PLAYERS: "Same players",
-            BUTTON_NEW_PLAYERS: "New players"
+            GALLERY_LINK: "Відвідати галерею",
+            NEW_GAME_STARTED: "Розпочалася нова гра",
+            PLAY_AGAIN: "Зіграти знов?",
+            THANKS_FOR_PLAYING: "Дякуємо за гру!",
+            BUTTON_GO_TO_GAME: "Перейти до гри",
+            BUTTON_GO_TO_JACKBOX: "Назад на ua.jackbox.fun",
+            BUTTON_SAME_PLAYERS: "Тим же складом",
+            BUTTON_NEW_PLAYERS: "Нові гравці"
         },
         R5 = {
-            AND: "AND",
-            OR: "OR"
+            AND: "ТА",
+            OR: "ЧИ"
         },
         N5 = {
-            BUTTON_SKIP: "Skip",
-            BUTTON_NEXT: "Next",
-            BUTTON_DONE: "Let’s Go!"
+            BUTTON_SKIP: "Пропустити",
+            BUTTON_NEXT: "Далі",
+            BUTTON_DONE: "Поїхали!"
         },
         L5 = {
-            NAME: "AUDIENCE"
+            NAME: "ГЛЯДАЧ"
         },
         D5 = {
             CART: {
-                CHECK_OUT: "Check out",
-                EMPTY: "Your cart is empty",
-                TITLE: "Shopping Cart",
-                TOTAL: "Total"
+                CHECK_OUT: "Оформити замовлення",
+                EMPTY: "Кошик порожній",
+                TITLE: "Кошик",
+                TOTAL: "Загалом"
             }
         },
         M5 = {
-            EPISODE_REPORT: "Report Episode",
-            EPISODE_UNLOAD: "Unload Episode",
-            EPISODE_VIEW_AUTHOR: "View Author",
-            EPISODES_LOAD: "Load an episode by id:",
-            EPISODES_MENU: "Episodes Menu",
-            EPISODES_SELECT: "Or select an epsiode:",
-            EPISODES_WARNING: "Warning: user generated content is not rated",
+            EPISODE_REPORT: "Поскаржитися на епізод",
+            EPISODE_UNLOAD: "Вивантажити епізод",
+            EPISODE_VIEW_AUTHOR: "Переглянути автора",
+            EPISODES_LOAD: "Завантажити епізод за ID:",
+            EPISODES_MENU: "Меню епізодів",
+            EPISODES_SELECT: "Або вибрати епізод:",
+            EPISODES_WARNING: "Важливо: користувацький контент не перевіряється",
             INSTRUCTION: {
-                CREATE_TITLE: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-                LOAD: "create or load?",
-                PUBLISH: "publish your episode",
-                TITLE: "name your episode",
-                TOGGLE_VISIBILITY: "tap to show/hide prompts",
-                WRITE: "write your prompts"
+                CREATE_TITLE: "насамперед введи назву епізоду, яка міститиме твої завдання, та натисни кнопку \"Створити\".",
+                LOAD: "створити чи завантажити?",
+                PUBLISH: "опублікувати свій епізод",
+                TITLE: "назви свій епізод",
+                TOGGLE_VISIBILITY: "показати/приховати завдання",
+                WRITE: "пиши свої завдання"
             },
             WARNING: {
-                DELETE: "Are you sure you want to delete this episode?",
-                TOS: "By sharing content, you agree to our [tos]Terms of Service[/tos]",
-                TOS_AGREE: "agree and share"
+                DELETE: "Ти впевнений, що хочеш видалити цей епізод?",
+                TOS: "Ділячись контентом, ти погоджуєшся з нашими [tos]Умовами надання послуг[/tos]",
+                TOS_AGREE: "погодитися та поділитися"
             },
-            BACK_TO_EPISODES: "back to episodes",
-            BACK_TO_MENU: "back to menu",
-            CREATE_NEW_EPISODE: "create a new episode",
-            PREVIOUS_EPISODES: "previous episodes",
-            PROMPT_ADD: "add prompt",
-            PROMPT_PLACEHOLDER: "enter a prompt",
-            PROMPTS_COUNT_HIDDEN: "({count} hidden)",
-            TITLE_PLACEHOLDER: "enter a title"
+            BACK_TO_EPISODES: "повернутися до епізодів",
+            BACK_TO_MENU: "повернутися до меню",
+            CREATE_NEW_EPISODE: "створити новий епізод",
+            PREVIOUS_EPISODES: "попередні епізоди",
+            PROMPT_ADD: "додати завдання",
+            PROMPT_PLACEHOLDER: "введи завдання",
+            PROMPTS_COUNT_HIDDEN: "({count} приховано)",
+            TITLE_PLACEHOLDER: "введи назву"
         },
         k5 = {
             BROADCASTER: {
-                SUBTEXT: "You have successfully connected your account to the Jackbox Audience Kit Twitch Extension.",
-                WARNING: "THIS ROOM DOESN'T HAVE THE AUDIENCE SETTING ENABLED"
+                SUBTEXT: "Обліковий запис успішно приєднано до розширення Jackbox Audience Kit Twitch.",
+                WARNING: "У ЦІЙ КІМНАТІ НЕ ВВІМКНЕНО НАЛАШТУВАННЯ ГЛЯДАЧІВ"
             },
             RECONNECTED: {
-                TEXT: "RECONNECTED",
-                SUBTEXT: "Have fun!"
+                TEXT: "ПІДКЛЮЧЕНО",
+                SUBTEXT: "Успіху!"
             },
             RECONNECTING: {
                 CONTROLLER: {
-                    TEXT: "CONNECTION INTERRUPTED",
-                    SUBTEXT: "Attempting to reconnect ({attempt} of 5)"
+                    TEXT: "З'ЄДНАННЯ ПЕРЕРВАНО ПЕРЕРВАНО",
+                    SUBTEXT: "Повторне підключення (спроба {attempt} з 5)"
                 },
                 GAME: {
-                    TEXT: "GAME CONNECTION INTERRUPTED",
-                    SUBTEXT: "Please wait while we attempt to reconnect"
+                    TEXT: "З'ЄДНАННЯ ПЕРЕРВАНО З ГРОЮ ПЕРЕРВАНО",
+                    SUBTEXT: "Будь ласка, зачекай, поки ми спробуємо відновити з'єднання"
                 }
             },
             PAUSED: {
-                TEXT: "THE GAME IS PAUSED",
-                SUBTEXT: "Anything you submit will still be sent to the game."
+                TEXT: "ПАУЗА У ГРІ",
+                SUBTEXT: "Але твоє введення буде в будь-якому разі відправлено в гру."
             }
         },
         P5 = {
-            SHARE: "Share",
-            COPY_TO_CLIPBOARD: "Copy to clipboard",
-            COPIED: "Copied"
+            SHARE: "Поділитися",
+            COPY_TO_CLIPBOARD: "Скопіювати в буфер обміну",
+            COPIED: "Скопійовано"
         },
         x5 = {
             ACTION: T5,
@@ -28828,91 +28828,91 @@ ${t}`
                 })
             })
         },
-        eoe = "Suggestion",
+        eoe = "Запропонувати",
         toe = {
             AVATARS: {
-                BAKU: "baku avatar",
-                BUN: "bunny avatar",
-                BLUE_DEMON: "blue demon avatar",
-                CAT: "cat avatar",
-                CATFISH: "catfish avatar",
-                CROW: "crow avatar",
-                DOG: "dog avatar",
-                FIRE: "fire avatar",
-                FOX: "fox avatar",
-                KAPPA: "kappa avatar",
-                HAIR: "hair avatar",
-                MONKEY: "monkey avatar",
-                RACCOON: "raccoon avatar",
-                RED_DEMON: "red demon avatar",
-                SNAKE: "snake avatar",
-                UMBRELLA: "umbrella avatar"
+                BAKU: "баку",
+                BUN: "кролик",
+                BLUE_DEMON: "блакитний демон",
+                CAT: "кіт",
+                CATFISH: "сом",
+                CROW: "крук",
+                DOG: "пес",
+                FIRE: "вогник",
+                FOX: "лис",
+                KAPPA: "каппа",
+                HAIR: "волосся",
+                MONKEY: "мавпа",
+                RACCOON: "єнот",
+                RED_DEMON: "червоний демон",
+                SNAKE: "змій",
+                UMBRELLA: "парасолька"
             },
-            LOGO: "the Tee K.O. logo"
+            LOGO: "логотип Футбол К.О."
         },
         roe = {
-            BAKU: "Winning the tournament is my life-long dream!",
-            BUN: "I’ve never made t-shirts before, but I’m usually pretty lucky.",
-            BLUE_DEMON: "My shirt will put my twin’s efforts to shame!",
-            CAT: "My mother is very ill. I must win the tournament to pay for her surgery.",
-            CATFISH: "I’m competing to raise Fin Rot awareness!",
-            CROW: "I did not mean to enter this tournament! It was a clerical error!",
-            DOG: "WOOF! WOOF WOOF!",
-            FIRE: "I’m just happy to get out of the house!",
-            FOX: "After I win the tournament, I can take a year off and finish my sitcom pilot!",
-            KAPPA: "If I win the tournament, I will get my own reality show!",
-            HAIR: "I HUNGER FOR VICTORY!",
-            MONKEY: "If I don’t win the tournament, I guess I’ll go paint houses for my uncle.",
-            RACCOON: "I must win the tournament or the evil banker will repossess the orphanage!",
-            RED_DEMON: "I don’t care about winning, as long as I beat my twin!",
-            SNAKE: "I do not have arms, but my love of t-shirts is strong. I will win the tournament!",
-            UMBRELLA: "My dream is to open a sandal shop. I would also like to win this tournament!"
+            BAKU: "Виграти турнір - мрія всього мого життя!",
+            BUN: "Ніколи не робив футболок, однак талан мене ніколи не підводив.",
+            BLUE_DEMON: "Моя футболка має вдрузки порвати братову!",
+            CAT: "Моїй матері дуже зле. Я мушу виграти турнір, аби оплатити лікування.",
+            CATFISH: "На цьому турнірі я представляю Фонд Сергія Сомохи!",
+            CROW: "Я не мав брати участь у цьому турнірі! Якась прикра помилка!",
+            DOG: "ГАВ! ТЯВ! ГАВ!",
+            FIRE: "Я відчуваю такий запал бути надворі!",
+            FOX: "Коли я виграю турнір, візьму відпустку і нарешті завершу свій фільм!",
+            KAPPA: "Якщо я виграю турнір, то я створю власне реаліті-шоу!",
+            HAIR: "Я ЖАДАЮ ПЕРЕМОГИ!",
+            MONKEY: "Якщо я переможу, мені більше не доведеться фарбувати татову хату!",
+            RACCOON: "Я повинен виграти турнір, або мене виселять за несплату боргів!",
+            RED_DEMON: "Мені не важлива перемога, важливішим буде переграти брата!",
+            SNAKE: "Я не маю рук, але до нестями обожнюю футболки! Я виграю турнір!",
+            UMBRELLA: "Моя мрія - відкрити крамницю сандаль. А також перемогти в цьому турнірі!"
         },
         noe = {
-            BAKU: "All my dreams are coming true!",
-            BUN: "I never lose!",
-            BLUE_DEMON: "Sorry, but my skills are superior!",
-            CAT: "I knew I could do it!",
-            CATFISH: "I win! Please donate to cure Fin Rot today!",
-            CROW: "What is happening? Did I win?",
-            DOG: "BARK! WOOF! BARK BARK!",
-            FIRE: "We’re having so much fun, guys!",
-            FOX: "Hollywood, here I come!",
-            KAPPA: "Now I will be famous!",
-            HAIR: "MY HUNGER HAS BEEN SATISFIED… FOR NOW…",
-            MONKEY: "I deserve this!",
-            RACCOON: "I put all of my heart into winning!",
-            RED_DEMON: "I was born to be the best!",
-            SNAKE: "I am honored to accept this victory.",
-            UMBRELLA: "What an unexpected surprise!"
+            BAKU: "Всі мої мрії здійснюються!",
+            BUN: "Я ніколи не програю!",
+            BLUE_DEMON: "Перепрошую, я здатний на більше!",
+            CAT: "Я знав, що зможу це зробити!",
+            CATFISH: "Я переміг! Підтримайте Фонд Сергія Сомохи!",
+            CROW: "Що відбувається? Я переміг?",
+            DOG: "ГАВ! ГАВ! ТЯВ ТЯВ!",
+            FIRE: "Нам так весело, хлопці!",
+            FOX: "Голлівуде, начувайся!",
+            KAPPA: "Тепер я буду знаменитим!",
+            HAIR: "МОЮ ЖАГУ ВГАМОВАНО... НАРАЗІ...",
+            MONKEY: "Батя, я стараюсь!",
+            RACCOON: "Я вклав усю свою душу в перемогу!",
+            RED_DEMON: "Я народжений, щоб бути кращим!",
+            SNAKE: "Для мене велика честь прийняти цю перемогу.",
+            UMBRELLA: "Який несподіваний сюрприз!"
         },
         ioe = {
-            BUTTON_FIGHT: "Fight",
-            QUOTE_CHANGE: "Change",
-            QUOTE_LABEL: "Victory Quote",
-            QUOTE_SET: "Set"
+            BUTTON_FIGHT: "До бою",
+            QUOTE_CHANGE: "Змінити",
+            QUOTE_LABEL: "Переможна цитата",
+            QUOTE_SET: "Встановити"
         },
         soe = {
             INSTRUCTION: {
-                DRAWING: "Choose a drawing",
-                SLOGAN: "Choose a slogan"
+                DRAWING: "Обери малюнок",
+                SLOGAN: "Обери гасло"
             }
         },
         ooe = {
             INSTRUCTION: {
-                DRAWING: "What would you like to see drawn?",
-                WRITING: "What should the players write?"
+                DRAWING: "Що гравцям варто намалювати?",
+                WRITING: "Що гравцям варто написати?"
             }
         },
         aoe = {
-            INSTRUCTION: "Pick your favorite!",
-            THANKS: "Thanks for voting! Your choice:"
+            INSTRUCTION: "Обери, що тобі до вподоби!",
+            THANKS: "Дякуємо! Твій вибір:"
         },
         coe = {
-            INSTRUCTION: "Waiting for other players to finish!"
+            INSTRUCTION: "Почекай на інших гравців!"
         },
         loe = {
-            INSTRUCTION: "Write something funny, or clever, or anything at all!"
+            INSTRUCTION: "Напиши щось мудре чи кумедне!"
         },
         uoe = {
             SUGGESTION: eoe,

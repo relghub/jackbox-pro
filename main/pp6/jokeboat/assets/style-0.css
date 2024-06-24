@@ -23203,7 +23203,7 @@ li>a.button-color.active[data-color="#000000"] {
 }
 
 .jokeboat .playerTopBarView:before {
-    content: "IN CASE OF LOSS, RETURN TO:";
+    content: "У РАЗІ ВТРАТИ ПОВЕРНУТИ:";
     position: absolute;
     top: 10px;
     left: 0;
@@ -23281,7 +23281,7 @@ li>a.button-color.active[data-color="#000000"] {
 }
 
 .jokeboat.catchphrase .playerTopBarView .playerTopBar:before {
-    content: "JOKE BOOK:";
+    content: "КНИГА ЖАРТІВ";
     position: absolute;
     top: 20px;
     left: 0;

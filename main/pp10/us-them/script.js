@@ -8028,10 +8028,10 @@ var Gfe = Qk((Cde, EA) => {
             return this.htmlEscape(r).trim()
         }
         static sanitizeName(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
         }
         static sanitizeInput(t) {
-            return t = t.replace("…", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+            return t = t.replace("…", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
         }
         static sanitizeEmoji(t) {
             return t.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -13372,17 +13372,17 @@ ${r.message}`,
         }
         static html(t) {
             if (String(t).match(/<fart>/g)) {
-                const n = new Audio(new URL("main/pp10/us-them/assets/4af6cbea.wav", self.location).href);
+                const n = new Audio(new URL("/main/pp10/us-them/assets/4af6cbea.wav", self.location).href);
                 n.volume = .1, n.play()
             }
             const r = /<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g;
             return String(t).replace(r, "")
         }
         static input(t) {
-            return t.replace("…", "...").replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u2019]/gi, "")
+            return t.replace("…", "...").replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2019]/gi, "")
         }
         static username(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
         }
         static emoji(t) {
             return t.replace(/(\u00A9|\u00AE|[\u2000-\u2017]|[\u2020-\u3300]|\uD83C[\uD000-\uDFFF]|\uD83D[\uD000-\uDFFF]|\uD83E[\uD000-\uDFFF])/, "")
@@ -13408,143 +13408,143 @@ ${r.message}`,
         }
     }
     const p5 = {
-            BACK: "Back",
-            CANCEL: "Cancel",
-            CLOSE: "Close",
-            CONFIRM: "Confirm",
-            CREATE: "Create",
-            DELETE: "Delete",
-            DONE: "Done",
-            EDIT: "Edit",
+            BACK: "Назад",
+            CANCEL: "Скасувати",
+            CLOSE: "Закрити",
+            CONFIRM: "Підтвердити",
+            CREATE: "Створити",
+            DELETE: "Видалити",
+            DONE: "Готово",
+            EDIT: "Редагувати",
             OK: "OK",
-            NEXT: "Next",
-            NO: "No",
-            PLAY: "Play",
-            PUBLISH: "Publish",
-            REMOVE: "Remove",
-            RESET: "Reset",
-            SUBMIT: "Submit",
-            TRY_AGAIN: "Try Again",
-            UNDO: "Undo",
-            YES: "Yes"
+            NEXT: "Далі",
+            NO: "Ні",
+            PLAY: "Грати",
+            PUBLISH: "Опублікувати",
+            REMOVE: "Видалити",
+            RESET: "Скинути",
+            SUBMIT: "Надіслати",
+            TRY_AGAIN: "Спробуй ще раз",
+            UNDO: "Відмінити",
+            YES: "Так"
         },
         g5 = {
             UGC: {
-                VISIBILITY_CONTROLLER_OFF: "prompts hidden on players’ devices",
-                VISIBILITY_CONTROLLER_ON: "prompts shown on players’ devices",
-                VISIBILITY_SCREEN_OFF: "prompts hidden on game screen",
-                VISIBILITY_SCREEN_ON: "prompts shown on game screen"
+                VISIBILITY_CONTROLLER_OFF: "завдання приховані для гравців",
+                VISIBILITY_CONTROLLER_ON: "завдання показані для гравців",
+                VISIBILITY_SCREEN_OFF: "завдання приховані на екрані",
+                VISIBILITY_SCREEN_ON: "завдання показані на екрані"
             }
         },
         m5 = {
-            DISCONNECTED: "You have been disconnected.",
-            DRAWING_NOTHING: "You have to draw something!",
-            PLAYER_KICKED: "You have been kicked from the game by a moderator.",
-            ROOM_DESTROYED: "Thanks for playing!",
-            ROOM_DISCONNECTED: "Disconnected",
-            TEXT_NAUGHTY: "I’m afraid you can’t write that. Please be respectful of other players.",
-            TEXT_NOTHING: "You can’t enter nothing!",
-            TITLE: "Error"
+            DISCONNECTED: "З'єднання розірвано.",
+            DRAWING_NOTHING: "Потрібно щось намалювати!",
+            PLAYER_KICKED: "Модератор виключив тебе з гри.",
+            ROOM_DESTROYED: "Дякуємо за гру!",
+            ROOM_DISCONNECTED: "Від'єднано",
+            TEXT_NAUGHTY: "Це введення неприпустиме. Будь ласка, поважай інших гравців.",
+            TEXT_NOTHING: "Потрібно щось написати!",
+            TITLE: "Помилка"
         },
-        _5 = "LOADING",
+        _5 = "ЗАВАНТАЖЕННЯ",
         y5 = {
-            JOINED_COUNT: "{count} of {maxPlayers} players joined",
-            PLAYERS_NEEDED: "1 player needed to start | {count} players needed to start",
-            WAITING_FOR_VIP: "Waiting for {name} to start the game",
-            WAITING_FOR_GAMEPAD: "Waiting for the game to start",
-            WAITING_FOR_NEW_GAME: "Waiting for a new game to start",
-            GAME_STARTING: "Game is starting",
-            BUTTON_START: "Press to Start",
-            BUTTON_CANCEL: "Press to Cancel"
+            JOINED_COUNT: "У грі {count} з {maxPlayers} гравців",
+            PLAYERS_NEEDED: "Потрібен ще 1 гравець | Потрібно ще {count} гравця",
+            WAITING_FOR_VIP: "Очікуємо, поки {name} почне гру",
+            WAITING_FOR_GAMEPAD: "Чекаємо на початок гри",
+            WAITING_FOR_NEW_GAME: "Чекаємо на початок нової гри",
+            GAME_STARTING: "Гра починається",
+            BUTTON_START: "Натисни, щоб почати",
+            BUTTON_CANCEL: "Натисни, щоб скасувати"
         },
         v5 = {
-            GALLERY_LINK: "Visit the Gallery",
-            NEW_GAME_STARTED: "A new game has started",
-            PLAY_AGAIN: "Play again?",
-            THANKS_FOR_PLAYING: "Thanks for playing!",
-            BUTTON_GO_TO_GAME: "Go to game",
-            BUTTON_GO_TO_JACKBOX: "Back to jackbox.tv",
-            BUTTON_SAME_PLAYERS: "Same players",
-            BUTTON_NEW_PLAYERS: "New players"
+            GALLERY_LINK: "Відвідати галерею",
+            NEW_GAME_STARTED: "Розпочалася нова гра",
+            PLAY_AGAIN: "Зіграти знов?",
+            THANKS_FOR_PLAYING: "Дякуємо за гру!",
+            BUTTON_GO_TO_GAME: "Перейти до гри",
+            BUTTON_GO_TO_JACKBOX: "Назад на ua.jackbox.fun",
+            BUTTON_SAME_PLAYERS: "Тим же складом",
+            BUTTON_NEW_PLAYERS: "Нові гравці"
         },
         E5 = {
-            AND: "AND",
-            OR: "OR"
+            AND: "ТА",
+            OR: "ЧИ"
         },
         b5 = {
-            BUTTON_SKIP: "Skip",
-            BUTTON_NEXT: "Next",
-            BUTTON_DONE: "Let’s Go!"
+            BUTTON_SKIP: "Пропустити",
+            BUTTON_NEXT: "Далі",
+            BUTTON_DONE: "Поїхали!"
         },
         T5 = {
-            NAME: "AUDIENCE"
+            NAME: "ГЛЯДАЧ"
         },
         S5 = {
             CART: {
-                CHECK_OUT: "Check out",
-                EMPTY: "Your cart is empty",
-                TITLE: "Shopping Cart",
-                TOTAL: "Total"
+                CHECK_OUT: "Оформити замовлення",
+                EMPTY: "Кошик порожній",
+                TITLE: "Кошик",
+                TOTAL: "Загалом"
             }
         },
         O5 = {
-            EPISODE_REPORT: "Report Episode",
-            EPISODE_UNLOAD: "Unload Episode",
-            EPISODE_VIEW_AUTHOR: "View Author",
-            EPISODES_LOAD: "Load an episode by id:",
-            EPISODES_MENU: "Episodes Menu",
-            EPISODES_SELECT: "Or select an epsiode:",
-            EPISODES_WARNING: "Warning: user generated content is not rated",
+            EPISODE_REPORT: "Поскаржитися на епізод",
+            EPISODE_UNLOAD: "Вивантажити епізод",
+            EPISODE_VIEW_AUTHOR: "Переглянути автора",
+            EPISODES_LOAD: "Завантажити епізод за ID:",
+            EPISODES_MENU: "Меню епізодів",
+            EPISODES_SELECT: "Або вибрати епізод:",
+            EPISODES_WARNING: "Важливо: користувацький контент не перевіряється",
             INSTRUCTION: {
-                CREATE_TITLE: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-                LOAD: "create or load?",
-                PUBLISH: "publish your episode",
-                TITLE: "name your episode",
-                TOGGLE_VISIBILITY: "tap to show/hide prompts",
-                WRITE: "write your prompts"
+                CREATE_TITLE: "насамперед введи назву епізоду, яка міститиме твої завдання, та натисни кнопку \"Створити\".",
+                LOAD: "створити чи завантажити?",
+                PUBLISH: "опублікувати свій епізод",
+                TITLE: "назви свій епізод",
+                TOGGLE_VISIBILITY: "показати/приховати завдання",
+                WRITE: "пиши свої завдання"
             },
             WARNING: {
-                DELETE: "Are you sure you want to delete this episode?",
-                TOS: "By sharing content, you agree to our [tos]Terms of Service[/tos]",
-                TOS_AGREE: "agree and share"
+                DELETE: "Ти впевнений, що хочеш видалити цей епізод?",
+                TOS: "Ділячись контентом, ти погоджуєшся з нашими [tos]Умовами надання послуг[/tos]",
+                TOS_AGREE: "погодитися та поділитися"
             },
-            BACK_TO_EPISODES: "back to episodes",
-            BACK_TO_MENU: "back to menu",
-            CREATE_NEW_EPISODE: "create a new episode",
-            PREVIOUS_EPISODES: "previous episodes",
-            PROMPT_ADD: "add prompt",
-            PROMPT_PLACEHOLDER: "enter a prompt",
-            PROMPTS_COUNT_HIDDEN: "({count} hidden)",
-            TITLE_PLACEHOLDER: "enter a title"
+            BACK_TO_EPISODES: "повернутися до епізодів",
+            BACK_TO_MENU: "повернутися до меню",
+            CREATE_NEW_EPISODE: "створити новий епізод",
+            PREVIOUS_EPISODES: "попередні епізоди",
+            PROMPT_ADD: "додати завдання",
+            PROMPT_PLACEHOLDER: "введи завдання",
+            PROMPTS_COUNT_HIDDEN: "({count} приховано)",
+            TITLE_PLACEHOLDER: "введи назву"
         },
         w5 = {
             BROADCASTER: {
-                SUBTEXT: "You have successfully connected your account to the Jackbox Audience Kit Twitch Extension.",
-                WARNING: "THIS ROOM DOESN'T HAVE THE AUDIENCE SETTING ENABLED"
+                SUBTEXT: "Обліковий запис успішно приєднано до розширення Jackbox Audience Kit Twitch.",
+                WARNING: "У ЦІЙ КІМНАТІ НЕ ВВІМКНЕНО НАЛАШТУВАННЯ ГЛЯДАЧІВ"
             },
             RECONNECTED: {
-                TEXT: "RECONNECTED",
-                SUBTEXT: "Have fun!"
+                TEXT: "ПІДКЛЮЧЕНО",
+                SUBTEXT: "Успіху!"
             },
             RECONNECTING: {
                 CONTROLLER: {
-                    TEXT: "CONNECTION INTERRUPTED",
-                    SUBTEXT: "Attempting to reconnect ({attempt} of 5)"
+                    TEXT: "З'ЄДНАННЯ ПЕРЕРВАНО ПЕРЕРВАНО",
+                    SUBTEXT: "Повторне підключення (спроба {attempt} з 5)"
                 },
                 GAME: {
-                    TEXT: "GAME CONNECTION INTERRUPTED",
-                    SUBTEXT: "Please wait while we attempt to reconnect"
+                    TEXT: "З'ЄДНАННЯ ПЕРЕРВАНО З ГРОЮ ПЕРЕРВАНО",
+                    SUBTEXT: "Будь ласка, зачекай, поки ми спробуємо відновити з'єднання"
                 }
             },
             PAUSED: {
-                TEXT: "THE GAME IS PAUSED",
-                SUBTEXT: "Anything you submit will still be sent to the game."
+                TEXT: "ПАУЗА У ГРІ",
+                SUBTEXT: "Але твоє введення буде в будь-якому разі відправлено в гру."
             }
         },
         A5 = {
-            SHARE: "Share",
-            COPY_TO_CLIPBOARD: "Copy to clipboard",
-            COPIED: "Copied"
+            SHARE: "Поділитися",
+            COPY_TO_CLIPBOARD: "Скопіювати в буфер обміну",
+            COPIED: "Скопійовано"
         },
         I5 = {
             ACTION: p5,
@@ -21056,7 +21056,7 @@ function print() { __p += __j.call(arguments, '') }
                     return this.player.hasControls && e.push("vip"), this.status === "progressed" && e.push("attention"), e
                 },
                 messageItem() {
-                    return this.status === "disconnected" ? {
+                    return this.status === "Від'єднано" ? {
                         t: "POST_GAME.THANKS_FOR_PLAYING"
                     } : this.status === "progressed" ? {
                         t: "POST_GAME.NEW_GAME_STARTED"
@@ -21079,7 +21079,7 @@ function print() { __p += __j.call(arguments, '') }
                     }
                 },
                 actionItems() {
-                    return this.status === "disconnected" ? [{
+                    return this.status === "Від'єднано" ? [{
                         t: "POST_GAME.BUTTON_GO_TO_JACKBOX",
                         fn: this.onDisconnectedClick
                     }] : this.status === "progressed" ? [{
@@ -21147,7 +21147,7 @@ function print() { __p += __j.call(arguments, '') }
                     window.location.reload()
                 },
                 onDidEmitPausedEvent(e) {
-                    this.status !== "disconnected" && (e !== "didDisconnect" && e !== "roomDidExit" || (this.status = "disconnected"))
+                    this.status !== "Від'єднано" && (e !== "didDisconnect" && e !== "roomDidExit" || (this.status = "Від'єднано"))
                 },
                 onDidReceivePausedEntities(e) {
                     if (this.status !== "waiting") return;
@@ -21718,7 +21718,7 @@ function print() { __p += __j.call(arguments, '') }
         },
         yX = {
             key: 0,
-            href: "https://jackbox.tv/past-games",
+            href: "https://ua.jackbox.fun/past-games",
             "aria-label": "back"
         },
         vX = {
@@ -21805,7 +21805,7 @@ function print() { __p += __j.call(arguments, '') }
             computed: {
                 src() {
                     var e, t;
-                    return (e = this.renderData) != null && e.dataURL ? this.renderData.dataURL : (t = this.localRenderData) != null && t.dataURL ? this.localRenderData.dataURL : this.isLoading ? new URL("main/pp10/us-them/assets/01ee7753.png", self.location).href : new URL("main/pp10/us-them/assets/8662ed51.png", self.location).href
+                    return (e = this.renderData) != null && e.dataURL ? this.renderData.dataURL : (t = this.localRenderData) != null && t.dataURL ? this.localRenderData.dataURL : this.isLoading ? new URL("/main/pp10/us-them/assets/01ee7753.png", self.location).href : new URL("/main/pp10/us-them/assets/8662ed51.png", self.location).href
                 }
             },
             mounted() {
@@ -22689,11 +22689,11 @@ function print() { __p += __j.call(arguments, '') }
                 }
             }
         }),
-        tw = "main/pp10/us-them/assets/ad9172fc.png",
-        rw = "main/pp10/us-them/assets/dc131b16.png",
-        Pee = "main/pp10/us-them/assets/38715b18.png",
-        Lee = "main/pp10/us-them/assets/b0d7c822.png",
-        kee = "main/pp10/us-them/assets/06150f24.png",
+        tw = "/main/pp10/us-them/assets/ad9172fc.png",
+        rw = "/main/pp10/us-them/assets/dc131b16.png",
+        Pee = "/main/pp10/us-them/assets/38715b18.png",
+        Lee = "/main/pp10/us-them/assets/b0d7c822.png",
+        kee = "/main/pp10/us-them/assets/06150f24.png",
         dn = e => (xo("data-v-2c53389f"), e = e(), Mo(), e),
         Nee = {
             class: "jbg"
@@ -26000,9 +26000,9 @@ ${t}`
                 dismissText: String
             }
         }),
-        gse = "main/pp10/us-them/assets/928ef0da.png",
-        mse = "main/pp10/us-them/assets/0bb76a2d.png",
-        _se = "main/pp10/us-them/assets/ed4469b3.png",
+        gse = "/main/pp10/us-them/assets/928ef0da.png",
+        mse = "/main/pp10/us-them/assets/0bb76a2d.png",
+        _se = "/main/pp10/us-them/assets/ed4469b3.png",
         yse = {
             key: 0,
             class: "image",
@@ -29104,7 +29104,7 @@ ${t}`
                 }
             }
         }),
-        vae = "main/pp10/us-them/assets/c8afd972.svg",
+        vae = "/main/pp10/us-them/assets/c8afd972.svg",
         Eae = {
             class: "constrain"
         },
@@ -29445,35 +29445,35 @@ ${t}`
             })
         },
         Uae = {
-            LOGO: "Hypnotorious logo",
-            EYES: "Creepy looking eyes",
-            BRAIN: "Brain"
+            LOGO: "логотип Гіпнотерії",
+            EYES: "Моторошні очі",
+            BRAIN: "Мозок"
         },
         Bae = {
-            PAGE_TITLE: "Your role is:",
-            REROLL: "Re-roll",
-            DISCLAIMER: "Rerolling is only allowed once per game!",
-            GOT_IT: "Got it!"
+            PAGE_TITLE: "Твоя роль - це:",
+            REROLL: "Змінити роль",
+            DISCLAIMER: "Змінювати роль дозволено лише один раз за гру!",
+            GOT_IT: "Добре!"
         },
         Fae = {
-            OR: "Or"
+            OR: "Чи"
         },
         Gae = {
-            DISCUSSION: "Discussion",
-            GROUP_UP: "Which group do you belong in?",
-            INVESTIGATE: "Tap to view previous answers",
-            NEXT: "Ready to move on?",
-            LETS_GO: "Let's go!",
-            HINT: "Hint"
+            DISCUSSION: "Дискусія",
+            GROUP_UP: "До якої групи ти належиш?",
+            INVESTIGATE: "Натисни, щоб переглянути попередні відповіді",
+            NEXT: "Готові рухатися далі?",
+            LETS_GO: "Рушаймо!",
+            HINT: "Підказка"
         },
-        jae = "I read some minds in this game of #Hypnotorious from #PartyPack10",
+        jae = "Я прочитав кілька думок у грі #Гіпнотерія з #PartyPack10", 
         Hae = {
-            CHARS_LEFT: "characters left",
-            REMEMBER: "Remember you are:"
+            CHARS_LEFT: "залишилося символів",
+            REMEMBER: "Пам\'ятай, що ти:"
         },
         Wae = {
-            APPLAUD_BONUS: "Applaud to give bonus points",
-            CLAP: "Clap"
+            APPLAUD_BONUS: "Аплодуй, щоб отримати бонусні бали",
+            CLAP: "Оплески"
         },
         qae = {
             ALT: Uae,
@@ -29799,7 +29799,7 @@ ${t}`
                 }
             }
         }),
-        Qw = "main/pp10/us-them/assets/2393f7bc.svg",
+        Qw = "/main/pp10/us-them/assets/2393f7bc.svg",
         jce = {
             class: "us-them"
         },
@@ -30093,7 +30093,7 @@ ${t}`
                 player: Object
             }
         }),
-        tA = "main/pp10/us-them/assets/9088f047.png",
+        tA = "/main/pp10/us-them/assets/9088f047.png",
         gle = {
             class: "waiting"
         },
@@ -30726,7 +30726,7 @@ ${t}`
                 }
             }
         }),
-        vue = "main/pp10/us-them/assets/b876c08e.svg",
+        vue = "/main/pp10/us-them/assets/b876c08e.svg",
         Eue = {
             class: "applause"
         },
@@ -30906,14 +30906,14 @@ ${t}`
     const Cue = Be(Aue, [
             ["render", $ue]
         ]),
-        Rue = "main/pp10/us-them/assets/6372b13d.png",
-        Pue = "main/pp10/us-them/assets/1ebb8671.png",
-        Lue = "main/pp10/us-them/assets/6cfa393c.png",
-        kue = "main/pp10/us-them/assets/1d607662.png",
-        Nue = "main/pp10/us-them/assets/ba340c1f.png",
-        Due = "main/pp10/us-them/assets/46079c70.png",
-        xue = "main/pp10/us-them/assets/a662c74c.png",
-        Mue = "main/pp10/us-them/assets/90097a68.png";
+        Rue = "/main/pp10/us-them/assets/6372b13d.png",
+        Pue = "/main/pp10/us-them/assets/1ebb8671.png",
+        Lue = "/main/pp10/us-them/assets/6cfa393c.png",
+        kue = "/main/pp10/us-them/assets/1d607662.png",
+        Nue = "/main/pp10/us-them/assets/ba340c1f.png",
+        Due = "/main/pp10/us-them/assets/46079c70.png",
+        xue = "/main/pp10/us-them/assets/a662c74c.png",
+        Mue = "/main/pp10/us-them/assets/90097a68.png";
 
     function Uue(e, t, r, n, i, o, c = {}) {
         c.fontFamily = c.fontFamily ?? "sans-serif", c.fontSize = c.fontSize ?? 12, c.fontStyle = c.fontStyle ?? "normal", c.fontVariant = c.fontVariant ?? "normal", c.fontWeight = c.fontWeight ?? "normal", c.indent = c.indent ?? 0, c.lineHeight = c.lineHeight ?? 1, c.stroke = c.stroke ?? "#000000", c.textAlign = c.textAlign ?? "left", c.verticalAlign = c.verticalAlign ?? "center";
@@ -31768,10 +31768,10 @@ table {
             ne(this, "answer");
             ne(this, "fonts", [{
                 family: "DrowsyLunch",
-                sources: new URL("main/pp10/us-them/assets/c4a4c799.woff", self.location).href
+                sources: new URL("/main/pp10/us-them/assets/c4a4c799.woff", self.location).href
             }, {
                 family: "Peraltav3",
-                sources: new URL("main/pp10/us-them/assets/5d5ff154.woff", self.location).href
+                sources: new URL("/main/pp10/us-them/assets/5d5ff154.woff", self.location).href
             }])
         }
         setup() {

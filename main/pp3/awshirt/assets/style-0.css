@@ -23275,8 +23275,7 @@ th,
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin-top: 15px;
-    margin-bottom: 25px
+    margin: 15px auto 25px auto
 }
 
 #state-shirt .glideSlogans,
@@ -23523,7 +23522,7 @@ li>a.button-color.active[data-color="#000000"] {
 }
 
 .awshirt-avatars {
-    max-width: 320px;
+    max-width: 321px;
     margin: 0 auto;
     display: inline-block
 }
@@ -23811,7 +23810,7 @@ span.awshirt-slogan {
 
 .canvas-container {
     display: inline-block;
-    max-width: 98vw
+    width: 100%;
 }
 
 .awshirt-slogan-list {

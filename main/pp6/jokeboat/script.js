@@ -8043,10 +8043,10 @@ const vl = class {
         return this.htmlEscape(n).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
     }
     static sanitizeInput(e) {
-        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
     }
     static sanitizeEmoji(e) {
         return e.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -16807,7 +16807,7 @@ Et.View.extend({
     },
     onRoomWasDestroyed() {
         Zt.remove("roomCode"), Zt.remove("reconnect"), Ot.show("error", {
-            titleText: "Disconnected",
+            titleText: "Від'єднано",
             text: "Thanks for playing!",
             willClose: () => {
                 window.location.reload(!0)
@@ -16816,7 +16816,7 @@ Et.View.extend({
     },
     onDisconnected() {
         Ot.show("error", {
-            titleText: "Disconnected",
+            titleText: "Від'єднано",
             text: "You have been disconnected.",
             willClose: () => {
                 window.location.reload(!0)
@@ -17346,7 +17346,7 @@ const FC = `<div id="controller" class="state-controller controller-content">
             SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
             LANGUAGE: "Language",
             LOGIN: "Login",
-            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
+            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
             STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
         },
         fr: {
@@ -21043,11 +21043,11 @@ const $x = Et.View.extend({
     }),
     Hx = `<div class="topics-info">
     <div class="arrow"></div>
-    <p>When another comedian uses your topic for a great joke, you get <em>POINTS</em>!</p>
+    <p>Якщо інший гравець візьме твій об'єкт для переможного жарта, ти отримаєш <em>БОНУСНІ БАЛИ</em>!</p>
 </div>`,
     Ux = `<div class="joke-info">
     <div class="arrow"></div>
-    <p>For <em>HALF</em> the points</p>
+    <p>За <em>ПОЛОВИНУ</em> балів</p>
 </div>`,
     Gx = Ma.extend({
         onRender() {
@@ -21090,7 +21090,7 @@ const Wx = xc.extend({
         }
     },
     parseBlob(t) {
-        return t.playerInfo = t.playerInfo || {}, t.playerInfo.classes = t.playerInfo.classes || [], t.isAudience && (t.playerInfo.username = "AUDIENCE"), this.detectCatchphrase(t), this.detectFinalRound(t), t.state === "MakeSingleChoice" && t.announcePrompt && (t.textDescriptions = t.textDescriptions || [], t.textDescriptions.push({
+        return t.playerInfo = t.playerInfo || {}, t.playerInfo.classes = t.playerInfo.classes || [], t.isAudience && (t.playerInfo.username = "ГЛЯДАЧ"), this.detectCatchphrase(t), this.detectFinalRound(t), t.state === "MakeSingleChoice" && t.announcePrompt && (t.textDescriptions = t.textDescriptions || [], t.textDescriptions.push({
             id: t.choiceId,
             category: "Prompt",
             text: t.prompt.html

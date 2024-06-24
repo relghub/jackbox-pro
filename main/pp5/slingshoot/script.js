@@ -8042,11 +8042,11 @@ const gl = class {
         const n = this.sanitizeInput(e).replace(/'/g, "\u2019");
         return this.htmlEscape(n).trim()
     }
-    static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+    static sanitizeName(t) {
+        return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
     }
-    static sanitizeInput(e) {
-        return e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+    static sanitizeInput(t) {
+        return t = t.replace("\u2026", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454’]/gi, "")
     }
     static sanitizeEmoji(e) {
         return e.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -15353,7 +15353,7 @@ class Ot {
         return e.customClass = {
             ...n,
             popup: "jbgModal"
-        }, e.titleText = e.titleText || "Error", Rn.fire(e)
+        }, e.titleText = e.titleText || "Помилка", Rn.fire(e)
     }
     static async showError(e) {
         const n = new URL("main/pp5/slingshoot/assets/8cdd50e7.png", self.location).href,
@@ -15361,7 +15361,7 @@ class Ot {
         return e.customClass = {
             ...i,
             popup: "jbgModal"
-        }, e.titleText = e.titleText || "Error", n && (e.imageUrl = n), Rn.fire(e)
+        }, e.titleText = e.titleText || "Помилка", n && (e.imageUrl = n), Rn.fire(e)
     }
     static async showCustom(e) {
         return Rn.fire(e)
@@ -16807,8 +16807,8 @@ Et.View.extend({
     },
     onRoomWasDestroyed() {
         Zt.remove("roomCode"), Zt.remove("reconnect"), Ot.show("error", {
-            titleText: "Disconnected",
-            text: "Thanks for playing!",
+            titleText: "Від'єднано",
+            text: "Дякуємо за гру!",
             willClose: () => {
                 window.location.reload(!0)
             }
@@ -16816,8 +16816,8 @@ Et.View.extend({
     },
     onDisconnected() {
         Ot.show("error", {
-            titleText: "Disconnected",
-            text: "You have been disconnected.",
+            titleText: "Від'єднано",
+            text: "З'єднання розірване.",
             willClose: () => {
                 window.location.reload(!0)
             }
@@ -16886,28 +16886,28 @@ const eh = `<div id="controller" class="state-controller controller-content">
             formattedActiveContentId: null,
             isLocal: !1,
             strings: {
-                wait: "Sit back and relax!",
-                vip_waiting: "Waiting for all players to join",
-                vip_canStart: "Press this button when everybody has joined",
-                vip_cancel: "Press this button to cancel game start",
-                vip_postgame: "What would you like to do now?",
-                vip_episodes_menu: "Episodes Menu",
-                vip_episodes_unload: "Unload Episode",
-                vip_episodes_report: "Report Episode",
-                vip_episodes_warning: "Warning: user generated content is not rated",
-                vip_episodes_load: "Load an episode by id:",
-                vip_episodes_select: "Or select an episode:",
-                vip_episodes_back: "Back",
-                vip_episodes_submit: "SUBMIT",
-                vip_episodes_view_author: "View Author",
-                button_start: "Everybody's In",
-                button_cancel: "Cancel",
-                button_changename: "Change Name",
-                button_sameplayers: "Same Players",
-                button_newplayers: "New Players",
-                prompt_entername: "Enter your name",
-                prompt_choosecharacter: "Select your character",
-                button_censorOptions: "Censor Options",
+                wait: "Відкинься на спинку крісла і відпочинь!",
+                vip_waiting: "Очікуємо інших гравців...",
+                vip_canStart: "Нажми цю кнопку, коли всі приєдналися",
+                vip_cancel: "Натисни цю кнопку, щоб відмінити запуск гри",
+                vip_postgame: "Що обереш?",
+                vip_episodes_menu: "Меню епізодів",
+                vip_episodes_unload: "Вигрузити епізод",
+                vip_episodes_report: "Поскаржитись на епізод",
+                vip_episodes_warning: "Важливо: користувацький контент не перевіряється",
+                vip_episodes_load: "Завантажити епізод за ID:",
+                vip_episodes_select: "Або обери епізод:",
+                vip_episodes_back: "Назад",
+                vip_episodes_submit: "НАДІСЛАТИ",
+                vip_episodes_view_author: "Показати автора",
+                button_start: "Усі тут",
+                button_cancel: "Відміна",
+                button_changename: "Змінити ім'я",
+                button_sameplayers: "Тим же складом",
+                button_newplayers: "Нові гравці",
+                prompt_entername: "Введи своє ім'я",
+                prompt_choosecharacter: "Обери свого персонажа",
+                button_censorOptions: "Меню цензури",
                 censor_prompt: ""
             }
         }
@@ -17346,8 +17346,8 @@ const eh = `<div id="controller" class="state-controller controller-content">
             SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
             LANGUAGE: "Language",
             LOGIN: "Login",
-            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Disconnected",
-            STRING_ERROR_SERVER_ROOM_DESTROYED: "Thanks for playing!"
+            STRING_ERROR_SERVER_ROOM_DISCONNECTED: "Від'єднано",
+            STRING_ERROR_SERVER_ROOM_DESTROYED: "Дякуємо за гру!"
         },
         fr: {
             LANGUAGE_NAME: "Fran\xE7ais",
@@ -21027,7 +21027,7 @@ const $x = Et.View.extend({
         model: new Fx({}),
         template: at.template(`${eh}<div class="mech"></div>`),
         update() {
-            this.strings = this.model.get("strings"), this.model.get("gameCanContinue") ? (this.strings.button_sameplayers = "Start Next Gauntlet", this.strings.button_newplayers = "Quit") : (this.strings.button_sameplayers = "Same Players", this.strings.button_newplayers = "New Players"), no.prototype.update.apply(this)
+            this.strings = this.model.get("strings"), this.model.get("gameCanContinue") ? (this.strings.button_sameplayers = "Почати наступний поєдинок", this.strings.button_newplayers = "Вийти") : (this.strings.button_sameplayers = "Тим же складом", this.strings.button_newplayers = "Нові гравці"), no.prototype.update.apply(this)
         }
     });
 const Hx = La.extend({

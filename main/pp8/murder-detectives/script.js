@@ -4672,10 +4672,10 @@ var jie = jL((Wie, l0) => {
             return this.htmlEscape(n).trim()
         }
         static sanitizeName(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
         }
         static sanitizeInput(t) {
-            return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+            return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458\u0490\u0491\u0404\u0454\’]/gi, "")
         }
         static sanitizeEmoji(t) {
             return t.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -10815,117 +10815,118 @@ ${n.message}`,
     let Wl = no;
     re(Wl, "isPolyfilled", !1);
     const sW = {
-            BACK: "Back",
-            CANCEL: "Cancel",
-            CLOSE: "Close",
-            CREATE: "Create",
-            DELETE: "Delete",
-            DONE: "Done",
-            EDIT: "Edit",
+            BACK: "Назад",
+            CANCEL: "Скасувати",
+            CLOSE: "Закрити",
+            CONFIRM: "Підтвердити",
+            CREATE: "Створити",
+            DELETE: "Видалити",
+            DONE: "Готово",
+            EDIT: "Редагувати",
             OK: "OK",
-            NO: "No",
-            PLAY: "Play",
-            PUBLISH: "Publish",
-            REMOVE: "Remove",
-            RESET: "Reset",
-            SUBMIT: "Submit",
-            TRY_AGAIN: "Try Again",
-            UNDO: "Undo",
-            YES: "Yes"
+            NO: "Ні",
+            PLAY: "Грати",
+            PUBLISH: "Опублікувати",
+            REMOVE: "Видалити",
+            RESET: "Скинути",
+            SUBMIT: "Надіслати",
+            TRY_AGAIN: "Спробуй ще раз",
+            UNDO: "Скасувати",
+            YES: "Так"
         },
         aW = {
             UGC: {
-                VISIBILITY_CONTROLLER_OFF: "prompts hidden on players\u2019 devices",
-                VISIBILITY_CONTROLLER_ON: "prompts shown on players\u2019 devices",
-                VISIBILITY_SCREEN_OFF: "prompts hidden on game screen",
-                VISIBILITY_SCREEN_ON: "prompts shown on game screen"
+                VISIBILITY_CONTROLLER_OFF: "завдання приховані для гравців",
+                VISIBILITY_CONTROLLER_ON: "завдання показані гравцям",
+                VISIBILITY_SCREEN_OFF: "завдання приховані на екрані",
+                VISIBILITY_SCREEN_ON: "завдання показані на екрані"
             }
         },
         oW = {
-            DISCONNECTED: "You have been disconnected.",
-            DRAWING_NOTHING: "You have to draw something!",
-            PLAYER_KICKED: "You have been kicked from the game by a moderator.",
-            ROOM_DESTROYED: "Thanks for playing!",
-            ROOM_DISCONNECTED: "Disconnected",
-            TEXT_NAUGHTY: "I\u2019m afraid you can\u2019t write that. Please be respectful of other players.",
-            TEXT_NOTHING: "You can\u2019t enter nothing!",
-            TITLE: "Error"
+            DISCONNECTED: "З'єднання розірване.",
+            DRAWING_NOTHING: "Потрібно щось намалювати!",
+            PLAYER_KICKED: "Модератор вигнав тебе з гри.",
+            ROOM_DESTROYED: "Дякуємо за гру!",
+            ROOM_DISCONNECTED: "Від'єднано",
+            TEXT_NAUGHTY: "Цей текст є недопустимим. Будь ласка, поважай інших гравців.",
+            TEXT_NOTHING: "Потрібно щось написати!",
+            TITLE: "Помилка"
         },
-        lW = "LOADING",
+        lW = "ЗАВАНТАЖЕННЯ",
         cW = {
-            JOINED_COUNT: "x | {count} of {maxPlayers} players joined | {count} of {maxPlayers} players joined",
-            PLAYERS_NEEDED: "x | {count} player needed to start | {count} players needed to start",
-            WAITING_FOR_VIP: "Waiting for {name} to start the game",
-            WAITING_FOR_GAMEPAD: "Waiting for the game to start",
-            GAME_STARTING: "Game is starting",
-            BUTTON_START: "Press to Start",
-            BUTTON_CANCEL: "Press to Cancel"
+            JOINED_COUNT: "В грі {count} з {maxPlayers} гравців",
+            PLAYERS_NEEDED: "Потрібен ще 1 гравець | Потрібно ще {count} гравців",
+            WAITING_FOR_VIP: "Чекаємо, поки {name} почне гру",
+            WAITING_FOR_GAMEPAD: "Очікування початку гри",
+            GAME_STARTING: "Гра починається",
+            BUTTON_START: "Натисни для запуску гри",
+            BUTTON_CANCEL: "Натисни для відміни"
         },
         uW = {
-            GALLERY_LINK: "Visit the Gallery",
-            PLAY_AGAIN: "Play again?",
-            BUTTON_SAME_PLAYERS: "Same Players",
-            BUTTON_NEW_PLAYERS: "New Players"
+            GALLERY_LINK: "Відкрити галерею",
+            PLAY_AGAIN: "Зіграти ще?",
+            BUTTON_SAME_PLAYERS: "Ті ж гравці",
+            BUTTON_NEW_PLAYERS: "Нові гравці"
         },
         fW = {
-            AND: "AND",
-            OR: "OR"
+            AND: "І",
+            OR: "АБО"
         },
         dW = {
-            BUTTON_SKIP: "Skip",
-            BUTTON_NEXT: "Next",
-            BUTTON_DONE: "Let\u2019s Go!"
+            BUTTON_SKIP: "Пропустити",
+            BUTTON_NEXT: "Далі",
+            BUTTON_DONE: "Вперед!"
         },
         hW = {
-            NAME: "AUDIENCE"
+            NAME: "ГЛЯДАЧ"
         },
         pW = {
-            EPISODE_REPORT: "Report Episode",
-            EPISODE_UNLOAD: "Unload Episode",
-            EPISODE_VIEW_AUTHOR: "View Author",
-            EPISODES_LOAD: "Load an episode by id:",
-            EPISODES_MENU: "Episodes Menu",
-            EPISODES_SELECT: "Or select an epsiode:",
-            EPISODES_WARNING: "Warning: user generated content is not rated",
+            EPISODE_REPORT: "Поскаржитись на епізод",
+            EPISODE_UNLOAD: "Вивантажити епізод",
+            EPISODE_VIEW_AUTHOR: "Показати автора",
+            EPISODES_LOAD: "Завантажити епізод за ID:",
+            EPISODES_MENU: "Меню епізодів",
+            EPISODES_SELECT: "Або обери епізод:",
+            EPISODES_WARNING: "Важливо: користувацький контент не перевіряється",
             INSTRUCTION: {
-                CREATE_TITLE: "first things first, enter a name for the episode that will contain all your prompts and hit create.",
-                LOAD: "create or load?",
-                PUBLISH: "publish your episode",
-                TITLE: "name your episode",
-                TOGGLE_VISIBILITY: "tap to show/hide prompts",
-                WRITE: "write your prompts"
+                CREATE_TITLE: "Перш за все, введіть назву для епізоду, яка буде містити всі ваші підказки, і натисніть кнопку \"створити\".",
+                LOAD: "створити чи завантажити?",
+                PUBLISH: "оприлюднити епізод",
+                TITLE: "назви епізод",
+                TOGGLE_VISIBILITY: "показати/сховати завдання",
+                WRITE: "пиши свої завдання"
             },
             WARNING: {
-                DELETE: "Are you sure you want to delete this episode?",
-                TOS: "By sharing content, you agree to our [tos]Terms of Service[/tos]",
-                TOS_AGREE: "agree and share"
+                DELETE: "Ти впевнений, що хочеш видалити цей епізод?",
+                TOS: "Поділившись контентом, ти погоджуєшся з [tos]Умовами користування[/tos]",
+                TOS_AGREE: "погодитись і поділитися"
             },
-            BACK_TO_EPISODES: "back to episodes",
-            BACK_TO_MENU: "back to menu",
-            CREATE_NEW_EPISODE: "create a new episode",
-            PREVIOUS_EPISODES: "previous episodes",
-            PROMPT_ADD: "add prompt",
-            PROMPT_PLACEHOLDER: "enter a prompt",
-            PROMPTS_COUNT_HIDDEN: "({count} hidden)",
-            TITLE_PLACEHOLDER: "enter a title"
+            BACK_TO_EPISODES: "назад до епізодів",
+            BACK_TO_MENU: "повернутись в меню",
+            CREATE_NEW_EPISODE: "створити новий епізод",
+            PREVIOUS_EPISODES: "попередній епізод",
+            PROMPT_ADD: "додати завдання",
+            PROMPT_PLACEHOLDER: "введи завдання",
+            PROMPTS_COUNT_HIDDEN: "({count} сховано)",
+            TITLE_PLACEHOLDER: "введи назву"
         },
         gW = {
             BROADCASTER: {
-                SUBTEXT: "You have successfully connected your account to the Jackbox Audience Kit Twitch Extension.",
-                WARNING: "THIS ROOM DOESN'T HAVE THE AUDIENCE SETTING ENABLED"
+                SUBTEXT: "Акаунт успішно під'єднаний до Twitch-розширення Jackbox Audience Kit.",
+                WARNING: "В ЦІЙ ГРІ НЕ ВКЛЮЧЕНА ОПЦІЯ ГЛЯДАЧІВ"
             },
             RECONNECTED: {
-                TEXT: "RECONNECTED",
-                SUBTEXT: "Have fun!"
+                TEXT: "ПІДКЛЮЧЕНО",
+                SUBTEXT: "Удачі!"
             },
             RECONNECTING: {
                 CONTROLLER: {
-                    TEXT: "CONNECTION INTERRUPTED",
-                    SUBTEXT: "Attempting to reconnect ({attempt} of 5)"
+                    TEXT: "З'ЄДНАННЯ ПЕРЕРВАНЕ",
+                    SUBTEXT: "Повторне підключення (спроба {attempt} з 5)"
                 },
                 GAME: {
-                    TEXT: "GAME CONNECTION INTERRUPTED",
-                    SUBTEXT: "Please wait while we attempt to reconnect"
+                    TEXT: "З'ЄДНАННЯ З ГРОЮ ЗУПИНЕНО",
+                    SUBTEXT: "Виконується повторне підключення "
                 }
             }
         },
@@ -16625,7 +16626,7 @@ function print() { __p += __j.call(arguments, '') }
         }, null, 40, fK))], 64))), 256)), Fe(H("button", {
             onClick: t[0] || (t[0] = fn((...c) => e.onSubmitClick && e.onSubmitClick(...c), ["prevent"]))
         }, null, 512), [
-            [l, e.player.submitText || "SUBMIT"]
+            [l, e.player.submitText || "ВІДПРАВИТИ"]
         ])])])
     }
     const hK = at(sK, [
@@ -25548,32 +25549,32 @@ ${t}`
                 })
             })
         },
-        pne = "sent",
+        pne = "відправлено",
         gne = {
-            SLIDE_0_TITLE: "In Weapons Drawn, every player is both a detective and a murderer.",
-            SLIDE_0_ITEM_1: "Murder guests brought by other players.",
-            SLIDE_0_ITEM_2: "Solve other murders to distract from your own.",
-            SLIDE_1_TITLE: "Each murder weapon you draw must contain a letter from your name.",
-            SLIDE_1_ITEM_1: 'This is your "calling card."',
-            SLIDE_1_ITEM_2: "Keep it a secret!",
-            SLIDE_2_TITLE: "Hide your letter as part of your drawing.",
-            SLIDE_2_ITEM_1: "Move your letter, then draw the weapon around it.",
-            SLIDE_2_ITEM_2: "Be on the lookout for other players\u2019 letters.",
-            SLIDE_3_TITLE: "Everyone brings two secret guests to the party.",
-            SLIDE_3_ITEM_1: "Give your guest a name that stands out, but won\u2019t lead back to you.",
-            SLIDE_3_ITEM_2: "Murder guests by guessing which player brought them.",
-            SLIDE_3_ITEM_3: "Your weapon is left behind as evidence.",
-            SLIDE_4_TITLE: "Pro Tips:",
-            SLIDE_4_ITEM_1: "Talk to each other and share your theories to get to a majority vote.",
-            SLIDE_4_ITEM_2: "Each player only draws each weapon once. Use this to eliminate suspects."
+            SLIDE_0_TITLE: "У Мальовничому Вбивстві кожен гравець є одночасно і детективом, і вбивцею.",
+            SLIDE_0_ITEM_1: "Вбивай гостей, яких привели інші гравці.",
+            SLIDE_0_ITEM_2: "Розкривайте інші вбивства, щоб відволіктися від власного.",
+            SLIDE_1_TITLE: "У кожному зброї вбивства, яке ти намалюєш, має бути літера з твого імені.",   
+            SLIDE_1_ITEM_1: 'Це твоя "візитна картка".',
+            SLIDE_1_ITEM_2: "Тримайте це в таємниці!",
+            SLIDE_2_TITLE: "Приховайте свою літеру, як частину малюнка.",
+            SLIDE_2_ITEM_1: "Спочатку переміщуй літеру, а потім домалюй зброю.",
+            SLIDE_2_ITEM_2: "Уважно вивчай зброю інших гравців.",
+            SLIDE_3_TITLE: "Кожен приводить на вечірку двох таємних гостей.",
+            SLIDE_3_ITEM_1: "Дай своєму гостю таке ім'я, яке приверне увагу, але не видасть тебе.",
+            SLIDE_3_ITEM_2: "Вбивай гостей, вгадуючи, хто з гравців їх привів.",
+            SLIDE_3_ITEM_3: "Твоє зброя залишиться як доказ.",
+            SLIDE_4_TITLE: "Поради:",
+            SLIDE_4_ITEM_1: "Спілкуйтеся один з одним і діліться своїми теоріями, щоб отримати більшість голосів.",
+            SLIDE_4_ITEM_2: "Кожен гравець тягне кожну зброю лише один раз. Використовуйте це, щоб усунути підозрюваних."
         },
         mne = {
-            TAB_MOVE: "MOVE",
-            TAB_DRAW: "DRAW"
+            TAB_MOVE: "РУХАТИ",
+            TAB_DRAW: "МАЛЮВАТИ"
         },
         vne = {
-            WRITE_SOMETHING: "You need to write something!",
-            FILTER_ERROR: "That's not allowed, enter something else! (You can change the level of filtering in the game's settings menu)"
+            WRITE_SOMETHING: "Тобі треба хоч щось написати!",
+            FILTER_ERROR: "Це неприпустимо, введи щось інше! (У налаштуваннях гри можна змінити рівень фільтрації контенту"
         },
         yne = {
             SENT: pne,
@@ -26654,7 +26655,7 @@ ${t}`
             disabled: e.isSubmitting
         }, [Fe(H("div", ure, null, 512), [
             [l, e.player.prompt]
-        ]), e.hasWarning ? (V(), X("div", fre, " Vote for someone! Quick! ")) : (V(), X("div", {
+        ]), e.hasWarning ? (V(), X("div", fre, " Голосуйте за когось! Швидше! ")) : (V(), X("div", {
             key: 1,
             ref: "nipple",
             class: $e(`nippleContainer numPlayers${e.player.numPlayers}`)
@@ -26671,7 +26672,7 @@ ${t}`
         }, [c.lines && c.lines.length > 0 ? (V(), X("img", {
             key: 0,
             class: "drawing",
-            alt: `${c.text} drawing`,
+            alt: `${c.text} - автор`,
             src: e.getWeaponImage(c)
         }, null, 8, pre)) : Se("", !0), Fe(H("span", gre, null, 512), [
             [l, c.text]
@@ -26987,7 +26988,7 @@ ${t}`
         },
         hie = H("img", {
             class: "logo",
-            alt: "weapons drawn logo",
+            alt: "логотип мальовничого вбивства",
             src: cie
         }, null, -1),
         pie = [hie];

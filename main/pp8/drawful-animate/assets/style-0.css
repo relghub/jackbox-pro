@@ -2765,6 +2765,7 @@ html.disable--interaction.show--consent body {
 }
 
 .feedback-button[data-v-6f2f1788] {
+    display: none;
     cursor: pointer;
     position: fixed;
     bottom: -1px;
